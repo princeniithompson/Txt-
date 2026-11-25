@@ -1,0 +1,2582 @@
+====================================================================
+ANDROID APP ANALYSIS REPORT
+====================================================================
+App Name: Rapcha Dev
+Package Name: com.princeniithompson.rapcha.debug
+APK Size: 18.5 MB
+Total Files: 150
+Indexed DEX Classes: 5282
+Native Libraries (.so): 8
+
+--------------------------------------------------------------------
+1. ANDROID MANIFEST (DECODED)
+--------------------------------------------------------------------
+<?xml version="1.0" encoding="utf-8"?>
+<manifest
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  android:versionCode="27"
+  android:versionName="lean-27"
+  android:compileSdkVersion="36"
+  android:compileSdkVersionCodename="16"
+  package="com.princeniithompson.rapcha.debug"
+  platformBuildVersionCode="36"
+  platformBuildVersionName="16">
+  <uses-sdk
+    android:minSdkVersion="24"
+    android:targetSdkVersion="36">
+  </uses-sdk>
+  <uses-permission android:name="android.permission.RECORD_AUDIO">
+  </uses-permission>
+  <uses-permission android:name="android.permission.INTERNET">
+  </uses-permission>
+  <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE">
+  </uses-permission>
+  <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW">
+  </uses-permission>
+  <uses-permission android:name="android.permission.FOREGROUND_SERVICE">
+  </uses-permission>
+  <uses-permission android:name="android.permission.FOREGROUND_SERVICE_SPECIAL_USE">
+  </uses-permission>
+  <uses-permission android:name="android.permission.FOREGROUND_SERVICE_MICROPHONE">
+  </uses-permission>
+  <uses-permission android:name="android.permission.POST_NOTIFICATIONS">
+  </uses-permission>
+  <uses-permission android:name="android.permission.WAKE_LOCK">
+  </uses-permission>
+  <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED">
+  </uses-permission>
+  <uses-permission android:name="android.permission.REQUEST_IGNORE_BATTERY_OPTIMIZATIONS">
+  </uses-permission>
+  <uses-permission android:name="android.permission.VIBRATE">
+  </uses-permission>
+  <queries>
+    <intent>
+      <action android:name="android.speech.RecognitionService">
+      </action>
+    </intent>
+    <intent>
+      <action android:name="android.intent.action.TTS_SERVICE">
+      </action>
+    </intent>
+    <intent>
+      <action android:name="android.intent.action.MAIN">
+      </action>
+      <category android:name="android.intent.category.LAUNCHER">
+      </category>
+    </intent>
+    <package android:name="com.samsung.android.lool">
+    </package>
+    <package android:name="com.miui.securitycenter">
+    </package>
+    <package android:name="com.miui.powerkeeper">
+    </package>
+    <package android:name="com.coloros.safecenter">
+    </package>
+    <package android:name="com.coloros.oppoguardelf">
+    </package>
+    <package android:name="com.oplus.battery">
+    </package>
+    <package android:name="com.oppo.safe">
+    </package>
+    <package android:name="com.oneplus.security">
+    </package>
+    <package android:name="com.vivo.permissionmanager">
+    </package>
+    <package android:name="com.iqoo.secure">
+    </package>
+    <package android:name="com.transsion.phonemanager">
+    </package>
+    <package android:name="com.itel.phonemaster">
+    </package>
+    <package android:name="com.transsion.security">
+    </package>
+    <package android:name="com.huawei.systemmanager">
+    </package>
+  </queries>
+  <permission
+    android:name="com.princeniithompson.rapcha.debug.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION"
+    android:protectionLevel="0x2">
+  </permission>
+  <uses-permission android:name="com.princeniithompson.rapcha.debug.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION">
+  </uses-permission>
+  <application
+    android:theme="@0x7f0b000a"
+    android:label="@0x7f0a0003"
+    android:icon="@0x7f090000"
+    android:name="com.princeniithompson.rapcha.RapchaApplication"
+    android:debuggable="true"
+    android:allowBackup="false"
+    android:supportsRtl="true"
+    android:extractNativeLibs="true"
+    android:fullBackupContent="@0x7f0d0001"
+    android:roundIcon="@0x7f090001"
+    android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+    android:dataExtractionRules="@0x7f0d0002">
+    <activity
+      android:theme="@0x7f0b000a"
+      android:label="@0x7f0a0003"
+      android:name="com.princeniithompson.rapcha.MainActivity"
+      android:exported="true"
+      android:windowSoftInputMode="0x10">
+      <intent-filter>
+        <action android:name="android.intent.action.MAIN">
+        </action>
+        <category android:name="android.intent.category.LAUNCHER">
+        </category>
+      </intent-filter>
+    </activity>
+    <service
+      android:name="com.princeniithompson.rapcha.service.FloatingBubbleService"
+      android:enabled="true"
+      android:exported="false"
+      android:stopWithTask="false"
+      android:foregroundServiceType="0x40000080">
+      <property
+        android:name="android.app.PROPERTY_SPECIAL_USE_FGS_SUBTYPE"
+        android:value="overlay-ui-host: keeps the Rapcha voice bubble visible over other apps">
+      </property>
+    </service>
+    <service
+      android:name="com.princeniithompson.rapcha.service.BubbleRecoveryJobService"
+      android:permission="android.permission.BIND_JOB_SERVICE"
+      android:exported="false">
+    </service>
+    <service
+      android:label="@0x7f0a0001"
+      android:name="com.princeniithompson.rapcha.service.RapchaAccessibilityService"
+      android:permission="android.permission.BIND_ACCESSIBILITY_SERVICE"
+      android:enabled="true"
+      android:exported="false"
+      android:stopWithTask="false">
+      <intent-filter>
+        <action android:name="android.accessibilityservice.AccessibilityService">
+        </action>
+      </intent-filter>
+      <meta-data
+        android:name="android.accessibilityservice"
+        android:resource="@0x7f0d0000">
+      </meta-data>
+    </service>
+    <service
+      android:label="@0x7f0a0003"
+      android:name="com.princeniithompson.rapcha.service.RapchaInputMethodService"
+      android:permission="android.permission.BIND_INPUT_METHOD"
+      android:enabled="true"
+      android:exported="true">
+      <intent-filter>
+        <action android:name="android.view.InputMethod">
+        </action>
+      </intent-filter>
+      <meta-data
+        android:name="android.inputmethodservice"
+        android:resource="@0x7f0d0004">
+      </meta-data>
+    </service>
+    <receiver
+      android:name="com.princeniithompson.rapcha.service.BubbleBootReceiver"
+      android:exported="true">
+      <intent-filter>
+        <action android:name="android.intent.action.BOOT_COMPLETED">
+        </action>
+        <action android:name="android.intent.action.MY_PACKAGE_REPLACED">
+        </action>
+      </intent-filter>
+    </receiver>
+    <receiver
+      android:name="com.princeniithompson.rapcha.service.VocabularyNotificationReceiver"
+      android:exported="false">
+    </receiver>
+    <provider
+      android:name="androidx.core.content.FileProvider"
+      android:exported="false"
+      android:authorities="com.princeniithompson.rapcha.debug.fileprovider"
+      android:grantUriPermissions="true">
+      <meta-data
+        android:name="android.support.FILE_PROVIDER_PATHS"
+        android:resource="@0x7f0d0003">
+      </meta-data>
+    </provider>
+    <activity
+      android:name="androidx.compose.ui.tooling.PreviewActivity"
+      android:exported="true">
+    </activity>
+    <provider
+      android:name="androidx.startup.InitializationProvider"
+      android:exported="false"
+      android:authorities="com.princeniithompson.rapcha.debug.androidx-startup">
+      <meta-data
+        android:name="androidx.emoji2.text.EmojiCompatInitializer"
+        android:value="androidx.startup">
+      </meta-data>
+      <meta-data
+        android:name="androidx.lifecycle.ProcessLifecycleInitializer"
+        android:value="androidx.startup">
+      </meta-data>
+      <meta-data
+        android:name="androidx.profileinstaller.ProfileInstallerInitializer"
+        android:value="androidx.startup">
+      </meta-data>
+    </provider>
+    <activity
+      android:name="androidx.activity.ComponentActivity"
+      android:exported="true">
+    </activity>
+    <receiver
+      android:name="androidx.profileinstaller.ProfileInstallReceiver"
+      android:permission="android.permission.DUMP"
+      android:enabled="true"
+      android:exported="true"
+      android:directBootAware="false">
+      <intent-filter>
+        <action android:name="androidx.profileinstaller.action.INSTALL_PROFILE">
+        </action>
+      </intent-filter>
+      <intent-filter>
+        <action android:name="androidx.profileinstaller.action.SKIP_FILE">
+        </action>
+      </intent-filter>
+      <intent-filter>
+        <action android:name="androidx.profileinstaller.action.SAVE_PROFILE">
+        </action>
+      </intent-filter>
+      <intent-filter>
+        <action android:name="androidx.profileinstaller.action.BENCHMARK_OPERATION">
+        </action>
+      </intent-filter>
+    </receiver>
+  </application>
+</manifest>
+
+
+--------------------------------------------------------------------
+2. SIGNING CERTIFICATES
+--------------------------------------------------------------------
+- Source: PackageManager
+  Subject: CN=Android Debug,O=Android,C=US
+  Issuer: CN=Android Debug,O=Android,C=US
+  Algorithm: SHA256withRSA
+  Valid: 2026-11-22 to 2054-04-10
+  SHA-256: BE:F8:A6:FD:D5:1A:61:1E:CB:65:C1:E3:8C:52:10:1D:A2:FB:ED:38:89:E2:8E:8A:09:8F:23:01:C0:C6:FD:1E
+
+--------------------------------------------------------------------
+3. NATIVE LIBRARIES (ELF)
+--------------------------------------------------------------------
+- lib/arm64-v8a/libandroidx.graphics.path.so (9 KB) | ARM64 64-bit | PIE=true NX=true RELRO=true
+- lib/arm64-v8a/libdatastore_shared_counter.so (6 KB) | ARM64 64-bit | PIE=true NX=true RELRO=true
+- lib/armeabi-v7a/libandroidx.graphics.path.so (7 KB) | ARMv7 32-bit | PIE=true NX=true RELRO=true
+- lib/armeabi-v7a/libdatastore_shared_counter.so (4 KB) | ARMv7 32-bit | PIE=true NX=true RELRO=true
+- lib/x86/libandroidx.graphics.path.so (9 KB) | x86 32-bit | PIE=true NX=true RELRO=true
+- lib/x86/libdatastore_shared_counter.so (5 KB) | x86 32-bit | PIE=true NX=true RELRO=true
+- lib/x86_64/libandroidx.graphics.path.so (10 KB) | x86-64 64-bit | PIE=true NX=true RELRO=true
+- lib/x86_64/libdatastore_shared_counter.so (6 KB) | x86-64 64-bit | PIE=true NX=true RELRO=true
+
+--------------------------------------------------------------------
+4. ASSETS, LAYOUTS & CONFIG FILES
+--------------------------------------------------------------------
+- META-INF/androidx.activity_activity-compose.version (7 B)
+- META-INF/androidx.activity_activity-ktx.version (7 B)
+- META-INF/androidx.activity_activity.version (7 B)
+- META-INF/androidx.annotation_annotation-experimental.version (6 B)
+- META-INF/androidx.arch.core_core-runtime.version (67 B)
+- META-INF/androidx.autofill_autofill.version (6 B)
+- META-INF/androidx.compose.animation_animation-core.version (6 B)
+- META-INF/androidx.compose.animation_animation.version (6 B)
+- META-INF/androidx.compose.foundation_foundation-layout.version (6 B)
+- META-INF/androidx.compose.foundation_foundation.version (6 B)
+- META-INF/androidx.compose.material3_material3.version (6 B)
+- META-INF/androidx.compose.material_material-icons-core.version (6 B)
+- META-INF/androidx.compose.material_material-icons-extended.version (6 B)
+- META-INF/androidx.compose.material_material-ripple.version (6 B)
+- META-INF/androidx.compose.material_material.version (6 B)
+- META-INF/androidx.compose.runtime_runtime-saveable.version (6 B)
+- META-INF/androidx.compose.runtime_runtime.version (6 B)
+- META-INF/androidx.compose.ui_ui-geometry.version (6 B)
+- META-INF/androidx.compose.ui_ui-graphics.version (6 B)
+- META-INF/androidx.compose.ui_ui-test-manifest.version (6 B)
+- META-INF/androidx.compose.ui_ui-text.version (6 B)
+- META-INF/androidx.compose.ui_ui-tooling-data.version (6 B)
+- META-INF/androidx.compose.ui_ui-tooling-preview.version (6 B)
+- META-INF/androidx.compose.ui_ui-tooling.version (6 B)
+- META-INF/androidx.compose.ui_ui-unit.version (6 B)
+- META-INF/androidx.compose.ui_ui-util.version (6 B)
+- META-INF/androidx.compose.ui_ui.version (6 B)
+- META-INF/androidx.core_core-ktx.version (7 B)
+- META-INF/androidx.core_core-viewtree.version (6 B)
+- META-INF/androidx.core_core.version (7 B)
+- META-INF/androidx.customview_customview-poolingcontainer.version (6 B)
+- META-INF/androidx.datastore_datastore-core.version (6 B)
+- META-INF/androidx.datastore_datastore-preferences-core.version (6 B)
+- META-INF/androidx.datastore_datastore-preferences.version (6 B)
+- META-INF/androidx.datastore_datastore.version (6 B)
+- META-INF/androidx.emoji2_emoji2.version (6 B)
+- META-INF/androidx.graphics_graphics-path.version (6 B)
+- META-INF/androidx.interpolator_interpolator.version (6 B)
+- META-INF/androidx.lifecycle_lifecycle-livedata-core.version (6 B)
+- META-INF/androidx.lifecycle_lifecycle-process.version (6 B)
+- META-INF/androidx.lifecycle_lifecycle-runtime-compose.version (6 B)
+- META-INF/androidx.lifecycle_lifecycle-runtime-ktx.version (6 B)
+- META-INF/androidx.lifecycle_lifecycle-runtime.version (6 B)
+- META-INF/androidx.lifecycle_lifecycle-viewmodel-compose.version (6 B)
+- META-INF/androidx.lifecycle_lifecycle-viewmodel-ktx.version (6 B)
+- META-INF/androidx.lifecycle_lifecycle-viewmodel-savedstate.version (6 B)
+- META-INF/androidx.lifecycle_lifecycle-viewmodel.version (6 B)
+- META-INF/androidx.profileinstaller_profileinstaller.version (6 B)
+- META-INF/androidx.savedstate_savedstate-ktx.version (6 B)
+- META-INF/androidx.savedstate_savedstate.version (6 B)
+- META-INF/androidx.startup_startup-runtime.version (6 B)
+- META-INF/androidx.tracing_tracing.version (6 B)
+- META-INF/androidx.versionedparcelable_versionedparcelable.version (6 B)
+- META-INF/com/android/build/gradle/app-metadata.properties (56 B)
+- META-INF/kotlinx_coroutines_android.version (6 B)
+- META-INF/kotlinx_coroutines_core.version (6 B)
+- res/layout-v21/notification_action.xml (1 KB)
+- res/layout-v21/notification_action_tombstone.xml (1 KB)
+- res/layout-v21/notification_template_custom_big.xml (2 KB)
+- res/layout-v21/notification_template_icon_group.xml (988 B)
+- res/layout/custom_dialog.xml (612 B)
+- res/layout/ime_base_split_test_activity.xml (364 B)
+- res/layout/ime_secondary_split_test_activity.xml (876 B)
+- res/layout/notification_template_part_chronometer.xml (440 B)
+- res/layout/notification_template_part_time.xml (440 B)
+- res/xml/accessibility_service_config.xml (600 B)
+- res/xml/backup_rules.xml (748 B)
+- res/xml/data_extraction_rules.xml (1 KB)
+- res/xml/file_paths.xml (292 B)
+- res/xml/method_service_meta_data.xml (368 B)
+
+--------------------------------------------------------------------
+5. EXTRACTED URLS, ENDPOINTS & NETWORK/STORAGE STRINGS
+--------------------------------------------------------------------
+- ()Lokhttp3/OkHttpClient;
+- Lokhttp3/Call;
+- Lokhttp3/MediaType$Companion;
+- Lokhttp3/MediaType;
+- Lokhttp3/OkHttpClient$Builder;
+- Lokhttp3/OkHttpClient;
+- Lokhttp3/Protocol;
+- Lokhttp3/Request$Builder;
+- Lokhttp3/Request;
+- Lokhttp3/RequestBody$Companion;
+- Lokhttp3/RequestBody;
+- Lokhttp3/Response;
+- Lokhttp3/ResponseBody;
+- createOkHttpClient
+- https://
+- https://generativelanguage.googleapis.com/
+- https://generativelanguage.googleapis.com/v1beta/models/
+- https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent
+- https://generativelanguage.googleapis.com/v1beta/models?pageSize=1
+-  To see where this was allocated, set the OkHttpClient logger level to FINE: Logger.getLogger(OkHttpClient.class.getName()).setLevel(Level.FINE);
+- $i$a$-apply-Http2Connection$okHttpSettings$1
+- $i$a$-apply-OkHttpClient$Builder$addInterceptor$1
+- $i$a$-apply-OkHttpClient$Builder$addNetworkInterceptor$1
+- $i$a$-apply-OkHttpClient$Builder$authenticator$1
+- $i$a$-apply-OkHttpClient$Builder$cache$1
+- $i$a$-apply-OkHttpClient$Builder$callTimeout$1
+- $i$a$-apply-OkHttpClient$Builder$callTimeout$2
+- $i$a$-apply-OkHttpClient$Builder$certificatePinner$1
+- $i$a$-apply-OkHttpClient$Builder$connectTimeout$1
+- $i$a$-apply-OkHttpClient$Builder$connectTimeout$2
+- $i$a$-apply-OkHttpClient$Builder$connectionPool$1
+- $i$a$-apply-OkHttpClient$Builder$connectionSpecs$1
+- $i$a$-apply-OkHttpClient$Builder$cookieJar$1
+- $i$a$-apply-OkHttpClient$Builder$dispatcher$1
+- $i$a$-apply-OkHttpClient$Builder$dns$1
+- $i$a$-apply-OkHttpClient$Builder$eventListener$1
+- $i$a$-apply-OkHttpClient$Builder$eventListenerFactory$1
+- $i$a$-apply-OkHttpClient$Builder$followRedirects$1
+- $i$a$-apply-OkHttpClient$Builder$followSslRedirects$1
+- $i$a$-apply-OkHttpClient$Builder$hostnameVerifier$1
+- $i$a$-apply-OkHttpClient$Builder$minWebSocketMessageToCompress$1
+- $i$a$-apply-OkHttpClient$Builder$pingInterval$1
+- $i$a$-apply-OkHttpClient$Builder$pingInterval$2
+- $i$a$-apply-OkHttpClient$Builder$protocols$1
+- $i$a$-apply-OkHttpClient$Builder$proxy$1
+- $i$a$-apply-OkHttpClient$Builder$proxyAuthenticator$1
+- $i$a$-apply-OkHttpClient$Builder$proxySelector$1
+- $i$a$-apply-OkHttpClient$Builder$readTimeout$1
+- $i$a$-apply-OkHttpClient$Builder$readTimeout$2
+- $i$a$-apply-OkHttpClient$Builder$retryOnConnectionFailure$1
+- $i$a$-apply-OkHttpClient$Builder$socketFactory$1
+- $i$a$-apply-OkHttpClient$Builder$sslSocketFactory$1
+- $i$a$-apply-OkHttpClient$Builder$sslSocketFactory$2
+- $i$a$-apply-OkHttpClient$Builder$writeTimeout$1
+- $i$a$-apply-OkHttpClient$Builder$writeTimeout$2
+- $i$a$-check-OkHttpClient$verifyClientState$1
+- $i$a$-check-OkHttpClient$verifyClientState$2
+- $i$a$-checkNotNull-OkHttpClient$verifyClientState$4
+- $i$a$-checkNotNull-OkHttpClient$verifyClientState$5
+- $i$a$-checkNotNull-OkHttpClient$verifyClientState$6
+- $i$a$-none-OkHttpClient$1
+- $i$a$-none-OkHttpClient$verifyClientState$3
+- $i$a$-require-OkHttpClient$Builder$minWebSocketMessageToCompress$1$1
+- $i$a$-require-OkHttpClient$Builder$protocols$1$1
+- $i$a$-require-OkHttpClient$Builder$protocols$1$2
+- $i$a$-require-OkHttpClient$Builder$protocols$1$3
+- $i$a$-require-OkHttpClient$Builder$protocols$1$4
+- $i$a$-require-OkHttpClient$Builder$socketFactory$1$1
+- $this$okHttpSettings_u24lambda_u2d0
+- ()Lokhttp3/Address;
+- ()Lokhttp3/Authenticator;
+- ()Lokhttp3/Cache;
+- ()Lokhttp3/CacheControl;
+- ()Lokhttp3/CertificatePinner;
+- ()Lokhttp3/CipherSuite;
+- ()Lokhttp3/ConnectionPool;
+- ()Lokhttp3/CookieJar;
+- ()Lokhttp3/Dispatcher;
+- ()Lokhttp3/Dns;
+- ()Lokhttp3/EventListener$Factory;
+- ()Lokhttp3/EventListener;
+- ()Lokhttp3/Handshake;
+- ()Lokhttp3/Headers$Builder;
+- ()Lokhttp3/Headers;
+- ()Lokhttp3/HttpUrl;
+- ()Lokhttp3/MediaType;
+- ()Lokhttp3/Protocol;
+- ()Lokhttp3/Request;
+- ()Lokhttp3/RequestBody;
+- ()Lokhttp3/Response;
+- ()Lokhttp3/ResponseBody;
+- ()Lokhttp3/TlsVersion;
+- ()Lokhttp3/WebSocketListener;
+- ()Lokhttp3/internal/cache/DiskLruCache$Editor;
+- ()Lokhttp3/internal/cache/DiskLruCache$Entry;
+- ()Lokhttp3/internal/cache/DiskLruCache$Snapshot;
+- ()Lokhttp3/internal/cache/DiskLruCache;
+- ()Lokhttp3/internal/concurrent/Task;
+- ()Lokhttp3/internal/concurrent/TaskQueue;
+- ()Lokhttp3/internal/concurrent/TaskRunner$Backend;
+- ()Lokhttp3/internal/concurrent/TaskRunner;
+- ()Lokhttp3/internal/connection/Exchange;
+- ()Lokhttp3/internal/connection/ExchangeFinder;
+- ()Lokhttp3/internal/connection/RealCall;
+- ()Lokhttp3/internal/connection/RealConnection;
+- ()Lokhttp3/internal/connection/RealConnectionPool;
+- ()Lokhttp3/internal/connection/RouteDatabase;
+- ()Lokhttp3/internal/http2/ErrorCode;
+- ()Lokhttp3/internal/http2/Hpack$Writer;
+- ()Lokhttp3/internal/http2/Http2Connection$Listener;
+- ()Lokhttp3/internal/http2/Http2Connection$ReaderRunnable;
+- ()Lokhttp3/internal/http2/Http2Connection;
+- ()Lokhttp3/internal/http2/Http2Reader;
+- ()Lokhttp3/internal/http2/Http2Stream$FramingSink;
+- ()Lokhttp3/internal/http2/Http2Stream$FramingSource;
+- ()Lokhttp3/internal/http2/Http2Stream$StreamTimeout;
+- ()Lokhttp3/internal/http2/Http2Writer;
+- ()Lokhttp3/internal/http2/PushObserver;
+- ()Lokhttp3/internal/http2/Settings;
+- ()Lokhttp3/internal/io/FileSystem;
+- ()Lokhttp3/internal/platform/android/DeferredSocketAdapter$Factory;
+- ()Lokhttp3/internal/tls/CertificateChainCleaner;
+- ()[Lokhttp3/internal/http2/Header;
+- ()[Lokhttp3/internal/http2/Huffman$Node;
+- (ILokhttp3/internal/http2/Http2Connection;ZZLokhttp3/Headers;)V
+- (JLokhttp3/Request;Lokhttp3/Response;)V
+- (Ljava/io/File;JLokhttp3/internal/io/FileSystem;)V
+- (Ljava/lang/Class;Ljava/lang/Object;)Lokhttp3/Request$Builder;
+- (Ljava/lang/String;[Ljava/lang/String;)Lokhttp3/CertificatePinner$Builder;
+- (Ljava/util/Set;Lokhttp3/internal/tls/CertificateChainCleaner;)V
+- (Lokhttp3/Address;Ljava/net/Proxy;Ljava/net/InetSocketAddress;)V
+- (Lokhttp3/Address;Lokhttp3/internal/connection/RouteDatabase;Lokhttp3/Call;Lokhttp3/EventListener;)V
+- (Lokhttp3/Authenticator;)V
+- (Lokhttp3/Cache;)V
+- (Lokhttp3/Cache;Lokhttp3/internal/cache/DiskLruCache$Editor;)V
+- (Lokhttp3/CertificatePinner;)V
+- (Lokhttp3/ConnectionPool;)V
+- (Lokhttp3/ConnectionSpec;)V
+- (Lokhttp3/CookieJar;)V
+- http://
+
+--------------------------------------------------------------------
+6. DEX PACKAGES & CLASS INDEX
+--------------------------------------------------------------------
+Package: com.princeniithompson.rapcha (24 classes)
+  BuildConfig, MainActivity, MainActivity$$ExternalSyntheticLambda0, MainActivity$$ExternalSyntheticLambda1, MainActivity$$ExternalSyntheticLambda2, MainActivity$$ExternalSyntheticLambda3, MainActivity$$ExternalSyntheticLambda4, MainActivity$$ExternalSyntheticLambda5, MainActivity$$ExternalSyntheticLambda6, MainActivity$Companion, MainActivity$onCreate$1$2$1, MainActivity$special$$inlined$viewModels$default$1, MainActivity$special$$inlined$viewModels$default$2, MainActivity$special$$inlined$viewModels$default$3, R, R$color, R$drawable, R$font, R$mipmap, R$string, R$style, R$xml, RapchaApplication, RapchaApplication$Companion
+Package: com.princeniithompson.rapcha.audio (16 classes)
+  AudioRecorder, AudioRecorder$$ExternalSyntheticLambda0, AudioRecorder$Companion, AudioRecorder$stopAndJoin$1, AudioRecorderState, AudioRecorderState$Error, AudioRecorderState$Idle, AudioRecorderState$Recording, AudioRecorderState$Starting, AudioRecorderState$Stopping, SessionAudioBackup, SessionAudioBackup$$ExternalSyntheticLambda0, SessionAudioBackup$Companion, SessionAudioBackup$ExportedAudio, SpeechGain, SpeechGain$Companion
+Package: com.princeniithompson.rapcha.core (24 classes)
+  ApiConfig, ApiConfig$$ExternalSyntheticLambda0, ApiConfig$$ExternalSyntheticLambda1, ApiConfig$$ExternalSyntheticLambda2, ApiKeyFormat, ApiKeyVault, ApiKeyVault$AndroidKeyStoreCipherAdapter, ApiKeyVault$CipherAdapter, ApiKeyVault$KeyVerifyKind, ApiKeyVault$KeyVerifyResult, ApiKeyVault$clearUserCredentials$1, ApiKeyVault$clearUserCredentials$2, ApiKeyVault$clearUserKeyOnly$1, ApiKeyVault$clearUserKeyOnly$2, ApiKeyVault$init$2, ApiKeyVault$loadFromDataStore$1, ApiKeyVault$loadFromDataStore$prefs$1, ApiKeyVault$saveGoogleEmail$1, ApiKeyVault$saveGoogleEmail$2, ApiKeyVault$saveUserApiKey$1, ApiKeyVault$saveUserApiKey$2, ApiKeyVault$verifyApiKeyWithGemini$2, ApiKeyVaultKt, SmartModeSetting
+Package: com.princeniithompson.rapcha.data (81 classes)
+  ApiUsageRepository, ApiUsageSnapshot, AppLogRepository, ConnectionState, ConnectionState$ConnectedWaitingSetup, ConnectionState$Connecting, ConnectionState$Error, ConnectionState$Idle, ConnectionState$Stopping, ConnectionState$Streaming, CustomVocabularyRepository, CustomVocabularyRepository$$ExternalSyntheticLambda0, CustomVocabularyRepository$$ExternalSyntheticLambda1, CustomVocabularyRepository$$ExternalSyntheticLambda2, CustomVocabularyRepository$$ExternalSyntheticLambda3, CustomVocabularyRepository$getVocabulary$$inlined$sortedByDescending$1, DiagnosticLogEntry, DiagnosticNote, DiagnosticSource, DiagnosticType, DictationEndedReason, DictationStats, DictationStats$Totals, FloatingTextActionsClient, FloatingTextActionsClient$execute$2
+Package: com.princeniithompson.rapcha.diagnostics (11 classes)
+  BubbleHealthLog, BubbleHealthLog$$ExternalSyntheticLambda0, BubbleHealthRateLimiter, BubbleHealthRateLimiter$$ExternalSyntheticLambda0, BubbleHealthRateLimiter$Companion, DictationFallbackReason, DictationSessionOutcome, DictationTelemetryEvent, DictationTelemetryRepository, DictationTelemetryRepository$buildReportText$lambda$13$$inlined$sortedByDescending$1, DictationTelemetrySnapshot
+Package: com.princeniithompson.rapcha.service (104 classes)
+  A11yRepairKind, A11yWatchdog, A11yWatchdogPolicy, AxWriteOutcome, BubbleBootReceiver, BubbleRecoveryJobScheduler, BubbleRecoveryJobService, EditableNodePolicy, EnabledImePackages, FgsStartupDecision, FgsStartupDecision$FgsPlan, FgsStartupDecision$StartRoute, FgsStartupDecision$WhenMappings, FloatingBubbleManager, FloatingBubbleManager$$ExternalSyntheticLambda0, FloatingBubbleService, FloatingBubbleService$$ExternalSyntheticLambda0, FloatingBubbleService$$ExternalSyntheticLambda1, FloatingBubbleService$$ExternalSyntheticLambda10, FloatingBubbleService$$ExternalSyntheticLambda11, FloatingBubbleService$$ExternalSyntheticLambda12, FloatingBubbleService$$ExternalSyntheticLambda13, FloatingBubbleService$$ExternalSyntheticLambda2, FloatingBubbleService$$ExternalSyntheticLambda3, FloatingBubbleService$$ExternalSyntheticLambda4
+Package: com.princeniithompson.rapcha.service.floating (196 classes)
+  BubbleChromeGeometry, BubbleChromeStyle, BubbleChromeStyle$Companion, BubbleInteractionPolicy, ComposableSingletons$TelescopeActionOverlayKt, ComposableSingletons$TelescopeActionOverlayKt$$ExternalSyntheticLambda0, ComposableSingletons$TelescopeActionOverlayKt$$ExternalSyntheticLambda1, ComposableSingletons$TelescopeActionOverlayKt$$ExternalSyntheticLambda2, ComposableSingletons$TelescopeActionOverlayKt$$ExternalSyntheticLambda3, ComposableSingletons$TelescopeActionOverlayKt$$ExternalSyntheticLambda4, DevicePerformanceTier, DictationAlerts, FloatingDictationSessionManager, FloatingDictationSessionManager$$ExternalSyntheticLambda0, FloatingDictationSessionManager$$ExternalSyntheticLambda1, FloatingDictationSessionManager$$ExternalSyntheticLambda10, FloatingDictationSessionManager$$ExternalSyntheticLambda11, FloatingDictationSessionManager$$ExternalSyntheticLambda12, FloatingDictationSessionManager$$ExternalSyntheticLambda13, FloatingDictationSessionManager$$ExternalSyntheticLambda14, FloatingDictationSessionManager$$ExternalSyntheticLambda15, FloatingDictationSessionManager$$ExternalSyntheticLambda16, FloatingDictationSessionManager$$ExternalSyntheticLambda17, FloatingDictationSessionManager$$ExternalSyntheticLambda18, FloatingDictationSessionManager$$ExternalSyntheticLambda2
+Package: com.princeniithompson.rapcha.ui (144 classes)
+  ComposableSingletons$SettingsDrawerKt, ComposableSingletons$SettingsDrawerKt$$ExternalSyntheticLambda0, ComposableSingletons$SettingsDrawerKt$$ExternalSyntheticLambda1, ComposableSingletons$SettingsDrawerKt$$ExternalSyntheticLambda2, ComposableSingletons$SettingsDrawerKt$$ExternalSyntheticLambda3, ComposableSingletons$SettingsDrawerKt$$ExternalSyntheticLambda4, ComposableSingletons$SettingsDrawerKt$$ExternalSyntheticLambda5, ComposableSingletons$SettingsDrawerKt$$ExternalSyntheticLambda6, MainScreenTab, SegmentPosition, SettingsDrawerKt, SettingsDrawerKt$$ExternalSyntheticLambda0, SettingsDrawerKt$$ExternalSyntheticLambda1, SettingsDrawerKt$$ExternalSyntheticLambda10, SettingsDrawerKt$$ExternalSyntheticLambda11, SettingsDrawerKt$$ExternalSyntheticLambda12, SettingsDrawerKt$$ExternalSyntheticLambda13, SettingsDrawerKt$$ExternalSyntheticLambda14, SettingsDrawerKt$$ExternalSyntheticLambda15, SettingsDrawerKt$$ExternalSyntheticLambda16, SettingsDrawerKt$$ExternalSyntheticLambda17, SettingsDrawerKt$$ExternalSyntheticLambda18, SettingsDrawerKt$$ExternalSyntheticLambda19, SettingsDrawerKt$$ExternalSyntheticLambda2, SettingsDrawerKt$$ExternalSyntheticLambda20
+Package: com.princeniithompson.rapcha.ui.components (27 classes)
+  AccountUsageComponentsKt, AccountUsageComponentsKt$$ExternalSyntheticLambda0, AccountUsageComponentsKt$$ExternalSyntheticLambda1, AccountUsageComponentsKt$$ExternalSyntheticLambda2, AccountUsageComponentsKt$$ExternalSyntheticLambda3, AccountUsageComponentsKt$$ExternalSyntheticLambda4, AccountUsageComponentsKt$$ExternalSyntheticLambda5, AccountUsageComponentsKt$$ExternalSyntheticLambda6, AccountUsageComponentsKt$$ExternalSyntheticLambda7, AccountUsageComponentsKt$$ExternalSyntheticLambda8, ComposableSingletons$FloatingDictationBubbleOverlayKt, ComposableSingletons$FloatingDictationBubbleOverlayKt$$ExternalSyntheticLambda0, FloatingDictationBubbleOverlayKt, FloatingDictationBubbleOverlayKt$$ExternalSyntheticLambda0, FloatingDictationBubbleOverlayKt$$ExternalSyntheticLambda1, FloatingDictationBubbleOverlayKt$$ExternalSyntheticLambda2, FloatingDictationBubbleOverlayKt$$ExternalSyntheticLambda3, FloatingDictationBubbleOverlayKt$$ExternalSyntheticLambda4, FloatingDictationBubbleOverlayKt$$ExternalSyntheticLambda5, FloatingDictationBubbleOverlayKt$$ExternalSyntheticLambda6, GlowAnimationCatalogue, GlowAnimationStyle, GlowAnimationStyleKt, GlowAnimationStyleKt$$ExternalSyntheticLambda0, GlowAnimationStyleKt$$ExternalSyntheticLambda1
+Package: com.princeniithompson.rapcha.ui.components.overlay (83 classes)
+  AuroraColorPalette, AuroraColorPaletteKt, CompactRecordingBarKt, CompactRecordingBarKt$$ExternalSyntheticLambda0, CompactRecordingBarKt$$ExternalSyntheticLambda1, CompactRecordingBarKt$$ExternalSyntheticLambda10, CompactRecordingBarKt$$ExternalSyntheticLambda11, CompactRecordingBarKt$$ExternalSyntheticLambda12, CompactRecordingBarKt$$ExternalSyntheticLambda13, CompactRecordingBarKt$$ExternalSyntheticLambda14, CompactRecordingBarKt$$ExternalSyntheticLambda15, CompactRecordingBarKt$$ExternalSyntheticLambda16, CompactRecordingBarKt$$ExternalSyntheticLambda17, CompactRecordingBarKt$$ExternalSyntheticLambda18, CompactRecordingBarKt$$ExternalSyntheticLambda19, CompactRecordingBarKt$$ExternalSyntheticLambda2, CompactRecordingBarKt$$ExternalSyntheticLambda20, CompactRecordingBarKt$$ExternalSyntheticLambda21, CompactRecordingBarKt$$ExternalSyntheticLambda22, CompactRecordingBarKt$$ExternalSyntheticLambda23, CompactRecordingBarKt$$ExternalSyntheticLambda24, CompactRecordingBarKt$$ExternalSyntheticLambda3, CompactRecordingBarKt$$ExternalSyntheticLambda4, CompactRecordingBarKt$$ExternalSyntheticLambda5, CompactRecordingBarKt$$ExternalSyntheticLambda6
+Package: com.princeniithompson.rapcha.ui.components.overlay.sections (45 classes)
+  FloatingAuroraGlowSectionKt, FloatingAuroraGlowSectionKt$$ExternalSyntheticLambda0, FloatingAuroraGlowSectionKt$$ExternalSyntheticLambda1, FloatingAuroraGlowSectionKt$$ExternalSyntheticLambda2, FloatingButtonRowSectionKt, FloatingButtonRowSectionKt$$ExternalSyntheticLambda0, FloatingButtonRowSectionKt$$ExternalSyntheticLambda1, FloatingButtonRowSectionKt$$ExternalSyntheticLambda2, FloatingDictationPopupState, FloatingDictationPopupStateKt, FloatingDictationPopupStateKt$$ExternalSyntheticLambda0, FloatingDictationPopupStateKt$$ExternalSyntheticLambda1, FloatingDictationPopupStateKt$$ExternalSyntheticLambda10, FloatingDictationPopupStateKt$$ExternalSyntheticLambda11, FloatingDictationPopupStateKt$$ExternalSyntheticLambda12, FloatingDictationPopupStateKt$$ExternalSyntheticLambda13, FloatingDictationPopupStateKt$$ExternalSyntheticLambda14, FloatingDictationPopupStateKt$$ExternalSyntheticLambda15, FloatingDictationPopupStateKt$$ExternalSyntheticLambda16, FloatingDictationPopupStateKt$$ExternalSyntheticLambda17, FloatingDictationPopupStateKt$$ExternalSyntheticLambda18, FloatingDictationPopupStateKt$$ExternalSyntheticLambda19, FloatingDictationPopupStateKt$$ExternalSyntheticLambda2, FloatingDictationPopupStateKt$$ExternalSyntheticLambda20, FloatingDictationPopupStateKt$$ExternalSyntheticLambda21
+Package: com.princeniithompson.rapcha.ui.protection (4 classes)
+  AccessibilityHealthState, DeviceHealthStatus, DeviceProtectionManager, OemBatteryGuide
+Package: com.princeniithompson.rapcha.ui.screens (456 classes)
+  AccountAndSettingsScreensKt, AccountAndSettingsScreensKt$$ExternalSyntheticLambda0, AccountAndSettingsScreensKt$$ExternalSyntheticLambda1, AccountAndSettingsScreensKt$$ExternalSyntheticLambda10, AccountAndSettingsScreensKt$$ExternalSyntheticLambda11, AccountAndSettingsScreensKt$$ExternalSyntheticLambda12, AccountAndSettingsScreensKt$$ExternalSyntheticLambda13, AccountAndSettingsScreensKt$$ExternalSyntheticLambda14, AccountAndSettingsScreensKt$$ExternalSyntheticLambda15, AccountAndSettingsScreensKt$$ExternalSyntheticLambda16, AccountAndSettingsScreensKt$$ExternalSyntheticLambda17, AccountAndSettingsScreensKt$$ExternalSyntheticLambda18, AccountAndSettingsScreensKt$$ExternalSyntheticLambda19, AccountAndSettingsScreensKt$$ExternalSyntheticLambda2, AccountAndSettingsScreensKt$$ExternalSyntheticLambda20, AccountAndSettingsScreensKt$$ExternalSyntheticLambda21, AccountAndSettingsScreensKt$$ExternalSyntheticLambda22, AccountAndSettingsScreensKt$$ExternalSyntheticLambda23, AccountAndSettingsScreensKt$$ExternalSyntheticLambda24, AccountAndSettingsScreensKt$$ExternalSyntheticLambda25, AccountAndSettingsScreensKt$$ExternalSyntheticLambda26, AccountAndSettingsScreensKt$$ExternalSyntheticLambda27, AccountAndSettingsScreensKt$$ExternalSyntheticLambda28, AccountAndSettingsScreensKt$$ExternalSyntheticLambda29, AccountAndSettingsScreensKt$$ExternalSyntheticLambda3
+Package: com.princeniithompson.rapcha.ui.screens.onboarding (235 classes)
+  AccessibilityDisclosureSheetKt, AccessibilityDisclosureSheetKt$$ExternalSyntheticLambda0, AccessibilityDisclosureSheetKt$$ExternalSyntheticLambda1, AccessibilityDisclosureSheetKt$$ExternalSyntheticLambda2, AccessibilityDisclosureSheetKt$$ExternalSyntheticLambda3, AccessibilityDisclosureSheetKt$$ExternalSyntheticLambda4, AccessibilityDisclosureSheetKt$$ExternalSyntheticLambda5, AccessibilityDisclosureSheetKt$$ExternalSyntheticLambda6, ComposableSingletons$AccessibilityDisclosureSheetKt, ComposableSingletons$AccessibilityDisclosureSheetKt$$ExternalSyntheticLambda0, ComposableSingletons$AccessibilityDisclosureSheetKt$$ExternalSyntheticLambda1, ComposableSingletons$EmbeddedGoogleAuthBrowserChromeKt, ComposableSingletons$EmbeddedGoogleAuthBrowserChromeKt$$ExternalSyntheticLambda0, ComposableSingletons$EmbeddedGoogleAuthBrowserChromeKt$$ExternalSyntheticLambda1, ComposableSingletons$OnboardingAccessibilityGuideScreenKt, ComposableSingletons$OnboardingAccessibilityGuideScreenKt$$ExternalSyntheticLambda0, ComposableSingletons$OnboardingAccessibilityGuideScreenKt$$ExternalSyntheticLambda1, ComposableSingletons$OnboardingAccessibilityGuideScreenKt$$ExternalSyntheticLambda2, ComposableSingletons$OnboardingAppsShowcaseScreenKt, ComposableSingletons$OnboardingAppsShowcaseScreenKt$$ExternalSyntheticLambda0, ComposableSingletons$OnboardingAppsShowcaseScreenKt$$ExternalSyntheticLambda1, ComposableSingletons$OnboardingAppsShowcaseScreenKt$$ExternalSyntheticLambda2, ComposableSingletons$OnboardingGoogleHandoffScreenKt, ComposableSingletons$OnboardingGoogleHandoffScreenKt$$ExternalSyntheticLambda0, ComposableSingletons$OnboardingGoogleSignInScreenKt
+Package: com.princeniithompson.rapcha.ui.screens.onboarding.provisioning (73 classes)
+  AiStudioAutomationEngine, AiStudioAutomationEngine$$ExternalSyntheticLambda0, AiStudioAutomationEngine$$ExternalSyntheticLambda1, AiStudioAutomationEngine$$ExternalSyntheticLambda2, AiStudioAutomationEngine$$ExternalSyntheticLambda3, AiStudioAutomationEngine$Companion, AiStudioAutomationEngine$RapchaKeyBridge, AiStudioAutomationEngine$RapchaKeyBridge$onKeyCopied$1, AiStudioAutomationEngine$captureAccountEmailIfAvailable$1, AiStudioAutomationEngine$captureGoogleProfileFromDom$1, AiStudioAutomationEngine$checkKeyNow$1, AiStudioAutomationEngine$clipboardListener$1$1, AiStudioAutomationEngine$createOrReuseWebView$wv$1$2, AiStudioAutomationEngine$createOrReuseWebView$wv$1$3, AiStudioAutomationEngine$createOrReuseWebView$wv$1$3$onRenderProcessGone$1, AiStudioAutomationEngine$ensureBackgroundAutomationRunning$1, AiStudioAutomationEngine$handleUrlTransition$1, AiStudioAutomationEngine$onHostResumed$1, AiStudioAutomationEngine$onValidKeyCaptured$1, AiStudioAutomationEngine$onValidKeyCaptured$2, AiStudioAutomationEngine$parkWebViewInStandby$2, AiStudioAutomationEngine$readKeyFromClipboard$2, AiStudioAutomationEngine$runAutomationLoop$1, AiStudioAutomationEngine$runAutomationLoop$currentUrl$1, AiStudioAutomationEngine$runBridgeACheckboxesAndContinue$1
+Package: com.princeniithompson.rapcha.ui.theme (6 classes)
+  ColorKt, ThemeKt, ThemeKt$$ExternalSyntheticLambda0, ThemeKt$$ExternalSyntheticLambda1, ThemeKt$$ExternalSyntheticLambda2, TypeKt
+Package: com.princeniithompson.rapcha.websocket (70 classes)
+  DictationPiecePlanner, DictationPiecePlanner$AgeMarker, DictationPiecePlanner$Companion, DictationPiecePlanner$PieceAudio, DictationPiecePlanner$Reason, DictationPiecePlanner$Split, DictationSessionClock, DictationSessionClock$Companion, DictationSessionClock$Tick, GeminiBatchTranscribeClient, GeminiBatchTranscribeClient$$ExternalSyntheticLambda0, GeminiBatchTranscribeClient$$ExternalSyntheticLambda1, GeminiBatchTranscribeClient$BatchTranscribeResult, GeminiBatchTranscribeClient$transcribe$1, GeminiBatchTranscribeClient$transcribeDetailed$2, GeminiLiveError, GeminiLiveError$MissingApiKey, GeminiLiveError$NetworkFailure, GeminiLiveError$ProtocolError, GeminiLiveError$ServerError, GeminiLiveError$SetupFailed, GeminiLiveWebSocketClient, GeminiLiveWebSocketClient$$ExternalSyntheticBackportWithForwarding0, GeminiLiveWebSocketClient$$ExternalSyntheticLambda1, GeminiLiveWebSocketClient$$ExternalSyntheticLambda10
+Package: _COROUTINE (4 classes)
+  ArtificialStackFrames, CoroutineDebuggingKt, _BOUNDARY, _CREATION
+Package: android.support.v4.app (6 classes)
+  INotificationSideChannel, INotificationSideChannel$Default, INotificationSideChannel$Stub, INotificationSideChannel$Stub$Proxy, INotificationSideChannel$_Parcel, RemoteActionCompatParcelizer
+Package: android.support.v4.graphics.drawable (1 classes)
+  IconCompatParcelizer
+Package: android.support.v4.os (14 classes)
+  IResultReceiver, IResultReceiver$Default, IResultReceiver$Stub, IResultReceiver$Stub$Proxy, IResultReceiver$_Parcel, IResultReceiver2, IResultReceiver2$Default, IResultReceiver2$Stub, IResultReceiver2$Stub$Proxy, IResultReceiver2$_Parcel, ResultReceiver, ResultReceiver$1, ResultReceiver$MyResultReceiver, ResultReceiver$MyRunnable
+Package: androidx.activity (92 classes)
+  ActivityViewModelLazyKt, ActivityViewModelLazyKt$viewModels$1, ActivityViewModelLazyKt$viewModels$2, ActivityViewModelLazyKt$viewModels$3, ActivityViewModelLazyKt$viewModels$4, ActivityViewModelLazyKt$viewModels$factoryPromise$1, ActivityViewModelLazyKt$viewModels$factoryPromise$2, Api26Impl, Api34Impl, BackEventCompat, BackEventCompat$Companion, BackEventCompat$SwipeEdge, Cancellable, ComponentActivity, ComponentActivity$$ExternalSyntheticLambda0, ComponentActivity$$ExternalSyntheticLambda1, ComponentActivity$$ExternalSyntheticLambda2, ComponentActivity$$ExternalSyntheticLambda3, ComponentActivity$$ExternalSyntheticLambda4, ComponentActivity$$ExternalSyntheticLambda5, ComponentActivity$4, ComponentActivity$Api33Impl, ComponentActivity$Companion, ComponentActivity$NonConfigurationInstances, ComponentActivity$ReportFullyDrawnExecutor
+Package: androidx.activity.compose (48 classes)
+  ActivityComposeUtilsKt, ActivityResultLauncherHolder, ActivityResultRegistryKt, ActivityResultRegistryKt$rememberLauncherForActivityResult$1$1, ActivityResultRegistryKt$rememberLauncherForActivityResult$1$1$$ExternalSyntheticLambda0, ActivityResultRegistryKt$rememberLauncherForActivityResult$1$1$invoke$$inlined$onDispose$1, ActivityResultRegistryKt$rememberLauncherForActivityResult$key$1, BackHandlerKt, BackHandlerKt$BackHandler$1$1, BackHandlerKt$BackHandler$2$1, BackHandlerKt$BackHandler$2$1$invoke$$inlined$onDispose$1, BackHandlerKt$BackHandler$3, BackHandlerKt$BackHandler$backCallback$1$1, ComponentActivityKt, LocalActivityKt, LocalActivityKt$LocalActivity$1, LocalActivityResultRegistryOwner, LocalActivityResultRegistryOwner$LocalComposition$1, LocalFullyDrawnReporterOwner, LocalFullyDrawnReporterOwner$LocalFullyDrawnReporterOwner$1, LocalOnBackPressedDispatcherOwner, LocalOnBackPressedDispatcherOwner$LocalOnBackPressedDispatcherOwner$1, ManagedActivityResultLauncher, OnBackInstance, OnBackInstance$job$1
+Package: androidx.activity.contextaware (6 classes)
+  ContextAware, ContextAwareHelper, ContextAwareKt, ContextAwareKt$withContextAvailable$2$1, ContextAwareKt$withContextAvailable$2$listener$1, OnContextAvailableListener
+Package: androidx.activity.ktx (1 classes)
+  R
+Package: androidx.activity.result (31 classes)
+  ActivityResult, ActivityResult$Companion, ActivityResult$Companion$CREATOR$1, ActivityResultCallback, ActivityResultCaller, ActivityResultCallerKt, ActivityResultCallerKt$$ExternalSyntheticLambda0, ActivityResultCallerKt$$ExternalSyntheticLambda1, ActivityResultCallerLauncher, ActivityResultCallerLauncher$resultContract$2, ActivityResultCallerLauncher$resultContract$2$1, ActivityResultKt, ActivityResultLauncher, ActivityResultLauncherKt, ActivityResultRegistry, ActivityResultRegistry$$ExternalSyntheticLambda0, ActivityResultRegistry$CallbackAndContract, ActivityResultRegistry$Companion, ActivityResultRegistry$LifecycleContainer, ActivityResultRegistry$generateRandomNumber$1, ActivityResultRegistry$register$2, ActivityResultRegistry$register$3, ActivityResultRegistryOwner, IntentSenderRequest, IntentSenderRequest$Builder
+Package: androidx.activity.result.contract (34 classes)
+  ActivityResultContract, ActivityResultContract$SynchronousResult, ActivityResultContracts, ActivityResultContracts$CaptureVideo, ActivityResultContracts$CreateDocument, ActivityResultContracts$GetContent, ActivityResultContracts$GetMultipleContents, ActivityResultContracts$GetMultipleContents$Companion, ActivityResultContracts$OpenDocument, ActivityResultContracts$OpenDocumentTree, ActivityResultContracts$OpenMultipleDocuments, ActivityResultContracts$PickContact, ActivityResultContracts$PickMultipleVisualMedia, ActivityResultContracts$PickMultipleVisualMedia$Companion, ActivityResultContracts$PickVisualMedia, ActivityResultContracts$PickVisualMedia$Companion, ActivityResultContracts$PickVisualMedia$DefaultTab, ActivityResultContracts$PickVisualMedia$DefaultTab$AlbumsTab, ActivityResultContracts$PickVisualMedia$DefaultTab$PhotosTab, ActivityResultContracts$PickVisualMedia$ImageAndVideo, ActivityResultContracts$PickVisualMedia$ImageOnly, ActivityResultContracts$PickVisualMedia$SingleMimeType, ActivityResultContracts$PickVisualMedia$VideoOnly, ActivityResultContracts$PickVisualMedia$VisualMediaType, ActivityResultContracts$RequestMultiplePermissions
+Package: androidx.annotation (78 classes)
+  AnimRes, AnimatorRes, AnyRes, AnyThread, ArrayRes, AttrRes, BinderThread, BoolRes, CallSuper, CheckResult, ChecksSdkIntAtLeast, ColorInt, ColorLong, ColorRes, ContentView, DeprecatedSinceApi, DimenRes, Dimension, Dimension$Companion, Discouraged, DisplayContext, DoNotInline, DrawableRes, EmptySuper, FloatRange
+Package: androidx.annotation.experimental (4 classes)
+  Experimental, Experimental$Level, R, UseExperimental
+Package: androidx.arch.core (1 classes)
+  R
+Package: androidx.arch.core.executor (7 classes)
+  ArchTaskExecutor, ArchTaskExecutor$$ExternalSyntheticLambda0, ArchTaskExecutor$$ExternalSyntheticLambda1, DefaultTaskExecutor, DefaultTaskExecutor$1, DefaultTaskExecutor$Api28Impl, TaskExecutor
+Package: androidx.arch.core.internal (8 classes)
+  FastSafeIterableMap, SafeIterableMap, SafeIterableMap$AscendingIterator, SafeIterableMap$DescendingIterator, SafeIterableMap$Entry, SafeIterableMap$IteratorWithAdditions, SafeIterableMap$ListIterator, SafeIterableMap$SupportRemove
+Package: androidx.arch.core.util (1 classes)
+  Function
+Package: androidx.autofill (12 classes)
+  HintConstants, R, R$attr, R$color, R$dimen, R$drawable, R$id, R$integer, R$layout, R$string, R$style, R$styleable
+Package: androidx.collection (139 classes)
+  ArrayMap, ArrayMap$EntrySet, ArrayMap$KeyIterator, ArrayMap$KeySet, ArrayMap$MapIterator, ArrayMap$ValueCollection, ArrayMap$ValueIterator, ArrayMapKt, ArraySet, ArraySet$ElementIterator, ArraySetJvmUtil, ArraySetKt, CircularArray, CircularIntArray, CollectionPlatformUtils, FloatFloatMap, FloatFloatMapKt, FloatFloatPair, FloatIntMap, FloatIntMapKt, FloatList, FloatListKt, FloatLongMap, FloatLongMapKt, FloatObjectMap
+Package: androidx.collection.internal (6 classes)
+  ContainerHelpersKt, Lock, LockExtKt, LruHashMap, PackingHelpers_jvmKt, RuntimeHelpersKt
+Package: androidx.compose.animation (246 classes)
+  AndroidActualDefaultDecayAnimationSpec_androidKt, AndroidFlingSpline, AndroidFlingSpline$FlingResult, AnimatedContentKt, AnimatedContentKt$AnimatedContent$1, AnimatedContentKt$AnimatedContent$2, AnimatedContentKt$AnimatedContent$3, AnimatedContentKt$AnimatedContent$4, AnimatedContentKt$AnimatedContent$5, AnimatedContentKt$AnimatedContent$6$1, AnimatedContentKt$AnimatedContent$6$1$1$1, AnimatedContentKt$AnimatedContent$6$1$1$1$1, AnimatedContentKt$AnimatedContent$6$1$3$1, AnimatedContentKt$AnimatedContent$6$1$4$1, AnimatedContentKt$AnimatedContent$6$1$5, AnimatedContentKt$AnimatedContent$6$1$5$1$1, AnimatedContentKt$AnimatedContent$6$1$5$1$1$invoke$$inlined$onDispose$1, AnimatedContentKt$AnimatedContent$9, AnimatedContentKt$SizeTransform$1, AnimatedContentMeasurePolicy, AnimatedContentMeasurePolicy$measure$3, AnimatedContentScope, AnimatedContentScopeImpl, AnimatedContentTransitionScope, AnimatedContentTransitionScope$SlideDirection
+Package: androidx.compose.animation.core (231 classes)
+  ActualJvm_jvmKt, Animatable, Animatable$runAnimation$2, Animatable$runAnimation$2$1, Animatable$snapTo$2, Animatable$stop$2, AnimatableKt, AnimateAsStateKt, AnimateAsStateKt$animateValueAsState$2$1, AnimateAsStateKt$animateValueAsState$3$1, AnimateAsStateKt$animateValueAsState$3$1$1, Animation, Animation$DefaultImpls, AnimationConstants, AnimationEndReason, AnimationKt, AnimationKt$createAnimation$1, AnimationKt$createAnimation$2, AnimationResult, AnimationScope, AnimationSpec, AnimationSpecKt, AnimationState, AnimationStateKt, AnimationVector
+Package: androidx.compose.animation.core.internal (1 classes)
+  JvmDefaultWithCompatibility_jvmKt
+Package: androidx.compose.animation.internal (1 classes)
+  JvmDefaultWithCompatibility_jvmKt
+Package: androidx.compose.foundation (246 classes)
+  AbstractClickableNode, AbstractClickableNode$TraverseKey, AbstractClickableNode$applySemantics$1, AbstractClickableNode$emitHoverEnter$1$1, AbstractClickableNode$emitHoverExit$1$1$1, AbstractClickableNode$handlePressInteraction$2$1, AbstractClickableNode$handlePressInteraction$2$1$delayJob$1, AbstractClickableNode$onKeyEvent$1, AbstractClickableNode$onKeyEvent$2$1, AbstractClickableNode$onPointerEvent$1, AbstractClickableNode$onPointerEvent$2, AbstractClickableNode$onPointerEvent$3, ActualJvm_jvmKt, AndroidEdgeEffectOverscrollEffect, AndroidEdgeEffectOverscrollEffect$applyToFling$1, AndroidEdgeEffectOverscrollEffect$effectModifier$1, AndroidEdgeEffectOverscrollEffect$effectModifier$1$1, AndroidEdgeEffectOverscrollEffect$special$$inlined$debugInspectorInfo$1, AndroidEdgeEffectOverscrollEffect$special$$inlined$debugInspectorInfo$2, AndroidEmbeddedExternalSurfaceState, AndroidExternalSurfaceScope, AndroidExternalSurfaceState, AndroidExternalSurfaceZOrder, AndroidExternalSurfaceZOrder$Companion, AndroidExternalSurface_androidKt
+Package: androidx.compose.foundation.layout (1 classes)
+  R
+Package: androidx.compose.material (1 classes)
+  R
+Package: androidx.compose.material.icons (1 classes)
+  R
+Package: androidx.compose.material.icons.extended (1 classes)
+  R
+Package: androidx.compose.material.ripple (1 classes)
+  R
+Package: androidx.compose.material3 (4 classes)
+  R, R$integer, R$string, R$style
+Package: androidx.compose.runtime (4 classes)
+  DisposableEffectResult, R, RememberObserver, State
+Package: androidx.compose.runtime.external.kotlinx.collections.immutable (14 classes)
+  ExtensionsKt, ImmutableCollection, ImmutableList, ImmutableList$SubList, ImmutableMap, ImmutableSet, PersistentCollection, PersistentCollection$Builder, PersistentList, PersistentList$Builder, PersistentMap, PersistentMap$Builder, PersistentSet, PersistentSet$Builder
+Package: androidx.compose.runtime.external.kotlinx.collections.immutable.adapters (4 classes)
+  ImmutableCollectionAdapter, ImmutableListAdapter, ImmutableMapAdapter, ImmutableSetAdapter
+Package: androidx.compose.runtime.external.kotlinx.collections.immutable.implementations.immutableList (16 classes)
+  AbstractListIterator, AbstractPersistentList, AbstractPersistentList$removeAll$1, AbstractPersistentList$retainAll$1, BufferIterator, ObjectRef, PersistentVector, PersistentVectorBuilder, PersistentVectorBuilder$removeAll$1, PersistentVectorIterator, PersistentVectorMutableIterator, SingleElementListIterator, SmallPersistentVector, SmallPersistentVector$Companion, TrieIterator, UtilsKt
+Package: androidx.compose.runtime.external.kotlinx.collections.immutable.implementations.immutableMap (30 classes)
+  AbstractMapBuilderEntries, MapEntry, MutableMapEntry, PersistentHashMap, PersistentHashMap$Companion, PersistentHashMapBaseIterator, PersistentHashMapBuilder, PersistentHashMapBuilderBaseIterator, PersistentHashMapBuilderEntries, PersistentHashMapBuilderEntriesIterator, PersistentHashMapBuilderKeys, PersistentHashMapBuilderKeysIterator, PersistentHashMapBuilderValues, PersistentHashMapBuilderValuesIterator, PersistentHashMapContentIteratorsKt, PersistentHashMapEntries, PersistentHashMapEntriesIterator, PersistentHashMapKeys, PersistentHashMapKeysIterator, PersistentHashMapValues, PersistentHashMapValuesIterator, TrieNode, TrieNode$Companion, TrieNode$ModificationResult, TrieNodeBaseIterator
+Package: androidx.compose.runtime.external.kotlinx.collections.immutable.implementations.immutableSet (10 classes)
+  PersistentHashSet, PersistentHashSet$Companion, PersistentHashSetBuilder, PersistentHashSetIterator, PersistentHashSetMutableIterator, TrieNode, TrieNode$Companion, TrieNodeIterator, TrieNodeKt, TrieNodeKt$filterTo$1
+Package: androidx.compose.runtime.external.kotlinx.collections.immutable.implementations.persistentOrderedMap (19 classes)
+  LinkedValue, MutableMapEntry, PersistentOrderedMap, PersistentOrderedMap$Companion, PersistentOrderedMapBuilder, PersistentOrderedMapBuilderEntries, PersistentOrderedMapBuilderEntriesIterator, PersistentOrderedMapBuilderKeys, PersistentOrderedMapBuilderKeysIterator, PersistentOrderedMapBuilderLinksIterator, PersistentOrderedMapBuilderValues, PersistentOrderedMapBuilderValuesIterator, PersistentOrderedMapEntries, PersistentOrderedMapEntriesIterator, PersistentOrderedMapKeys, PersistentOrderedMapKeysIterator, PersistentOrderedMapLinksIterator, PersistentOrderedMapValues, PersistentOrderedMapValuesIterator
+Package: androidx.compose.runtime.external.kotlinx.collections.immutable.implementations.persistentOrderedSet (6 classes)
+  Links, PersistentOrderedSet, PersistentOrderedSet$Companion, PersistentOrderedSetBuilder, PersistentOrderedSetIterator, PersistentOrderedSetMutableIterator
+Package: androidx.compose.runtime.external.kotlinx.collections.immutable.internal (6 classes)
+  CommonFunctionsKt, DeltaCounter, EndOfChain, ForEachOneBitKt, ListImplementation, MutabilityOwnership
+Package: androidx.compose.runtime.internal (47 classes)
+  ComposableLambda, ComposableLambdaImpl, ComposableLambdaImpl$invoke$1, ComposableLambdaImpl$invoke$10, ComposableLambdaImpl$invoke$11, ComposableLambdaImpl$invoke$12, ComposableLambdaImpl$invoke$13, ComposableLambdaImpl$invoke$14, ComposableLambdaImpl$invoke$15, ComposableLambdaImpl$invoke$16, ComposableLambdaImpl$invoke$17, ComposableLambdaImpl$invoke$18, ComposableLambdaImpl$invoke$2, ComposableLambdaImpl$invoke$3, ComposableLambdaImpl$invoke$4, ComposableLambdaImpl$invoke$5, ComposableLambdaImpl$invoke$6, ComposableLambdaImpl$invoke$7, ComposableLambdaImpl$invoke$8, ComposableLambdaImpl$invoke$9, ComposableLambdaKt, ComposableLambdaN, ComposableLambdaNImpl, ComposableLambdaNImpl$invoke$1, ComposableLambdaN_jvmKt
+Package: androidx.compose.runtime.reflect (3 classes)
+  ComposableInfo, ComposableMethod, ComposableMethodKt
+Package: androidx.compose.runtime.saveable (36 classes)
+  ListSaverKt, ListSaverKt$listSaver$1, MapSaverKt, MapSaverKt$mapSaver$1, MapSaverKt$mapSaver$2, R, RememberSaveableKt, RememberSaveableKt$mutableStateSaver$1$1, RememberSaveableKt$mutableStateSaver$1$2, RememberSaveableKt$rememberSaveable$1$1, SaveableHolder, SaveableHolder$valueProvider$1, SaveableStateHolder, SaveableStateHolderImpl, SaveableStateHolderImpl$Companion, SaveableStateHolderImpl$Companion$Saver$1, SaveableStateHolderImpl$Companion$Saver$2, SaveableStateHolderImpl$RegistryHolder, SaveableStateHolderImpl$RegistryHolder$registry$1, SaveableStateHolderImpl$SaveableStateProvider$1$1$1, SaveableStateHolderImpl$SaveableStateProvider$1$1$1$invoke$$inlined$onDispose$1, SaveableStateHolderImpl$SaveableStateProvider$2, SaveableStateHolderKt, SaveableStateHolderKt$rememberSaveableStateHolder$1, SaveableStateRegistry
+Package: androidx.compose.runtime.snapshots (74 classes)
+  AutoboxingStateValueProperty, GlobalSnapshot, GlobalSnapshot$1$1$1, GlobalSnapshot$takeNestedMutableSnapshot$1, GlobalSnapshot$takeNestedSnapshot$1, ListUtilsKt, MutableSnapshot, MutableSnapshot$Companion, NestedMutableSnapshot, NestedReadonlySnapshot, ObserverHandle, ReaderKind, ReaderKind$Companion, ReadonlySnapshot, Snapshot, Snapshot$Companion, Snapshot$Companion$$ExternalSyntheticLambda0, Snapshot$Companion$$ExternalSyntheticLambda1, SnapshotApplyConflictException, SnapshotApplyResult, SnapshotApplyResult$Failure, SnapshotApplyResult$Success, SnapshotContextElement, SnapshotContextElement$DefaultImpls, SnapshotContextElement$Key
+Package: androidx.compose.runtime.tooling (9 classes)
+  CompositionData, CompositionGroup, CompositionGroup$DefaultImpls, CompositionObserver, CompositionObserverHandle, CompositionObserverKt, InspectionTablesKt, InspectionTablesKt$LocalInspectionTables$1, RecomposeScopeObserver
+Package: androidx.compose.ui (51 classes)
+  AbsoluteAlignment, Actual_jvmKt, Actual_jvmKt$tryPopulateReflectively$$inlined$sortedBy$1, Alignment, Alignment$Companion, Alignment$Horizontal, Alignment$Vertical, AtomicReference_jvmKt, BiasAbsoluteAlignment, BiasAbsoluteAlignment$Horizontal, BiasAlignment, BiasAlignment$Horizontal, BiasAlignment$Vertical, CombinedModifier, CombinedModifier$toString$1, ComposedModifier, ComposedModifierKt, ComposedModifierKt$materializeImpl$1, ComposedModifierKt$materializeImpl$result$1, CompositionLocalMapInjectionElement, CompositionLocalMapInjectionNode, ExperimentalComposeUiApi, InternalComposeUiApi, KeyedComposedModifier1, KeyedComposedModifier2
+Package: androidx.compose.ui.autofill (15 classes)
+  AndroidAutofill, AndroidAutofillType_androidKt, AndroidAutofill_androidKt, Autofill, AutofillApi23Helper, AutofillApi26Helper, AutofillCallback, AutofillNode, AutofillNode$Companion, AutofillTree, AutofillType, ContentDataType, ContentDataType$Companion, ContentType, ContentType$Companion
+Package: androidx.compose.ui.contentcapture (8 classes)
+  AndroidContentCaptureManager, AndroidContentCaptureManager$$ExternalSyntheticLambda0, AndroidContentCaptureManager$TranslateStatus, AndroidContentCaptureManager$ViewTranslationHelperMethods, AndroidContentCaptureManager$ViewTranslationHelperMethods$$ExternalSyntheticLambda0, AndroidContentCaptureManager$boundsUpdatesEventLoop$1, ContentCaptureManager, ContentCaptureManager$Companion
+Package: androidx.compose.ui.draganddrop (17 classes)
+  ComposeDragShadowBuilder, DragAndDropEvent, DragAndDropManager, DragAndDropModifierNode, DragAndDropNode, DragAndDropNode$Companion, DragAndDropNode$Companion$DragAndDropTraversableKey, DragAndDropNode$acceptDragAndDropTransfer$1, DragAndDropNode$onEnded$1, DragAndDropNode$onMoved$$inlined$firstDescendantOrNull$1, DragAndDropNodeKt, DragAndDropNodeKt$DragAndDropModifierNode$1, DragAndDropNodeKt$DragAndDropModifierNode$2, DragAndDropNodeKt$firstDescendantOrNull$1, DragAndDropTarget, DragAndDropTransferData, DragAndDrop_androidKt
+Package: androidx.compose.ui.draw (36 classes)
+  AlphaKt, BlurKt, BlurKt$blur$1, BlurredEdgeTreatment, BlurredEdgeTreatment$Companion, BuildDrawCacheParams, CacheDrawModifierNode, CacheDrawModifierNodeImpl, CacheDrawModifierNodeImpl$1, CacheDrawModifierNodeImpl$getOrBuildCachedDrawBlock$1$1, CacheDrawScope, CacheDrawScope$onDrawBehind$1, CacheDrawScope$record$1, ClipKt, DrawBackgroundModifier, DrawBehindElement, DrawCacheModifier, DrawCacheModifier$DefaultImpls, DrawModifier, DrawModifier$DefaultImpls, DrawModifierKt, DrawResult, DrawWithCacheElement, DrawWithContentElement, DrawWithContentModifier
+Package: androidx.compose.ui.focus (98 classes)
+  BeyondBoundsLayoutKt, CustomDestinationResult, FocusChangedElement, FocusChangedModifierKt, FocusChangedNode, FocusDirection, FocusDirection$Companion, FocusEventElement, FocusEventModifier, FocusEventModifier$DefaultImpls, FocusEventModifierKt, FocusEventModifierNode, FocusEventModifierNodeKt, FocusEventModifierNodeKt$WhenMappings, FocusEventNode, FocusInteropUtils, FocusInteropUtils$Companion, FocusInteropUtils_androidKt, FocusInvalidationManager, FocusInvalidationManager$scheduleInvalidation$1, FocusManager, FocusManager$DefaultImpls, FocusModifierKt, FocusOrder, FocusOrderModifier
+Package: androidx.compose.ui.geometry (20 classes)
+  CornerRadius, CornerRadius$Companion, CornerRadiusKt, GeometryUtilsKt, InlineClassHelperKt, MutableRect, MutableRectKt, Offset, Offset$Companion, OffsetKt, R, Rect, Rect$Companion, RectKt, RoundRect, RoundRect$Companion, RoundRectKt, Size, Size$Companion, SizeKt
+Package: androidx.compose.ui.graphics (185 classes)
+  AndroidBlendMode_androidKt, AndroidBlendMode_androidKt$WhenMappings, AndroidCanvas, AndroidCanvas_androidKt, AndroidColorFilter_androidKt, AndroidColorSpace_androidKt, AndroidGraphicsContext, AndroidGraphicsContext$1, AndroidGraphicsContext$1$onTrimMemory$1, AndroidGraphicsContext$2, AndroidGraphicsContext$Companion, AndroidGraphicsContext$UniqueDrawingIdApi29, AndroidGraphicsContext_androidKt, AndroidImageBitmap, AndroidImageBitmap_androidKt, AndroidMatrixConversions_androidKt, AndroidPaint, AndroidPaint_androidKt, AndroidPaint_androidKt$WhenMappings, AndroidPath, AndroidPathEffect, AndroidPathEffect_androidKt, AndroidPathIterator, AndroidPathIterator$WhenMappings, AndroidPathIterator_androidKt
+Package: androidx.compose.ui.graphics.colorspace (46 classes)
+  Adaptation, Adaptation$Companion, Adaptation$Companion$Bradford$1, Adaptation$Companion$Ciecat02$1, Adaptation$Companion$VonKries$1, ColorModel, ColorModel$Companion, ColorSpace, ColorSpace$Companion, ColorSpaceKt, ColorSpaces, ColorSpaces$$ExternalSyntheticLambda0, ColorSpaces$$ExternalSyntheticLambda1, Connector, Connector$Companion, Connector$Companion$identity$1, Connector$RgbConnector, ConnectorKt, DoubleFunction, Illuminant, Lab, Lab$Companion, Oklab, Oklab$Companion, RenderIntent
+Package: androidx.compose.ui.graphics.drawscope (23 classes)
+  CanvasDrawScope, CanvasDrawScope$DrawParams, CanvasDrawScope$drawContext$1, CanvasDrawScopeKt, CanvasDrawScopeKt$asDrawTransform$1, ContentDrawScope, ContentDrawScope$DefaultImpls, DrawContext, DrawContextKt, DrawScope, DrawScope$Companion, DrawScope$DefaultImpls, DrawScope$record$1, DrawScopeKt, DrawScopeMarker, DrawStyle, DrawTransform, DrawTransform$DefaultImpls, DrawTransformKt, EmptyCanvas, Fill, Stroke, Stroke$Companion
+Package: androidx.compose.ui.graphics.internal (1 classes)
+  JvmDefaultWithCompatibility_androidKt
+Package: androidx.compose.ui.graphics.layer (44 classes)
+  ChildLayerDependenciesTracker, CompositingStrategy, CompositingStrategy$Companion, GraphicsLayer, GraphicsLayer$Companion, GraphicsLayer$clipDrawBlock$1, GraphicsLayer$drawBlock$1, GraphicsLayer$toImageBitmap$1, GraphicsLayerImpl, GraphicsLayerImpl$Companion, GraphicsLayerImpl$Companion$DefaultDrawBlock$1, GraphicsLayerKt, GraphicsLayerV23, GraphicsLayerV23$Companion, GraphicsLayerV29, GraphicsViewLayer, GraphicsViewLayer$Companion, GraphicsViewLayer$Companion$PlaceholderCanvas$1, LayerManager, LayerManager$$ExternalSyntheticLambda0, LayerManager$$ExternalSyntheticLambda1, LayerManager$Companion, LayerSnapshotImpl, LayerSnapshotV21, LayerSnapshotV22
+Package: androidx.compose.ui.graphics.layer.view (3 classes)
+  DrawChildContainer, PlaceholderHardwareCanvas, ViewLayerContainer
+Package: androidx.compose.ui.graphics.painter (6 classes)
+  BitmapPainter, BitmapPainterKt, BrushPainter, ColorPainter, Painter, Painter$drawLambda$1
+Package: androidx.compose.ui.graphics.vector (102 classes)
+  DrawCache, FastFloatParserKt, GroupComponent, GroupComponent$wrappedListener$1, ImageVector, ImageVector$Builder, ImageVector$Builder$GroupParams, ImageVector$Companion, ImageVectorKt, PathBuilder, PathComponent, PathComponent$pathMeasure$2, PathNode, PathNode$ArcTo, PathNode$Close, PathNode$CurveTo, PathNode$HorizontalTo, PathNode$LineTo, PathNode$MoveTo, PathNode$QuadTo, PathNode$ReflectiveCurveTo, PathNode$ReflectiveQuadTo, PathNode$RelativeArcTo, PathNode$RelativeCurveTo, PathNode$RelativeHorizontalTo
+Package: androidx.compose.ui.graphics.vector.compat (3 classes)
+  AndroidVectorParser, AndroidVectorResources, XmlVectorParser_androidKt
+Package: androidx.compose.ui.hapticfeedback (5 classes)
+  HapticFeedback, HapticFeedbackType, HapticFeedbackType$Companion, PlatformHapticFeedback, PlatformHapticFeedbackType
+Package: androidx.compose.ui.input (4 classes)
+  InputMode, InputMode$Companion, InputModeManager, InputModeManagerImpl
+Package: androidx.compose.ui.input.key (15 classes)
+  InterceptedKeyInputNode, Key, Key$Companion, KeyEvent, KeyEventType, KeyEventType$Companion, KeyEvent_androidKt, KeyInputElement, KeyInputModifierKt, KeyInputModifierNode, KeyInputNode, Key_androidKt, SoftKeyboardInterceptionElement, SoftKeyboardInterceptionModifierNode, SoftwareKeyboardInterceptionModifierKt
+Package: androidx.compose.ui.input.nestedscroll (15 classes)
+  NestedScrollConnection, NestedScrollConnection$DefaultImpls, NestedScrollDispatcher, NestedScrollDispatcher$calculateNestedScrollScope$1, NestedScrollDispatcher$dispatchPostFling$1, NestedScrollDispatcher$dispatchPreFling$1, NestedScrollElement, NestedScrollModifierKt, NestedScrollNode, NestedScrollNode$onPostFling$1, NestedScrollNode$onPreFling$1, NestedScrollNode$updateDispatcherFields$1, NestedScrollNodeKt, NestedScrollSource, NestedScrollSource$Companion
+Package: androidx.compose.ui.input.pointer (78 classes)
+  AndroidPointerIcon, AndroidPointerIconType, AwaitPointerEventScope, AwaitPointerEventScope$DefaultImpls, CancelTimeoutCancellationException, ConsumedData, HistoricalChange, HitPathTracker, InternalPointerEvent, MotionEventAdapter, MotionEventHelper, Node, NodeParent, PointerButtons, PointerEvent, PointerEventKt, PointerEventPass, PointerEventTimeoutCancellationException, PointerEventType, PointerEventType$Companion, PointerEvent_androidKt, PointerHoverIconModifierElement, PointerHoverIconModifierNode, PointerHoverIconModifierNode$displayIconFromAncestorNodeWithCursorInBoundsOrDefaultIcon$1, PointerHoverIconModifierNode$displayIconIfDescendantsDoNotHavePriority$1
+Package: androidx.compose.ui.input.pointer.util (7 classes)
+  DataPointAtTime, PointerIdArray, VelocityTracker, VelocityTracker1D, VelocityTracker1D$Strategy, VelocityTracker1D$WhenMappings, VelocityTrackerKt
+Package: androidx.compose.ui.input.rotary (5 classes)
+  RotaryInputElement, RotaryInputModifierKt, RotaryInputModifierNode, RotaryInputNode, RotaryScrollEvent
+Package: androidx.compose.ui.internal (2 classes)
+  InlineClassHelperKt, JvmDefaultWithCompatibility_jvmKt
+Package: androidx.compose.ui.layout (68 classes)
+  AlignmentLine, AlignmentLine$Companion, AlignmentLineKt, AlignmentLineKt$FirstBaseline$1, AlignmentLineKt$LastBaseline$1, ApproachIntrinsicMeasureScope, ApproachIntrinsicsMeasureScope, ApproachIntrinsicsMeasureScope$layout$1, ApproachLayoutElement, ApproachLayoutModifierNode, ApproachLayoutModifierNode$maxApproachIntrinsicHeight$1, ApproachLayoutModifierNode$maxApproachIntrinsicWidth$1, ApproachLayoutModifierNode$measure$1$1, ApproachLayoutModifierNode$minApproachIntrinsicHeight$1, ApproachLayoutModifierNode$minApproachIntrinsicWidth$1, ApproachLayoutModifierNodeImpl, ApproachMeasureScope, ApproachMeasureScopeImpl, ApproachMeasureScopeImpl$layout$1, BeyondBoundsLayout, BeyondBoundsLayout$BeyondBoundsScope, BeyondBoundsLayout$LayoutDirection, BeyondBoundsLayout$LayoutDirection$Companion, BeyondBoundsLayoutKt, BeyondBoundsLayoutKt$ModifierLocalBeyondBoundsLayout$1
+Package: androidx.compose.ui.modifier (2 classes)
+  ModifierLocalModifierNode, ModifierLocalReadScope
+Package: androidx.compose.ui.node (10 classes)
+  CompositionLocalConsumerModifierNode, DelegatableNode, DrawModifierNode, LayoutModifierNode, ModifierNodeElement, NodeMeasuringIntrinsics$ApproachMeasureBlock, ObserverModifierNode, ParentDataModifierNode, PointerInputModifierNode, TraversableNode
+Package: androidx.compose.ui.platform (2 classes)
+  InspectableValue, InspectorValueInfo
+Package: androidx.compose.ui.test.manifest (1 classes)
+  R
+Package: androidx.compose.ui.text (1 classes)
+  R
+Package: androidx.compose.ui.tooling (1 classes)
+  R
+Package: androidx.compose.ui.tooling.data (1 classes)
+  R
+Package: androidx.compose.ui.tooling.preview (1 classes)
+  R
+Package: androidx.compose.ui.unit (3 classes)
+  Density, FontScaling, R
+Package: androidx.compose.ui.util (1 classes)
+  R
+Package: androidx.core (11 classes)
+  R, R$attr, R$color, R$dimen, R$drawable, R$id, R$integer, R$layout, R$string, R$style, R$styleable
+Package: androidx.core.ktx (1 classes)
+  R
+Package: androidx.core.viewtree (2 classes)
+  R, R$id
+Package: androidx.customview.poolingcontainer (2 classes)
+  R, R$id
+Package: androidx.datastore.core (1 classes)
+  R
+Package: androidx.datastore.datastore (1 classes)
+  R
+Package: androidx.datastore.preferences (1 classes)
+  R
+Package: androidx.datastore.preferences.core (1 classes)
+  R
+Package: androidx.emoji2 (1 classes)
+  R
+Package: androidx.graphics.path (1 classes)
+  R
+Package: androidx.interpolator (1 classes)
+  R
+Package: androidx.lifecycle (2 classes)
+  DefaultLifecycleObserver, LifecycleObserver
+Package: androidx.lifecycle.ktx (1 classes)
+  R
+Package: androidx.lifecycle.livedata.core (1 classes)
+  R
+Package: androidx.lifecycle.process (1 classes)
+  R
+Package: androidx.lifecycle.runtime (2 classes)
+  R, R$id
+Package: androidx.lifecycle.runtime.compose (1 classes)
+  R
+Package: androidx.lifecycle.viewmodel (2 classes)
+  R, R$id
+Package: androidx.lifecycle.viewmodel.compose (1 classes)
+  R
+Package: androidx.lifecycle.viewmodel.ktx (1 classes)
+  R
+Package: androidx.lifecycle.viewmodel.savedstate (1 classes)
+  R
+Package: androidx.profileinstaller (1 classes)
+  R
+Package: androidx.savedstate (2 classes)
+  R, R$id
+Package: androidx.savedstate.ktx (1 classes)
+  R
+
+--------------------------------------------------------------------
+7. KEY CLASS CODE OVERVIEW (DECOMPILED PSEUDO-JAVA)
+--------------------------------------------------------------------
+// --- com.princeniithompson.rapcha.BuildConfig (classes6.dex) ---
+package com.princeniithompson.rapcha;
+
+public final class BuildConfig {
+    public static final String APPLICATION_ID;
+    public static final String BUILD_TYPE;
+    public static final boolean DEBUG;
+    public static final String GIT_COMMIT;
+    public static final int VERSION_CODE;
+    public static final String VERSION_NAME;
+
+    static <clinit>() {
+        Boolean.parseBoolean(...);
+        DEBUG = /* sput-boolean */;
+        return;
+    }
+
+    public BuildConfig() {
+        Object.<init>(...);
+        return;
+    }
+
+}
+
+// --- com.princeniithompson.rapcha.MainActivity (classes6.dex) ---
+package com.princeniithompson.rapcha;
+
+public final class MainActivity extends ComponentActivity {
+    public static final int $stable;
+    public static final MainActivity$Companion Companion;
+    public static final String EXTRA_DICTIONARY_DRAFT;
+    private final MutableState dictionaryDraft$delegate;
+    private final MutableState openDestination$delegate;
+    private final Lazy viewModel$delegate;
+    private final MutableState vocabCandidateId$delegate;
+
+    static <clinit>() {
+        MainActivity$Companion.<init>(...);
+        Companion = /* sput-object */;
+        $stable = /* sput */;
+        return;
+    }
+
+    public MainActivity() {
+        ComponentActivity.<init>(...);
+        MainActivity$special$$inlined$viewModels$default$1.<init>(...);
+        Reflection.getOrCreateKotlinClass(...);
+        MainActivity$special$$inlined$viewModels$default$2.<init>(...);
+        MainActivity$special$$inlined$viewModels$default$3.<init>(...);
+        ViewModelLazy.<init>(...);
+        viewModel$delegate = /* iput-object */;
+        SnapshotStateKt.mutableStateOf$default(...);
+        dictionaryDraft$delegate = /* iput-object */;
+        SnapshotStateKt.mutableStateOf$default(...);
+        openDestination$delegate = /* iput-object */;
+        SnapshotStateKt.mutableStateOf$default(...);
+        vocabCandidateId$delegate = /* iput-object */;
+        return;
+    }
+
+    public static final boolean access$onCreate$lambda$12$lambda$2(State p0) {
+        MainActivity.onCreate$lambda$12$lambda$2(...);
+        return v0;
+    }
+
+    private final void consumeIntentExtras(Intent p0) {
+        if (if-eqz) goto L_16;
+        Intent.getStringExtra(...);
+        if (if-eqz) goto L_16;
+        StringsKt.trim(...);
+        Object.toString(...);
+        if (if-nez) goto L_1c;
+        CharSequence.length(...);
+        if (if-lez) goto L_29;
+        if (if-eqz) goto L_2f;
+        MainActivity.setDictionaryDraft(...);
+        if (if-eqz) goto L_44;
+        Intent.getStringExtra(...);
+        if (if-eqz) goto L_44;
+        StringsKt.trim(...);
+        Object.toString(...);
+        if (if-nez) goto L_48;
+        CharSequence.length(...);
+        if (if-lez) goto L_53;
+        if (if-eqz) goto L_59;
+        MainActivity.setVocabCandidateId(...);
+        if (if-eqz) goto L_6d;
+        Intent.getStringExtra(...);
+        if (if-eqz) goto L_6d;
+        StringsKt.trim(...);
+        Object.toString(...);
+        if (if-nez) goto L_70;
+        CharSequence.length(...);
+        if (if-lez) goto L_7b;
+        if (if-eqz) goto L_81;
+        MainActivity.setOpenDestination(...);
+        return;
+    }
+
+    private final String getDictionaryDraft() {
+        // read dictionaryDraft$delegate:Landroidx/compose/runtime/MutableState;
+        State.getValue(...);
+        return v0;
+    }
+
+    private final String getOpenDestination() {
+        // read openDestination$delegate:Landroidx/compose/runtime/MutableState;
+        State.getValue(...);
+        return v0;
+    }
+
+    private final VoiceTypingViewModel getViewModel() {
+        // read viewModel$delegate:Lkotlin/Lazy;
+        Lazy.getValue(...);
+        return v0;
+    }
+
+    private final String getVocabCandidateId() {
+        // read vocabCandidateId$delegate:Landroidx/compose/runtime/MutableState;
+        State.getValue(...);
+        return v0;
+    }
+
+    static final Unit onCreate$lambda$12(MainActivity p0, Composer p1, int p2) {
+        ComposerKt.sourceInformation(...);
+        if (if-ne) goto L_1c;
+        Composer.ge
+// --- com.princeniithompson.rapcha.MainActivity$$ExternalSyntheticLambda0 (classes6.dex) ---
+package com.princeniithompson.rapcha;
+
+public final class MainActivity$$ExternalSyntheticLambda0 {
+    public final View f$0;
+
+    public MainActivity$$ExternalSyntheticLambda0(View p0) {
+        Object.<init>(...);
+        f$0 = /* iput-object */;
+        return;
+    }
+
+    public final Object invoke() {
+        // read f$0:Landroid/view/View;
+        MainActivity.onCreate$lambda$12$lambda$1$lambda$0(...);
+        return v0;
+    }
+
+}
+
+// --- com.princeniithompson.rapcha.MainActivity$$ExternalSyntheticLambda1 (classes6.dex) ---
+package com.princeniithompson.rapcha;
+
+public final class MainActivity$$ExternalSyntheticLambda1 {
+    public final MainActivity f$0;
+
+    public MainActivity$$ExternalSyntheticLambda1(MainActivity p0) {
+        Object.<init>(...);
+        f$0 = /* iput-object */;
+        return;
+    }
+
+    public final Object invoke(Object p0, Object p1) {
+        // read f$0:Lcom/princeniithompson/rapcha/MainActivity;
+        Integer.intValue(...);
+        MainActivity.onCreate$lambda$12$lambda$11(...);
+        return v2;
+    }
+
+}
+
+// --- com.princeniithompson.rapcha.MainActivity$$ExternalSyntheticLambda2 (classes6.dex) ---
+package com.princeniithompson.rapcha;
+
+public final class MainActivity$$ExternalSyntheticLambda2 {
+    public final MainActivity f$0;
+
+    public MainActivity$$ExternalSyntheticLambda2(MainActivity p0) {
+        Object.<init>(...);
+        f$0 = /* iput-object */;
+        return;
+    }
+
+    public final Object invoke() {
+        // read f$0:Lcom/princeniithompson/rapcha/MainActivity;
+        MainActivity.onCreate$lambda$12$lambda$11$lambda$10$lambda$5$lambda$4(...);
+        return v0;
+    }
+
+}
+
+// --- com.princeniithompson.rapcha.MainActivity$$ExternalSyntheticLambda3 (classes6.dex) ---
+package com.princeniithompson.rapcha;
+
+public final class MainActivity$$ExternalSyntheticLambda3 {
+    public final MainActivity f$0;
+
+    public MainActivity$$ExternalSyntheticLambda3(MainActivity p0) {
+        Object.<init>(...);
+        f$0 = /* iput-object */;
+        return;
+    }
+
+    public final Object invoke() {
+        // read f$0:Lcom/princeniithompson/rapcha/MainActivity;
+        MainActivity.onCreate$lambda$12$lambda$11$lambda$10$lambda$7$lambda$6(...);
+        return v0;
+    }
+
+}
+
+// --- com.princeniithompson.rapcha.MainActivity$$ExternalSyntheticLambda4 (classes6.dex) ---
+package com.princeniithompson.rapcha;
+
+public final class MainActivity$$ExternalSyntheticLambda4 {
+    public final MainActivity f$0;
+
+    public MainActivity$$ExternalSyntheticLambda4(MainActivity p0) {
+        Object.<init>(...);
+        f$0 = /* iput-object */;
+        return;
+    }
+
+    public final Object invoke() {
+        // read f$0:Lcom/princeniithompson/rapcha/MainActivity;
+        MainActivity.onCreate$lambda$12$lambda$11$lambda$10$lambda$9$lambda$8(...);
+        return v0;
+    }
+
+}
+
+// --- com.princeniithompson.rapcha.MainActivity$$ExternalSyntheticLambda5 (classes6.dex) ---
+package com.princeniithompson.rapcha;
+
+public final class MainActivity$$ExternalSyntheticLambda5 {
+    public final MainActivity f$0;
+
+    public MainActivity$$ExternalSyntheticLambda5(MainActivity p0) {
+        Object.<init>(...);
+        f$0 = /* iput-object */;
+        return;
+    }
+
+    public final Object invoke(Object p0, Object p1) {
+        // read f$0:Lcom/princeniithompson/rapcha/MainActivity;
+        Integer.intValue(...);
+        MainActivity.onCreate$lambda$12$lambda$11$lambda$10(...);
+        return v2;
+    }
+
+}
+
+// --- com.princeniithompson.rapcha.MainActivity$$ExternalSyntheticLambda6 (classes6.dex) ---
+package com.princeniithompson.rapcha;
+
+public final class MainActivity$$ExternalSyntheticLambda6 {
+    public final MainActivity f$0;
+
+    public MainActivity$$ExternalSyntheticLambda6(MainActivity p0) {
+        Object.<init>(...);
+        f$0 = /* iput-object */;
+        return;
+    }
+
+    public final Object invoke(Object p0, Object p1) {
+        // read f$0:Lcom/princeniithompson/rapcha/MainActivity;
+        Integer.intValue(...);
+        MainActivity.onCreate$lambda$12(...);
+        return v2;
+    }
+
+}
+
+// --- com.princeniithompson.rapcha.MainActivity$Companion (classes6.dex) ---
+package com.princeniithompson.rapcha;
+
+public final class MainActivity$Companion {
+    private MainActivity$Companion() {
+        Object.<init>(...);
+        return;
+    }
+
+    public MainActivity$Companion(DefaultConstructorMarker p0) {
+        MainActivity$Companion.<init>(...);
+        return;
+    }
+
+}
+
+// --- com.princeniithompson.rapcha.MainActivity$onCreate$1$2$1 (classes6.dex) ---
+package com.princeniithompson.rapcha;
+
+final class MainActivity$onCreate$1$2$1 extends SuspendLambda {
+    final State $isDarkTheme$delegate;
+    int label;
+    final MainActivity this$0;
+
+    MainActivity$onCreate$1$2$1(MainActivity p0, State p1, Continuation p2) {
+        this$0 = /* iput-object */;
+        $isDarkTheme$delegate = /* iput-object */;
+        SuspendLambda.<init>(...);
+        return;
+    }
+
+    public final Continuation create(Object p0, Continuation p1) {
+        // read this$0:Lcom/princeniithompson/rapcha/MainActivity;
+        // read $isDarkTheme$delegate:Landroidx/compose/runtime/State;
+        MainActivity$onCreate$1$2$1.<init>(...);
+        return v0;
+    }
+
+    public Object invoke(Object p0, Object p1) {
+        MainActivity$onCreate$1$2$1.invoke(...);
+        return v0;
+    }
+
+    public final Object invoke(CoroutineScope p0, Continuation p1) {
+        MainActivity$onCreate$1$2$1.create(...);
+        // read INSTANCE:Lkotlin/Unit;
+        MainActivity$onCreate$1$2$1.invokeSuspend(...);
+        return v0;
+    }
+
+    public final Object invokeSuspend(Object p0) {
+        IntrinsicsKt.getCOROUTINE_SUSPENDED(...);
+        // read label:I
+        IllegalStateException.<init>(...);
+        ResultKt.throwOnFailure(...);
+        // read this$0:Lcom/princeniithompson/rapcha/MainActivity;
+        // read $isDarkTheme$delegate:Landroidx/compose/runtime/State;
+        MainActivity.access$onCreate$lambda$12$lambda$2(...);
+        if (if-eqz) goto L_27;
+        // read Companion:Landroidx/activity/SystemBarStyle$Companion;
+        SystemBarStyle$Companion.dark(...);
+        // read Companion:Landroidx/activity/SystemBarStyle$Companion;
+        SystemBarStyle$Companion.light(...);
+        // read $isDarkTheme$delegate:Landroidx/compose/runtime/State;
+        MainActivity.access$onCreate$lambda$12$lambda$2(...);
+        if (if-eqz) goto L_3c;
+        // read Companion:Landroidx/activity/SystemBarStyle$Companion;
+        SystemBarStyle$Companion.dark(...);
+        // read Companion:Landroidx/activity/SystemBarStyle$Companion;
+        SystemBarStyle$Companion.light(...);
+        EdgeToEdge.enable(...);
+        // read INSTANCE:Lkotlin/Unit;
+        return v0;
+    }
+
+}
+
+// --- com.princeniithompson.rapcha.MainActivity$special$$inlined$viewModels$default$1 (classes6.dex) ---
+package com.princeniithompson.rapcha;
+
+public final class MainActivity$special$$inlined$viewModels$default$1 extends Lambda {
+    final ComponentActivity $this_viewModels;
+
+    public MainActivity$special$$inlined$viewModels$default$1(ComponentActivity p0) {
+        $this_viewModels = /* iput-object */;
+        Lambda.<init>(...);
+        return;
+    }
+
+    public final ViewModelProvider$Factory invoke() {
+        // read $this_viewModels:Landroidx/activity/ComponentActivity;
+        ComponentActivity.getDefaultViewModelProviderFactory(...);
+        return v0;
+    }
+
+    public Object invoke() {
+        MainActivity$special$$inlined$viewModels$default$1.invoke(...);
+        return v0;
+    }
+
+}
+
+// --- com.princeniithompson.rapcha.MainActivity$special$$inlined$viewModels$default$2 (classes6.dex) ---
+package com.princeniithompson.rapcha;
+
+public final class MainActivity$special$$inlined$viewModels$default$2 extends Lambda {
+    final ComponentActivity $this_viewModels;
+
+    public MainActivity$special$$inlined$viewModels$default$2(ComponentActivity p0) {
+        $this_viewModels = /* iput-object */;
+        Lambda.<init>(...);
+        return;
+    }
+
+    public final ViewModelStore invoke() {
+        // read $this_viewModels:Landroidx/activity/ComponentActivity;
+        ComponentActivity.getViewModelStore(...);
+        return v0;
+    }
+
+    public Object invoke() {
+        MainActivity$special$$inlined$viewModels$default$2.invoke(...);
+        return v0;
+    }
+
+}
+
+// --- com.princeniithompson.rapcha.MainActivity$special$$inlined$viewModels$default$3 (classes6.dex) ---
+package com.princeniithompson.rapcha;
+
+public final class MainActivity$special$$inlined$viewModels$default$3 extends Lambda {
+    final Function0 $extrasProducer;
+    final ComponentActivity $this_viewModels;
+
+    public MainActivity$special$$inlined$viewModels$default$3(Function0 p0, ComponentActivity p1) {
+        $extrasProducer = /* iput-object */;
+        $this_viewModels = /* iput-object */;
+        Lambda.<init>(...);
+        return;
+    }
+
+    public final CreationExtras invoke() {
+        // read $extrasProducer:Lkotlin/jvm/functions/Function0;
+        if (if-eqz) goto L_c;
+        Function0.invoke(...);
+        if (if-nez) goto L_12;
+        // read $this_viewModels:Landroidx/activity/ComponentActivity;
+        ComponentActivity.getDefaultViewModelCreationExtras(...);
+        return v0;
+    }
+
+    public Object invoke() {
+        MainActivity$special$$inlined$viewModels$default$3.invoke(...);
+        return v0;
+    }
+
+}
+
+// --- com.princeniithompson.rapcha.R (classes2.dex) ---
+package com.princeniithompson.rapcha;
+
+public final class R {
+    private R() {
+        Object.<init>(...);
+        return;
+    }
+
+}
+
+// --- com.princeniithompson.rapcha.RapchaApplication (classes6.dex) ---
+package com.princeniithompson.rapcha;
+
+public final class RapchaApplication extends Application {
+    public static final int $stable;
+    public static final RapchaApplication$Companion Companion;
+    private static final AtomicBoolean backgroundInitStarted;
+
+    static <clinit>() {
+        RapchaApplication$Companion.<init>(...);
+        Companion = /* sput-object */;
+        $stable = /* sput */;
+        AtomicBoolean.<init>(...);
+        backgroundInitStarted = /* sput-object */;
+        return;
+    }
+
+    public RapchaApplication() {
+        Application.<init>(...);
+        return;
+    }
+
+    public static final AtomicBoolean access$getBackgroundInitStarted$cp() {
+        // read backgroundInitStarted:Ljava/util/concurrent/atomic/AtomicBoolean;
+        return v0;
+    }
+
+    public void onCreate() {
+        Application.onCreate(...);
+        // read INSTANCE:Lcom/princeniithompson/rapcha/core/ApiKeyVault;
+        ApiKeyVault.init(...);
+        // read INSTANCE:Lcom/princeniithompson/rapcha/data/ApiUsageRepository;
+        ApiUsageRepository.init(...);
+        // read INSTANCE:Lcom/princeniithompson/rapcha/data/UserProfileRepository;
+        UserProfileRepository.init(...);
+        // read INSTANCE:Lcom/princeniithompson/rapcha/diagnostics/DictationTelemetryRepository;
+        DictationTelemetryRepository.init(...);
+        // read Companion:Lcom/princeniithompson/rapcha/RapchaApplication$Companion;
+        RapchaApplication$Companion.ensureBackgroundInit(...);
+        // read INSTANCE:Lcom/princeniithompson/rapcha/service/FloatingBubbleManager;
+        FloatingBubbleManager.isBubbleEnabledSync(...);
+        if (if-eqz) goto L_6e;
+        // read Companion:Lcom/princeniithompson/rapcha/service/FloatingBubbleService$Companion;
+        FloatingBubbleService$Companion.getInstance(...);
+        if (if-nez) goto L_6e;
+        // read INSTANCE:Lcom/princeniithompson/rapcha/diagnostics/BubbleHealthLog;
+        BubbleHealthLog.lastStopReason(...);
+        Intrinsics.areEqual(...);
+        if (if-eqz) goto L_6e;
+        // read INSTANCE:Lcom/princeniithompson/rapcha/service/FloatingBubbleManager;
+        FloatingBubbleManager.canDrawOverlays(...);
+        if (if-eqz) goto L_6e;
+        // read INSTANCE:Lcom/princeniithompson/rapcha/diagnostics/BubbleHealthLog;
+        BubbleHealthLog.resetJobSuccessStreak(...);
+        // read INSTANCE:Lcom/princeniithompson/rapcha/service/BubbleRecoveryJobScheduler;
+        BubbleRecoveryJobScheduler.schedule(...);
+        return;
+    }
+
+}
+
+// --- com.princeniithompson.rapcha.RapchaApplication$Companion (classes6.dex) ---
+package com.princeniithompson.rapcha;
+
+public final class RapchaApplication$Companion {
+    private RapchaApplication$Companion() {
+        Object.<init>(...);
+        return;
+    }
+
+    public RapchaApplication$Companion(DefaultConstructorMarker p0) {
+        RapchaApplication$Companion.<init>(...);
+        return;
+    }
+
+    public final void ensureBackgroundInit(Context p0) {
+        Intrinsics.checkNotNullParameter(...);
+        Context.getApplicationContext(...);
+        if (if-nez) goto L_c;
+        RapchaApplication.access$getBackgroundInitStarted$cp(...);
+        AtomicBoolean.compareAndSet(...);
+        if (if-nez) goto L_19;
+        return;
+        // read INSTANCE:Lcom/princeniithompson/rapcha/data/LegacyDataCleanup;
+        LegacyDataCleanup.runOnce(...);
+        return;
+    }
+
+}
+
+// --- com.princeniithompson.rapcha.audio.AudioRecorder (classes3.dex) ---
+package com.princeniithompson.rapcha.audio;
+
+public final class AudioRecorder {
+    public static final int $stable;
+    public static final int AUDIO_FORMAT;
+    public static final int CHANNEL_CONFIG;
+    public static final int CHUNK_SIZE_BYTES;
+    public static final AudioRecorder$Companion Companion;
+    private static final int MIC_OPEN_ATTEMPTS;
+    private static final long MIC_RETRY_DELAY_MS;
+    private static final int MIN_TAIL_BYTES;
+    public static final int SAMPLE_RATE;
+    private static final int SLICE_SIZE_BYTES;
+    public static final String TAG;
+    public static final int TARGET_BUFFER_BYTES;
+    private final MutableStateFlow _state;
+    private String activeSourceName;
+    private AudioRecord audioRecord;
+    private final AtomicLong captureGeneration;
+    private long drainDeadlineMs;
+    private final ArrayList effects;
+    private CompletableDeferred finished;
+    private boolean hardStop;
+    private final AtomicBoolean isRecording;
+    private final Function1 onAmplitudeChanged;
+    private final Function1 onChunkReady;
+    private final Function1 onError;
+    private final StateFlow state;
+    private Thread thread;
+
+    static <clinit>() {
+        AudioRecorder$Companion.<init>(...);
+        Companion = /* sput-object */;
+        $stable = /* sput */;
+        return;
+    }
+
+    public AudioRecorder(Function1 p0, Function1 p1, Function1 p2) {
+        Intrinsics.checkNotNullParameter(...);
+        Intrinsics.checkNotNullParameter(...);
+        Intrinsics.checkNotNullParameter(...);
+        Object.<init>(...);
+        onChunkReady = /* iput-object */;
+        onAmplitudeChanged = /* iput-object */;
+        onError = /* iput-object */;
+        activeSourceName = /* iput-object */;
+        AtomicBoolean.<init>(...);
+        isRecording = /* iput-object */;
+        AtomicLong.<init>(...);
+        captureGeneration = /* iput-object */;
+        ArrayList.<init>(...);
+        effects = /* iput-object */;
+        // read INSTANCE:Lcom/princeniithompson/rapcha/audio/AudioRecorderState$Idle;
+        StateFlowKt.MutableStateFlow(...);
+        _state = /* iput-object */;
+        // read _state:Lkotlinx/coroutines/flow/MutableStateFlow;
+        FlowKt.asStateFlow(...);
+        state = /* iput-object */;
+        return;
+    }
+
+    private final void disablePlatformEffects(int p0) {
+        AudioRecorder.releaseEffects(...);
+        NoiseSuppressor.isAvailable(...);
+        if (if-eqz) goto L_14;
+        NoiseSuppressor.create(...);
+        AudioRecorder.disablePlatformEffects$keepDisabled(...);
+        AcousticEchoCanceler.isAvailable(...);
+        if (if-eqz) goto L_25;
+        AcousticEchoCanceler.create(...);
+        AudioRecorder.disablePlatformEffects$keepDisabled(...);
+        AutomaticGainControl.isAvailable(...);
+        if (if-eqz) goto L_36;
+        AutomaticGainControl.create(...);
+        AudioRecorder.disablePlatformEffects$keepDisabled(...);
+        return;
+    }
+
+    private static final void disablePlatformEffects$keepDisabled(AudioRecorder p0, AudioEffect p1) {
+        if (if-nez) goto L_3;
+        return;
+        AudioEffect.setEnabled(...);
+        // read effects:Ljava/util/ArrayList;
+        ArrayList.add(...);
+        AudioEffect.release(...);
+        return;
+    }
+
+    private final float meterValue(byte[] p0) {
+        if (if-gtz) goto L_9;
+        return v2;
+        if (if-ge) goto L_25;
+        Math.sqrt(...);
+        RangesKt.coerceIn(...);
+        Math.sqrt(...);
+        RangesKt.coerceIn(...
+// --- com.princeniithompson.rapcha.audio.AudioRecorder$$ExternalSyntheticLambda0 (classes3.dex) ---
+package com.princeniithompson.rapcha.audio;
+
+public final class AudioRecorder$$ExternalSyntheticLambda0 {
+    public final AudioRecorder f$0;
+    public final CompletableDeferred f$1;
+    public final long f$2;
+
+    public AudioRecorder$$ExternalSyntheticLambda0(AudioRecorder p0, CompletableDeferred p1, long p2) {
+        Object.<init>(...);
+        f$0 = /* iput-object */;
+        f$1 = /* iput-object */;
+        f$2 = /* iput-wide */;
+        return;
+    }
+
+    public final void run() {
+        // read f$0:Lcom/princeniithompson/rapcha/audio/AudioRecorder;
+        // read f$1:Lkotlinx/coroutines/CompletableDeferred;
+        // read f$2:J
+        AudioRecorder.start$lambda$0(...);
+        return;
+    }
+
+}
+
+// --- com.princeniithompson.rapcha.audio.AudioRecorder$Companion (classes3.dex) ---
+package com.princeniithompson.rapcha.audio;
+
+public final class AudioRecorder$Companion {
+    private AudioRecorder$Companion() {
+        Object.<init>(...);
+        return;
+    }
+
+    public AudioRecorder$Companion(DefaultConstructorMarker p0) {
+        AudioRecorder$Companion.<init>(...);
+        return;
+    }
+
+    public final int bufferSizeFor(int p0) {
+        Math.max(...);
+        Math.max(...);
+        return v0;
+    }
+
+    public final byte[] tailPacket(byte[] p0, int p1) {
+        Intrinsics.checkNotNullParameter(...);
+        if (if-ge) goto L_f;
+        return v1;
+        Arrays.copyOf(...);
+        Intrinsics.checkNotNullExpressionValue(...);
+        return v1;
+    }
+
+}
+
+// --- com.princeniithompson.rapcha.audio.AudioRecorder$stopAndJoin$1 (classes3.dex) ---
+package com.princeniithompson.rapcha.audio;
+
+final class AudioRecorder$stopAndJoin$1 extends ContinuationImpl {
+    long J$0;
+    long J$1;
+    Object L$0;
+    int label;
+    Object result;
+    final AudioRecorder this$0;
+
+    AudioRecorder$stopAndJoin$1(AudioRecorder p0, Continuation p1) {
+        this$0 = /* iput-object */;
+        ContinuationImpl.<init>(...);
+        return;
+    }
+
+    public final Object invokeSuspend(Object p0) {
+        result = /* iput-object */;
+        // read label:I
+        label = /* iput */;
+        // read this$0:Lcom/princeniithompson/rapcha/audio/AudioRecorder;
+        AudioRecorder.stopAndJoin(...);
+        return v0;
+    }
+
+}
+
+// --- com.princeniithompson.rapcha.audio.AudioRecorderState (classes3.dex) ---
+package com.princeniithompson.rapcha.audio;
+
+public abstract class AudioRecorderState {
+    public static final int $stable;
+
+    static <clinit>() {
+        return;
+    }
+
+    private AudioRecorderState() {
+        Object.<init>(...);
+        return;
+    }
+
+    public AudioRecorderState(DefaultConstructorMarker p0) {
+        AudioRecorderState.<init>(...);
+        return;
+    }
+
+}
+
+// --- com.princeniithompson.rapcha.audio.AudioRecorderState$Error (classes3.dex) ---
+package com.princeniithompson.rapcha.audio;
+
+public final class AudioRecorderState$Error extends AudioRecorderState {
+    public static final int $stable;
+    private final String message;
+
+    static <clinit>() {
+        return;
+    }
+
+    public AudioRecorderState$Error(String p0) {
+        Intrinsics.checkNotNullParameter(...);
+        AudioRecorderState.<init>(...);
+        message = /* iput-object */;
+        return;
+    }
+
+    public static AudioRecorderState$Error copy$default(AudioRecorderState$Error p0, String p1, int p2, Object p3) {
+        if (if-eqz) goto L_6;
+        // read message:Ljava/lang/String;
+        AudioRecorderState$Error.copy(...);
+        return v0;
+    }
+
+    public final String component1() {
+        // read message:Ljava/lang/String;
+        return v0;
+    }
+
+    public final AudioRecorderState$Error copy(String p0) {
+        Intrinsics.checkNotNullParameter(...);
+        AudioRecorderState$Error.<init>(...);
+        return v0;
+    }
+
+    public boolean equals(Object p0) {
+        if (if-ne) goto L_4;
+        return v0;
+        if (if-nez) goto L_a;
+        return v2;
+        // read message:Ljava/lang/String;
+        // read message:Ljava/lang/String;
+        Intrinsics.areEqual(...);
+        if (if-nez) goto L_18;
+        return v2;
+        return v0;
+    }
+
+    public final String getMessage() {
+        // read message:Ljava/lang/String;
+        return v0;
+    }
+
+    public int hashCode() {
+        // read message:Ljava/lang/String;
+        String.hashCode(...);
+        return v0;
+    }
+
+    public String toString() {
+        // read message:Ljava/lang/String;
+        StringBuilder.<init>(...);
+        StringBuilder.append(...);
+        StringBuilder.append(...);
+        StringBuilder.append(...);
+        StringBuilder.toString(...);
+        return v0;
+    }
+
+}
+
+// --- com.princeniithompson.rapcha.audio.AudioRecorderState$Idle (classes3.dex) ---
+package com.princeniithompson.rapcha.audio;
+
+public final class AudioRecorderState$Idle extends AudioRecorderState {
+    public static final int $stable;
+    public static final AudioRecorderState$Idle INSTANCE;
+
+    static <clinit>() {
+        AudioRecorderState$Idle.<init>(...);
+        INSTANCE = /* sput-object */;
+        return;
+    }
+
+    private AudioRecorderState$Idle() {
+        AudioRecorderState.<init>(...);
+        return;
+    }
+
+}
+
+// --- com.princeniithompson.rapcha.audio.AudioRecorderState$Recording (classes3.dex) ---
+package com.princeniithompson.rapcha.audio;
+
+public final class AudioRecorderState$Recording extends AudioRecorderState {
+    public static final int $stable;
+    public static final AudioRecorderState$Recording INSTANCE;
+
+    static <clinit>() {
+        AudioRecorderState$Recording.<init>(...);
+        INSTANCE = /* sput-object */;
+        return;
+    }
+
+    private AudioRecorderState$Recording() {
+        AudioRecorderState.<init>(...);
+        return;
+    }
+
+}
+
+// --- com.princeniithompson.rapcha.audio.AudioRecorderState$Starting (classes3.dex) ---
+package com.princeniithompson.rapcha.audio;
+
+public final class AudioRecorderState$Starting extends AudioRecorderState {
+    public static final int $stable;
+    public static final AudioRecorderState$Starting INSTANCE;
+
+    static <clinit>() {
+        AudioRecorderState$Starting.<init>(...);
+        INSTANCE = /* sput-object */;
+        return;
+    }
+
+    private AudioRecorderState$Starting() {
+        AudioRecorderState.<init>(...);
+        return;
+    }
+
+}
+
+// --- com.princeniithompson.rapcha.audio.AudioRecorderState$Stopping (classes3.dex) ---
+package com.princeniithompson.rapcha.audio;
+
+public final class AudioRecorderState$Stopping extends AudioRecorderState {
+    public static final int $stable;
+    public static final AudioRecorderState$Stopping INSTANCE;
+
+    static <clinit>() {
+        AudioRecorderState$Stopping.<init>(...);
+        INSTANCE = /* sput-object */;
+        return;
+    }
+
+    private AudioRecorderState$Stopping() {
+        AudioRecorderState.<init>(...);
+        return;
+    }
+
+}
+
+// --- com.princeniithompson.rapcha.audio.SessionAudioBackup (classes3.dex) ---
+package com.princeniithompson.rapcha.audio;
+
+public final class SessionAudioBackup {
+    public static final int $stable;
+    private static final int AAC_BITRATE_BPS;
+    private static final int AAC_FALLBACK_BITRATE_BPS;
+    private static final int BITS_PER_SAMPLE;
+    private static final long BYTES_PER_MS;
+    private static final int CHANNEL_COUNT;
+    private static final long CODEC_TIMEOUT_US;
+    public static final SessionAudioBackup$Companion Companion;
+    private static final String FILE_PREFIX;
+    private static final long MAX_BACKUP_PCM_BYTES;
+    private static final long MIN_FALLBACK_PCM_BYTES;
+    private static final long ORPHAN_MAX_AGE_MS;
+    private static final int SAMPLE_RATE_HZ;
+    private static final String TAG;
+    private static final AtomicLong fileSeq;
+    private long bytesWritten;
+    private final Context context;
+    private final Object lock;
+    private FileOutputStream outputStream;
+    private File pcmFile;
+    private double rmsMaxValue;
+    private int rmsSamples;
+    private double rmsSum;
+
+    static <clinit>() {
+        SessionAudioBackup$Companion.<init>(...);
+        Companion = /* sput-object */;
+        $stable = /* sput */;
+        AtomicLong.<init>(...);
+        fileSeq = /* sput-object */;
+        return;
+    }
+
+    public SessionAudioBackup(Context p0) {
+        Intrinsics.checkNotNullParameter(...);
+        Object.<init>(...);
+        context = /* iput-object */;
+        Object.<init>(...);
+        lock = /* iput-object */;
+        return;
+    }
+
+    private final void closeAndDeleteLocked() {
+        // read outputStream:Ljava/io/FileOutputStream;
+        if (if-eqz) goto L_8;
+        FileOutputStream.flush(...);
+        // read outputStream:Ljava/io/FileOutputStream;
+        if (if-eqz) goto L_11;
+        FileOutputStream.close(...);
+        outputStream = /* iput-object */;
+        // read pcmFile:Ljava/io/File;
+        if (if-eqz) goto L_25;
+        File.exists(...);
+        if (if-eqz) goto L_25;
+        File.delete(...);
+        pcmFile = /* iput-object */;
+        bytesWritten = /* iput-wide */;
+        rmsSum = /* iput-wide */;
+        rmsMaxValue = /* iput-wide */;
+        rmsSamples = /* iput */;
+        return;
+    }
+
+    private final boolean encodePcmToM4a(File p0, File p1, int p2) {
+        File.exists(...);
+        if (if-eqz) goto L_2d;
+        // read Companion:Lkotlin/Result$Companion;
+        File.delete(...);
+        Boolean.valueOf(...);
+        Result.constructor-impl(...);
+        // read Companion:Lkotlin/Result$Companion;
+        ResultKt.createFailure(...);
+        Result.constructor-impl(...);
+        MediaFormat.createAudioFormat(...);
+        MediaFormat.setInteger(...);
+        MediaFormat.setInteger(...);
+        MediaFormat.setInteger(...);
+        Intrinsics.checkNotNullExpressionValue(...);
+        MediaCodec.createEncoderByType(...);
+        MediaCodec.configure(...);
+        MediaCodec.start(...);
+        File.getAbsolutePath(...);
+        MediaMuxer.<init>(...);
+        MediaCodec$BufferInfo.<init>(...);
+        FileInputStream.<init>(...);
+        if (if-nez) goto L_229;
+    }
+
+    private final void openFreshFileLocked() {
+        bytesWritten = /* iput-wide */;
+        rmsSum = /* iput-wide */;
+        rmsMaxValue = /* iput-wide */;
+        rmsSamples = /* iput */;
+        // read context:Landroid/content/Context;
+        Context.getCacheDir(...);
+        File.exists(...);
+        if (if-nez) goto L_1d;
+        File.mkdirs(...);
+        System
+// --- com.princeniithompson.rapcha.audio.SessionAudioBackup$$ExternalSyntheticLambda0 (classes3.dex) ---
+package com.princeniithompson.rapcha.audio;
+
+public final class SessionAudioBackup$$ExternalSyntheticLambda0 {
+    public final long f$0;
+
+    public SessionAudioBackup$$ExternalSyntheticLambda0(long p0) {
+        Object.<init>(...);
+        f$0 = /* iput-wide */;
+        return;
+    }
+
+    public final boolean accept(File p0) {
+        // read f$0:J
+        SessionAudioBackup.sweepOrphanedFiles$lambda$10(...);
+        return v3;
+    }
+
+}
+
+// --- com.princeniithompson.rapcha.audio.SessionAudioBackup$Companion (classes3.dex) ---
+package com.princeniithompson.rapcha.audio;
+
+public final class SessionAudioBackup$Companion {
+    private SessionAudioBackup$Companion() {
+        Object.<init>(...);
+        return;
+    }
+
+    public SessionAudioBackup$Companion(DefaultConstructorMarker p0) {
+        SessionAudioBackup$Companion.<init>(...);
+        return;
+    }
+
+    public final byte[] wrapPcmAsWav(byte[] p0) {
+        Intrinsics.checkNotNullParameter(...);
+        ByteBuffer.allocate(...);
+        // read LITTLE_ENDIAN:Ljava/nio/ByteOrder;
+        ByteBuffer.order(...);
+        // read US_ASCII:Ljava/nio/charset/Charset;
+        String.getBytes(...);
+        Intrinsics.checkNotNullExpressionValue(...);
+        ByteBuffer.put(...);
+        ByteBuffer.putInt(...);
+        // read US_ASCII:Ljava/nio/charset/Charset;
+        String.getBytes(...);
+        Intrinsics.checkNotNullExpressionValue(...);
+        ByteBuffer.put(...);
+        // read US_ASCII:Ljava/nio/charset/Charset;
+        String.getBytes(...);
+        Intrinsics.checkNotNullExpressionValue(...);
+        ByteBuffer.put(...);
+        ByteBuffer.putInt(...);
+        ByteBuffer.putShort(...);
+        ByteBuffer.putShort(...);
+        ByteBuffer.putInt(...);
+        ByteBuffer.putInt(...);
+        ByteBuffer.putShort(...);
+        ByteBuffer.putShort(...);
+        // read US_ASCII:Ljava/nio/charset/Charset;
+        String.getBytes(...);
+        Intrinsics.checkNotNullExpressionValue(...);
+        ByteBuffer.put(...);
+        ByteBuffer.putInt(...);
+        ByteBuffer.array(...);
+        System.arraycopy(...);
+        System.arraycopy(...);
+        return v6;
+    }
+
+}
+
+// --- com.princeniithompson.rapcha.audio.SessionAudioBackup$ExportedAudio (classes3.dex) ---
+package com.princeniithompson.rapcha.audio;
+
+public final class SessionAudioBackup$ExportedAudio {
+    public static final int $stable;
+    private final byte[] bytes;
+    private final long durationMs;
+    private final String mimeType;
+    private final long pcmBytes;
+
+    static <clinit>() {
+        $stable = /* sput */;
+        return;
+    }
+
+    public SessionAudioBackup$ExportedAudio(byte[] p0, String p1, long p2, long p3) {
+        Intrinsics.checkNotNullParameter(...);
+        Intrinsics.checkNotNullParameter(...);
+        Object.<init>(...);
+        bytes = /* iput-object */;
+        mimeType = /* iput-object */;
+        durationMs = /* iput-wide */;
+        pcmBytes = /* iput-wide */;
+        return;
+    }
+
+    public static SessionAudioBackup$ExportedAudio copy$default(SessionAudioBackup$ExportedAudio p0, byte[] p1, String p2, long p3, long p4, int p5, Object p6) {
+        if (if-eqz) goto L_6;
+        // read bytes:[B
+        if (if-eqz) goto L_c;
+        // read mimeType:Ljava/lang/String;
+        if (if-eqz) goto L_12;
+        // read durationMs:J
+        if (if-eqz) goto L_18;
+        // read pcmBytes:J
+        SessionAudioBackup$ExportedAudio.copy(...);
+        return v0;
+    }
+
+    public final byte[] component1() {
+        // read bytes:[B
+        return v0;
+    }
+
+    public final String component2() {
+        // read mimeType:Ljava/lang/String;
+        return v0;
+    }
+
+    public final long component3() {
+        // read durationMs:J
+        return v0;
+    }
+
+    public final long component4() {
+        // read pcmBytes:J
+        return v0;
+    }
+
+    public final SessionAudioBackup$ExportedAudio copy(byte[] p0, String p1, long p2, long p3) {
+        Intrinsics.checkNotNullParameter(...);
+        Intrinsics.checkNotNullParameter(...);
+        SessionAudioBackup$ExportedAudio.<init>(...);
+        return v1;
+    }
+
+    public boolean equals(Object p0) {
+        if (if-ne) goto L_4;
+        return v0;
+        if (if-nez) goto L_a;
+        return v2;
+        // read bytes:[B
+        // read bytes:[B
+        Intrinsics.areEqual(...);
+        if (if-nez) goto L_18;
+        return v2;
+        // read mimeType:Ljava/lang/String;
+        // read mimeType:Ljava/lang/String;
+        Intrinsics.areEqual(...);
+        if (if-nez) goto L_23;
+        return v2;
+        // read durationMs:J
+        // read durationMs:J
+        if (if-eqz) goto L_2c;
+        return v2;
+        // read pcmBytes:J
+        // read pcmBytes:J
+        if (if-eqz) goto L_35;
+        return v2;
+        return v0;
+    }
+
+    public final byte[] getBytes() {
+        // read bytes:[B
+        return v0;
+    }
+
+    public final long getDurationMs() {
+        // read durationMs:J
+        return v0;
+    }
+
+    public final String getMimeType() {
+        // read mimeType:Ljava/lang/String;
+        return v0;
+    }
+
+    public final long getPcmBytes() {
+        // read pcmBytes:J
+        return v0;
+    }
+
+    public int hashCode() {
+        // read bytes:[B
+        Arrays.hashCode(...);
+        // read mimeType:Ljava/lang/String;
+        String.hashCode(...);
+        // read durationMs:J
+        Long.hashCode(...);
+        // read pcmBytes:J
+        Long.hashCode(...);
+        return v1;
+    }
+
+    public String toString() {
+        // read bytes:[B
+        Arrays.toString(...);
+        // read mimeType:Ljava/lang/String;
+        // read durationMs:J
+        // read pcmBytes:J
+        StringBuilder.<init>(...);
+        StringBuilder.append(...);
+        StringBuild
+// --- com.princeniithompson.rapcha.audio.SpeechGain (classes3.dex) ---
+package com.princeniithompson.rapcha.audio;
+
+public final class SpeechGain {
+    public static final int $stable;
+    public static final SpeechGain$Companion Companion;
+    public static final double KNEE;
+    public static final double MAX_GAIN;
+    private static final double MIN_SPEECH_RMS;
+    public static final double PEAK_CEILING;
+    private static final double RISE;
+    private static final double SPEECH_OVER_FLOOR;
+    public static final double TARGET_RMS;
+    private double currentGain;
+    private double noiseFloor;
+    private double previousApplied;
+    private double speechLevel;
+
+    static <clinit>() {
+        SpeechGain$Companion.<init>(...);
+        Companion = /* sput-object */;
+        $stable = /* sput */;
+        return;
+    }
+
+    public SpeechGain() {
+        Object.<init>(...);
+        noiseFloor = /* iput-wide */;
+        speechLevel = /* iput-wide */;
+        currentGain = /* iput-wide */;
+        previousApplied = /* iput-wide */;
+        return;
+    }
+
+    public static byte[] process$default(SpeechGain p0, byte[] p1, boolean p2, int p3, Object p4) {
+        if (if-eqz) goto L_5;
+        SpeechGain.process(...);
+        return v0;
+    }
+
+    public final double getCurrentGain() {
+        // read currentGain:D
+        return v0;
+    }
+
+    public final byte[] process(byte[] p0, boolean p1) {
+        Intrinsics.checkNotNullParameter(...);
+        if (if-gtz) goto L_11;
+        return v1;
+        // read Companion:Lcom/princeniithompson/rapcha/audio/SpeechGain$Companion;
+        SpeechGain$Companion.rms(...);
+        // read Companion:Lcom/princeniithompson/rapcha/audio/SpeechGain$Companion;
+        SpeechGain$Companion.peak(...);
+        if (if-eqz) goto L_ca;
+        // read noiseFloor:D
+        if (if-gez) goto L_33;
+        Math.max(...);
+        noiseFloor = /* iput-wide */;
+        // read noiseFloor:D
+        // read noiseFloor:D
+        if (if-gez) goto L_54;
+        Math.max(...);
+        noiseFloor = /* iput-wide */;
+        noiseFloor = /* iput-wide */;
+        // read noiseFloor:D
+        Math.max(...);
+        if (if-ltz) goto L_77;
+        if (if-eqz) goto L_ca;
+        // read speechLevel:D
+        if (if-gez) goto L_82;
+        if (if-eqz) goto L_87;
+        // read speechLevel:D
+        speechLevel = /* iput-wide */;
+        // read speechLevel:D
+        Math.max(...);
+    }
+
+    public final void reset() {
+        noiseFloor = /* iput-wide */;
+        speechLevel = /* iput-wide */;
+        currentGain = /* iput-wide */;
+        previousApplied = /* iput-wide */;
+        return;
+    }
+
+}
+
+// --- com.princeniithompson.rapcha.audio.SpeechGain$Companion (classes3.dex) ---
+package com.princeniithompson.rapcha.audio;
+
+public final class SpeechGain$Companion {
+    private SpeechGain$Companion() {
+        Object.<init>(...);
+        return;
+    }
+
+    public SpeechGain$Companion(DefaultConstructorMarker p0) {
+        SpeechGain$Companion.<init>(...);
+        return;
+    }
+
+    public static int peak$default(SpeechGain$Companion p0, byte[] p1, int p2, int p3, Object p4) {
+        if (if-eqz) goto L_5;
+        SpeechGain$Companion.peak(...);
+        return v0;
+    }
+
+    public static double rms$default(SpeechGain$Companion p0, byte[] p1, int p2, int p3, Object p4) {
+        if (if-eqz) goto L_5;
+        SpeechGain$Companion.rms(...);
+        return v0;
+    }
+
+    public final int peak(byte[] p0, int p1) {
+        Intrinsics.checkNotNullParameter(...);
+        if (if-ge) goto L_1a;
+        SpeechGain$Companion.sample$app(...);
+        Math.abs(...);
+        if (if-le) goto L_16;
+        return v0;
+    }
+
+    public final double rms(byte[] p0, int p1) {
+        Intrinsics.checkNotNullParameter(...);
+        if (if-gtz) goto L_c;
+        return v1;
+        if (if-ge) goto L_1f;
+        SpeechGain$Companion.sample$app(...);
+        Math.sqrt(...);
+        return v4;
+    }
+
+    public final int sample$app(byte[] p0, int p1) {
+        Intrinsics.checkNotNullParameter(...);
+        return v0;
+    }
+
+    public final double softLimit$app(double p0) {
+        Math.abs(...);
+        if (if-gtz) goto L_e;
+        return v11;
+        Math.min(...);
+        if (if-gez) goto L_2e;
+        return v6;
+    }
+
+}
+
+// --- com.princeniithompson.rapcha.core.ApiConfig (classes10.dex) ---
+package com.princeniithompson.rapcha.core;
+
+public final class ApiConfig {
+    public static final int $stable;
+    private static final String GEMINI_HOST;
+    public static final ApiConfig INSTANCE;
+    private static final String PLACEHOLDER_KEY;
+    private static final long PREWARM_MIN_INTERVAL_MS;
+    private static final AtomicLong lastPrewarmAtMs;
+    private static final ExecutorService prewarmExecutor;
+    private static final Lazy sharedClient$delegate;
+
+    static <clinit>() {
+        ApiConfig.<init>(...);
+        INSTANCE = /* sput-object */;
+        AtomicLong.<init>(...);
+        lastPrewarmAtMs = /* sput-object */;
+        ApiConfig$$ExternalSyntheticLambda1.<init>(...);
+        Executors.newSingleThreadExecutor(...);
+        prewarmExecutor = /* sput-object */;
+        ApiConfig$$ExternalSyntheticLambda2.<init>(...);
+        LazyKt.lazy(...);
+        sharedClient$delegate = /* sput-object */;
+        $stable = /* sput */;
+        return;
+    }
+
+    private ApiConfig() {
+        Object.<init>(...);
+        return;
+    }
+
+    public static String getEffectiveKey$default(ApiConfig p0, String p1, int p2, Object p3) {
+        if (if-eqz) goto L_5;
+        ApiConfig.getEffectiveKey(...);
+        return v0;
+    }
+
+    private final OkHttpClient getSharedClient() {
+        // read sharedClient$delegate:Lkotlin/Lazy;
+        Lazy.getValue(...);
+        return v0;
+    }
+
+    static final Thread prewarmExecutor$lambda$1(Runnable p0) {
+        Thread.<init>(...);
+        Thread.setDaemon(...);
+        return v0;
+    }
+
+    static final void prewarmGeminiConnection$lambda$3() {
+        InetAddress.getAllByName(...);
+        Request$Builder.<init>(...);
+        Request$Builder.url(...);
+        Request$Builder.head(...);
+        Request$Builder.build(...);
+        // read INSTANCE:Lcom/princeniithompson/rapcha/core/ApiConfig;
+        ApiConfig.getSharedClient(...);
+        OkHttpClient.newBuilder(...);
+        // read HTTP_1_1:Lokhttp3/Protocol;
+        CollectionsKt.listOf(...);
+        OkHttpClient$Builder.protocols(...);
+        // read SECONDS:Ljava/util/concurrent/TimeUnit;
+        OkHttpClient$Builder.connectTimeout(...);
+        // read SECONDS:Ljava/util/concurrent/TimeUnit;
+        OkHttpClient$Builder.readTimeout(...);
+        // read SECONDS:Ljava/util/concurrent/TimeUnit;
+        OkHttpClient$Builder.callTimeout(...);
+        OkHttpClient$Builder.build(...);
+        OkHttpClient.newCall(...);
+        Call.execute(...);
+        // read INSTANCE:Lkotlin/Unit;
+        CloseableKt.closeFinally(...);
+        CloseableKt.closeFinally(...);
+        return;
+    }
+
+    public static String resolveApiKey$default(ApiConfig p0, Context p1, int p2, Object p3) {
+        if (if-eqz) goto L_5;
+        ApiConfig.resolveApiKey(...);
+        return v0;
+    }
+
+    static final OkHttpClient sharedClient_delegate$lambda$4() {
+        OkHttpClient$Builder.<init>(...);
+        // read SECONDS:Ljava/util/concurrent/TimeUnit;
+        OkHttpClient$Builder.connectTimeout(...);
+        // read SECONDS:Ljava/util/concurrent/TimeUnit;
+        OkHttpClient$Builder.readTimeout(...);
+        // read SECONDS:Ljava/util/concurrent/TimeUnit;
+        OkHttpClient$Builder.writeTimeout(...);
+        OkHttpClient$Builder.build(...);
+        return v0;
+    }
+
+    public final OkHttpClient createOkHttpClient() {
+        ApiConfig.getSharedClient(...);
+        return v0;
+    }
+
+    public final String geminiGenerateContentUrl(String p0) {
+        Intrinsics.checkN
+// --- com.princeniithompson.rapcha.core.ApiConfig$$ExternalSyntheticLambda0 (classes10.dex) ---
+package com.princeniithompson.rapcha.core;
+
+public final class ApiConfig$$ExternalSyntheticLambda0 {
+    public ApiConfig$$ExternalSyntheticLambda0() {
+        Object.<init>(...);
+        return;
+    }
+
+    public final void run() {
+        ApiConfig.prewarmGeminiConnection$lambda$3(...);
+        return;
+    }
+
+}
+
+// --- androidx.activity.ActivityViewModelLazyKt (classes.dex) ---
+package androidx.activity;
+
+public final class ActivityViewModelLazyKt {
+    public static final Lazy viewModels(ComponentActivity p0, Function0 p1) {
+        Intrinsics.checkNotNullParameter(...);
+        if (if-nez) goto L_10;
+        ActivityViewModelLazyKt$viewModels$factoryPromise$1.<init>(...);
+        Intrinsics.reifiedOperationMarker(...);
+        Reflection.getOrCreateKotlinClass(...);
+        ActivityViewModelLazyKt$viewModels$1.<init>(...);
+        ActivityViewModelLazyKt$viewModels$2.<init>(...);
+        ViewModelLazy.<init>(...);
+        return v2;
+    }
+
+    public static final Lazy viewModels(ComponentActivity p0, Function0 p1, Function0 p2) {
+        Intrinsics.checkNotNullParameter(...);
+        if (if-nez) goto L_10;
+        ActivityViewModelLazyKt$viewModels$factoryPromise$2.<init>(...);
+        Intrinsics.reifiedOperationMarker(...);
+        Reflection.getOrCreateKotlinClass(...);
+        ActivityViewModelLazyKt$viewModels$3.<init>(...);
+        ActivityViewModelLazyKt$viewModels$4.<init>(...);
+        ViewModelLazy.<init>(...);
+        return v2;
+    }
+
+    public static Lazy viewModels$default(ComponentActivity p0, Function0 p1, int p2, Object p3) {
+        if (if-eqz) goto L_5;
+        Intrinsics.checkNotNullParameter(...);
+        if (if-nez) goto L_15;
+        ActivityViewModelLazyKt$viewModels$factoryPromise$1.<init>(...);
+        Intrinsics.reifiedOperationMarker(...);
+        Reflection.getOrCreateKotlinClass(...);
+        ActivityViewModelLazyKt$viewModels$1.<init>(...);
+        ActivityViewModelLazyKt$viewModels$2.<init>(...);
+        ViewModelLazy.<init>(...);
+        return v0;
+    }
+
+    public static Lazy viewModels$default(ComponentActivity p0, Function0 p1, Function0 p2, int p3, Object p4) {
+        if (if-eqz) goto L_5;
+        if (if-eqz) goto L_a;
+        Intrinsics.checkNotNullParameter(...);
+        if (if-nez) goto L_1a;
+        ActivityViewModelLazyKt$viewModels$factoryPromise$2.<init>(...);
+        Intrinsics.reifiedOperationMarker(...);
+        Reflection.getOrCreateKotlinClass(...);
+        ActivityViewModelLazyKt$viewModels$3.<init>(...);
+        ActivityViewModelLazyKt$viewModels$4.<init>(...);
+        ViewModelLazy.<init>(...);
+        return v0;
+    }
+
+}
+
+// --- androidx.activity.ActivityViewModelLazyKt$viewModels$1 (classes.dex) ---
+package androidx.activity;
+
+public final class ActivityViewModelLazyKt$viewModels$1 extends Lambda {
+    final ComponentActivity $this_viewModels;
+
+    public ActivityViewModelLazyKt$viewModels$1(ComponentActivity p0) {
+        $this_viewModels = /* iput-object */;
+        Lambda.<init>(...);
+        return;
+    }
+
+    public final ViewModelStore invoke() {
+        // read $this_viewModels:Landroidx/activity/ComponentActivity;
+        ComponentActivity.getViewModelStore(...);
+        return v0;
+    }
+
+    public Object invoke() {
+        ActivityViewModelLazyKt$viewModels$1.invoke(...);
+        return v0;
+    }
+
+}
+
+// --- androidx.activity.ActivityViewModelLazyKt$viewModels$2 (classes.dex) ---
+package androidx.activity;
+
+public final class ActivityViewModelLazyKt$viewModels$2 extends Lambda {
+    final ComponentActivity $this_viewModels;
+
+    public ActivityViewModelLazyKt$viewModels$2(ComponentActivity p0) {
+        $this_viewModels = /* iput-object */;
+        Lambda.<init>(...);
+        return;
+    }
+
+    public final CreationExtras invoke() {
+        // read $this_viewModels:Landroidx/activity/ComponentActivity;
+        ComponentActivity.getDefaultViewModelCreationExtras(...);
+        return v0;
+    }
+
+    public Object invoke() {
+        ActivityViewModelLazyKt$viewModels$2.invoke(...);
+        return v0;
+    }
+
+}
+
+// --- androidx.activity.ActivityViewModelLazyKt$viewModels$3 (classes.dex) ---
+package androidx.activity;
+
+public final class ActivityViewModelLazyKt$viewModels$3 extends Lambda {
+    final ComponentActivity $this_viewModels;
+
+    public ActivityViewModelLazyKt$viewModels$3(ComponentActivity p0) {
+        $this_viewModels = /* iput-object */;
+        Lambda.<init>(...);
+        return;
+    }
+
+    public final ViewModelStore invoke() {
+        // read $this_viewModels:Landroidx/activity/ComponentActivity;
+        ComponentActivity.getViewModelStore(...);
+        return v0;
+    }
+
+    public Object invoke() {
+        ActivityViewModelLazyKt$viewModels$3.invoke(...);
+        return v0;
+    }
+
+}
+
+// --- androidx.activity.ActivityViewModelLazyKt$viewModels$4 (classes.dex) ---
+package androidx.activity;
+
+public final class ActivityViewModelLazyKt$viewModels$4 extends Lambda {
+    final Function0 $extrasProducer;
+    final ComponentActivity $this_viewModels;
+
+    public ActivityViewModelLazyKt$viewModels$4(Function0 p0, ComponentActivity p1) {
+        $extrasProducer = /* iput-object */;
+        $this_viewModels = /* iput-object */;
+        Lambda.<init>(...);
+        return;
+    }
+
+    public final CreationExtras invoke() {
+        // read $extrasProducer:Lkotlin/jvm/functions/Function0;
+        if (if-eqz) goto L_c;
+        Function0.invoke(...);
+        if (if-nez) goto L_12;
+        // read $this_viewModels:Landroidx/activity/ComponentActivity;
+        ComponentActivity.getDefaultViewModelCreationExtras(...);
+        return v0;
+    }
+
+    public Object invoke() {
+        ActivityViewModelLazyKt$viewModels$4.invoke(...);
+        return v0;
+    }
+
+}
+
+// --- androidx.activity.ActivityViewModelLazyKt$viewModels$factoryPromise$1 (classes.dex) ---
+package androidx.activity;
+
+public final class ActivityViewModelLazyKt$viewModels$factoryPromise$1 extends Lambda {
+    final ComponentActivity $this_viewModels;
+
+    public ActivityViewModelLazyKt$viewModels$factoryPromise$1(ComponentActivity p0) {
+        $this_viewModels = /* iput-object */;
+        Lambda.<init>(...);
+        return;
+    }
+
+    public final ViewModelProvider$Factory invoke() {
+        // read $this_viewModels:Landroidx/activity/ComponentActivity;
+        ComponentActivity.getDefaultViewModelProviderFactory(...);
+        return v0;
+    }
+
+    public Object invoke() {
+        ActivityViewModelLazyKt$viewModels$factoryPromise$1.invoke(...);
+        return v0;
+    }
+
+}
+
+// --- androidx.activity.ActivityViewModelLazyKt$viewModels$factoryPromise$2 (classes.dex) ---
+package androidx.activity;
+
+public final class ActivityViewModelLazyKt$viewModels$factoryPromise$2 extends Lambda {
+    final ComponentActivity $this_viewModels;
+
+    public ActivityViewModelLazyKt$viewModels$factoryPromise$2(ComponentActivity p0) {
+        $this_viewModels = /* iput-object */;
+        Lambda.<init>(...);
+        return;
+    }
+
+    public final ViewModelProvider$Factory invoke() {
+        // read $this_viewModels:Landroidx/activity/ComponentActivity;
+        ComponentActivity.getDefaultViewModelProviderFactory(...);
+        return v0;
+    }
+
+    public Object invoke() {
+        ActivityViewModelLazyKt$viewModels$factoryPromise$2.invoke(...);
+        return v0;
+    }
+
+}
+
+// --- androidx.activity.Api26Impl (classes.dex) ---
+package androidx.activity;
+
+public final class Api26Impl {
+    public static final Api26Impl INSTANCE;
+
+    static <clinit>() {
+        Api26Impl.<init>(...);
+        INSTANCE = /* sput-object */;
+        return;
+    }
+
+    private Api26Impl() {
+        Object.<init>(...);
+        return;
+    }
+
+    public final void setPipParamsSourceRectHint(Activity p0, Rect p1) {
+        Intrinsics.checkNotNullParameter(...);
+        Intrinsics.checkNotNullParameter(...);
+        PictureInPictureParams$Builder.<init>(...);
+        PictureInPictureParams$Builder.setSourceRectHint(...);
+        PictureInPictureParams$Builder.build(...);
+        Activity.setPictureInPictureParams(...);
+        return;
+    }
+
+}
+
+// --- androidx.activity.Api34Impl (classes.dex) ---
+package androidx.activity;
+
+public final class Api34Impl {
+    public static final Api34Impl INSTANCE;
+
+    static <clinit>() {
+        Api34Impl.<init>(...);
+        INSTANCE = /* sput-object */;
+        return;
+    }
+
+    private Api34Impl() {
+        Object.<init>(...);
+        return;
+    }
+
+    public final BackEvent createOnBackEvent(float p0, float p1, float p2, int p3) {
+        BackEvent.<init>(...);
+        return v0;
+    }
+
+    public final float progress(BackEvent p0) {
+        Intrinsics.checkNotNullParameter(...);
+        BackEvent.getProgress(...);
+        return v0;
+    }
+
+    public final int swipeEdge(BackEvent p0) {
+        Intrinsics.checkNotNullParameter(...);
+        BackEvent.getSwipeEdge(...);
+        return v0;
+    }
+
+    public final float touchX(BackEvent p0) {
+        Intrinsics.checkNotNullParameter(...);
+        BackEvent.getTouchX(...);
+        return v0;
+    }
+
+    public final float touchY(BackEvent p0) {
+        Intrinsics.checkNotNullParameter(...);
+        BackEvent.getTouchY(...);
+        return v0;
+    }
+
+}
+
+// --- androidx.activity.BackEventCompat (classes.dex) ---
+package androidx.activity;
+
+public final class BackEventCompat {
+    public static final BackEventCompat$Companion Companion;
+    public static final int EDGE_LEFT;
+    public static final int EDGE_RIGHT;
+    private final float progress;
+    private final int swipeEdge;
+    private final float touchX;
+    private final float touchY;
+
+    static <clinit>() {
+        BackEventCompat$Companion.<init>(...);
+        Companion = /* sput-object */;
+        return;
+    }
+
+    public BackEventCompat(float p0, float p1, float p2, int p3) {
+        Object.<init>(...);
+        touchX = /* iput */;
+        touchY = /* iput */;
+        progress = /* iput */;
+        swipeEdge = /* iput */;
+        return;
+    }
+
+    public BackEventCompat(BackEvent p0) {
+        Intrinsics.checkNotNullParameter(...);
+        // read INSTANCE:Landroidx/activity/Api34Impl;
+        Api34Impl.touchX(...);
+        // read INSTANCE:Landroidx/activity/Api34Impl;
+        Api34Impl.touchY(...);
+        // read INSTANCE:Landroidx/activity/Api34Impl;
+        Api34Impl.progress(...);
+        // read INSTANCE:Landroidx/activity/Api34Impl;
+        Api34Impl.swipeEdge(...);
+        BackEventCompat.<init>(...);
+        return;
+    }
+
+    public final float getProgress() {
+        // read progress:F
+        return v0;
+    }
+
+    public final int getSwipeEdge() {
+        // read swipeEdge:I
+        return v0;
+    }
+
+    public final float getTouchX() {
+        // read touchX:F
+        return v0;
+    }
+
+    public final float getTouchY() {
+        // read touchY:F
+        return v0;
+    }
+
+    public final BackEvent toBackEvent() {
+        // read SDK_INT:I
+        if (if-lt) goto L_15;
+        // read INSTANCE:Landroidx/activity/Api34Impl;
+        // read touchX:F
+        // read touchY:F
+        // read progress:F
+        // read swipeEdge:I
+        Api34Impl.createOnBackEvent(...);
+        return v0;
+        UnsupportedOperationException.<init>(...);
+    }
+
+    public String toString() {
+        StringBuilder.<init>(...);
+        StringBuilder.append(...);
+        // read touchX:F
+        StringBuilder.append(...);
+        StringBuilder.append(...);
+        // read touchY:F
+        StringBuilder.append(...);
+        StringBuilder.append(...);
+        // read progress:F
+        StringBuilder.append(...);
+        StringBuilder.append(...);
+        // read swipeEdge:I
+        StringBuilder.append(...);
+        StringBuilder.append(...);
+        StringBuilder.toString(...);
+        return v0;
+    }
+
+}
+

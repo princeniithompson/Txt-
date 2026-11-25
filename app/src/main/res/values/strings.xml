@@ -1,0 +1,103 @@
+<resources>
+    <string name="app_name">Android Reverse IDE</string>
+
+    <!-- Navigation -->
+    <string name="nav_workspace">Workspace</string>
+    <string name="nav_tools">Tools</string>
+    <string name="nav_notes">Notes</string>
+    <string name="nav_settings">Settings</string>
+
+    <!-- Workspace -->
+    <string name="action_installed_apps">Installed Apps</string>
+    <string name="action_open_apk">Open APK</string>
+    <string name="action_ask_gemini">Ask Gemini</string>
+    <string name="action_close_workspace">Close</string>
+    <string name="action_export_apk">Export</string>
+    <string name="export_save_txt">Save report (.txt)</string>
+    <string name="export_share_txt">Share report (.txt)</string>
+    <string name="export_save_apk">Save APK (.apk)</string>
+    <string name="action_search">Search</string>
+    <string name="hint_filter_tree">Filter files</string>
+    <string name="hint_filter_apps">Filter apps</string>
+    <string name="hint_search_query">Search workspace</string>
+    <string name="filter_user_apps">User</string>
+    <string name="filter_all_apps">All</string>
+    <string name="hint_ask_gemini">Ask about this app</string>
+    <string name="action_send">Send</string>
+    <string name="action_clear">Clear</string>
+    <string name="prompt_permissions">Permissions</string>
+    <string name="prompt_components">Components</string>
+    <string name="prompt_security">Security</string>
+    <string name="prompt_explain">Explain</string>
+    <string name="stat_files">Files</string>
+    <string name="stat_classes">Classes</string>
+    <string name="stat_native">Native</string>
+    <string name="stat_edits">Edits</string>
+    <string name="dialog_close_title">Close package?</string>
+    <string name="dialog_close_body">Unsaved edits will be cleared.</string>
+    <string name="action_cancel">Cancel</string>
+    <string name="action_confirm_close">Close</string>
+    <string name="action_delete">Delete</string>
+
+    <!-- Inspector -->
+    <string name="tab_smali">Smali</string>
+    <string name="tab_java">Java</string>
+    <string name="tab_hex">Hex</string>
+    <string name="tab_cfg">CFG</string>
+    <string name="tab_calls">Calls</string>
+    <string name="action_edit">Edit</string>
+    <string name="action_save">Save</string>
+    <string name="action_copy">Copy</string>
+    <string name="action_bookmark">Bookmark</string>
+    <string name="action_outline">Outline</string>
+    <string name="label_methods">Methods</string>
+    <string name="label_fields">Fields</string>
+    <string name="label_sections">Sections</string>
+    <string name="label_security">Security</string>
+    <string name="label_depth">Depth</string>
+    <string name="legend_reads">Reads</string>
+    <string name="legend_writes">Writes</string>
+    <string name="legend_calls">Calls</string>
+
+    <!-- Tools -->
+    <string name="title_converter">Converter</string>
+    <string name="title_certificate">Certificates</string>
+    <string name="hint_input_text">Input data</string>
+    <string name="hint_xor_key">XOR key</string>
+    <string name="label_result">Output</string>
+    <string name="label_hashes">Checksums</string>
+
+    <!-- Notes & Bookmarks -->
+    <string name="title_notes">Notes</string>
+    <string name="title_bookmarks">Bookmarks</string>
+    <string name="action_new_note">New note</string>
+    <string name="hint_note_title">Title</string>
+    <string name="hint_note_body">Write note</string>
+    <string name="dialog_delete_note_title">Delete note?</string>
+    <string name="dialog_delete_note_body">This note cannot be recovered.</string>
+
+    <!-- Settings -->
+    <string name="title_settings">Settings</string>
+    <string name="section_theme">Theme</string>
+    <string name="theme_light">Light</string>
+    <string name="theme_dark">Dark</string>
+    <string name="section_editor">Editor</string>
+    <string name="label_font_size">Code size</string>
+    <string name="label_word_wrap">Wrap lines</string>
+    <string name="label_line_numbers">Line numbers</string>
+
+    <!-- Content descriptions -->
+    <string name="cd_back">Back</string>
+    <string name="cd_folder">Folder</string>
+    <string name="cd_file">File</string>
+    <string name="cd_search">Search</string>
+    <string name="cd_clear">Clear</string>
+    <string name="cd_add">Add</string>
+    <string name="cd_more">More</string>
+    <string name="cd_warning">Warning</string>
+    <string name="cd_status_good">Enabled</string>
+    <string name="cd_status_warn">Missing</string>
+    <string name="cd_reset_view">Reset view</string>
+    <string name="cd_decrease">Decrease</string>
+    <string name="cd_increase">Increase</string>
+</resources>

@@ -1,0 +1,8 @@
+{
+  "name": "Android Reverse IDE",
+  "description": "On-device Android reverse engineering environment for inspecting APKs, decoding AXML and DEX bytecode, viewing control flow and call graphs, analyzing ELF binaries, and managing analysis notes.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

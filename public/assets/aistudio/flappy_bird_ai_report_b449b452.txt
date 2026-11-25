@@ -1,0 +1,1885 @@
+====================================================================
+ANDROID APP ANALYSIS REPORT
+====================================================================
+App Name: Flappy Bird
+Package Name: epic.org.flappybird
+APK Size: 119.2 MB
+Total Files: 581
+Indexed DEX Classes: 2400
+Native Libraries (.so): 14
+
+--------------------------------------------------------------------
+1. ANDROID MANIFEST (DECODED)
+--------------------------------------------------------------------
+<?xml version="1.0" encoding="utf-8"?>
+<manifest
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  android:versionCode="21"
+  android:versionName="1.5"
+  android:installLocation="2"
+  android:compileSdkVersion="35"
+  android:compileSdkVersionCodename="15"
+  package="epic.org.flappybird"
+  platformBuildVersionCode="35"
+  platformBuildVersionName="15">
+  <uses-sdk
+    android:minSdkVersion="23"
+    android:targetSdkVersion="35">
+  </uses-sdk>
+  <supports-screens
+    android:anyDensity="true"
+    android:smallScreens="true"
+    android:normalScreens="true"
+    android:largeScreens="true"
+    android:xlargeScreens="true">
+  </supports-screens>
+  <uses-permission android:name="android.permission.INTERNET">
+  </uses-permission>
+  <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE">
+  </uses-permission>
+  <uses-feature android:glEsVersion="0x30000">
+  </uses-feature>
+  <uses-feature
+    android:name="android.hardware.vulkan.version"
+    android:required="false">
+  </uses-feature>
+  <uses-feature
+    android:name="android.hardware.touchscreen"
+    android:required="false">
+  </uses-feature>
+  <uses-feature
+    android:name="android.hardware.touchscreen.multitouch"
+    android:required="false">
+  </uses-feature>
+  <uses-feature
+    android:name="android.hardware.touchscreen.multitouch.distinct"
+    android:required="false">
+  </uses-feature>
+  <uses-permission android:name="com.google.android.gms.permission.AD_ID">
+  </uses-permission>
+  <uses-permission android:name="android.permission.ACCESS_ADSERVICES_TOPICS">
+  </uses-permission>
+  <uses-permission android:name="android.permission.ACCESS_ADSERVICES_ATTRIBUTION">
+  </uses-permission>
+  <queries>
+    <intent>
+      <action android:name="android.intent.action.VIEW">
+      </action>
+      <category android:name="android.intent.category.BROWSABLE">
+      </category>
+      <data android:scheme="https">
+      </data>
+    </intent>
+    <intent>
+      <action android:name="android.intent.action.SEND">
+      </action>
+      <data android:mimeType="*/*">
+      </data>
+    </intent>
+    <intent>
+      <action android:name="android.intent.action.SEND_MULTIPLE">
+      </action>
+      <data android:mimeType="*/*">
+      </data>
+    </intent>
+  </queries>
+  <queries>
+    <intent>
+      <action android:name="android.support.customtabs.action.CustomTabsService">
+      </action>
+    </intent>
+  </queries>
+  <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE">
+  </uses-permission>
+  <uses-permission android:name="android.permission.DOWNLOAD_WITHOUT_NOTIFICATION">
+  </uses-permission>
+  <uses-permission android:name="android.permission.ACCESS_WIFI_STATE">
+  </uses-permission>
+  <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE">
+  </uses-permission>
+  <uses-permission android:name="android.permission.WAKE_LOCK">
+  </uses-permission>
+  <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED">
+  </uses-permission>
+  <uses-permission android:name="android.permission.FOREGROUND_SERVICE">
+  </uses-permission>
+  <permission
+    android:name="epic.org.flappybird.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION"
+    android:protectionLevel="0x2">
+  </permission>
+  <uses-permission android:name="epic.org.flappybird.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION">
+  </uses-permission>
+  <application
+    android:theme="@0x7f0f010a"
+    android:label="@0x7f0e0022"
+    android:icon="@0x7f0c0000"
+    android:extractNativeLibs="true"
+    android:usesCleartextTraffic="true"
+    android:appComponentFactory="androidx.core.app.CoreComponentFactory">
+    <meta-data
+      android:name="unity.splash-mode"
+      android:value="2">
+    </meta-data>
+    <meta-data
+      android:name="unity.splash-enable"
+      android:value="true">
+    </meta-data>
+    <meta-data
+      android:name="unity.launch-fullscreen"
+      android:value="true">
+    </meta-data>
+    <meta-data
+      android:name="unity.render-outside-safearea"
+      android:value="true">
+    </meta-data>
+    <meta-data
+      android:name="notch.config"
+      android:value="portrait|landscape">
+    </meta-data>
+    <meta-data
+      android:name="unity.auto-report-fully-drawn"
+      android:value="true">
+    </meta-data>
+    <activity
+      android:theme="@0x7f0f0116"
+      android:name="com.unity3d.player.UnityPlayerActivity"
+      android:exported="true"
+      android:launchMode="2"
+      android:screenOrientation="1"
+      android:configChanges="0x40003fff"
+      android:hardwareAccelerated="false"
+      android:resizeableActivity="false">
+      <intent-filter>
+        <category android:name="android.intent.category.LAUNCHER">
+        </category>
+        <action android:name="android.intent.action.MAIN">
+        </action>
+      </intent-filter>
+      <meta-data
+        android:name="unityplayer.UnityActivity"
+        android:value="true">
+      </meta-data>
+      <meta-data
+        android:name="notch_support"
+        android:value="true">
+      </meta-data>
+    </activity>
+    <activity
+      android:theme="@0x01030007"
+      android:name="com.unity3d.services.ads.adunit.AdUnitActivity"
+      android:exported="false"
+      android:configChanges="0x40000fff"
+      android:hardwareAccelerated="true">
+    </activity>
+    <activity
+      android:theme="@0x01030011"
+      android:name="com.unity3d.services.ads.adunit.AdUnitTransparentActivity"
+      android:exported="false"
+      android:configChanges="0x40000fff"
+      android:hardwareAccelerated="true">
+    </activity>
+    <activity
+      android:theme="@0x01030011"
+      android:name="com.unity3d.services.ads.adunit.AdUnitTransparentSoftwareActivity"
+      android:exported="false"
+      android:configChanges="0x40000fff"
+      android:hardwareAccelerated="false">
+    </activity>
+    <activity
+      android:theme="@0x01030007"
+      android:name="com.unity3d.services.ads.adunit.AdUnitSoftwareActivity"
+      android:exported="false"
+      android:configChanges="0x40000fff"
+      android:hardwareAccelerated="false">
+    </activity>
+    <activity
+      android:theme="@0x01030007"
+      android:name="com.unity3d.ads.adplayer.FullScreenWebViewDisplay"
+      android:exported="false"
+      android:configChanges="0x40000fff"
+      android:hardwareAccelerated="true">
+    </activity>
+    <provider
+      android:name="androidx.startup.InitializationProvider"
+      android:exported="false"
+      android:authorities="epic.org.flappybird.androidx-startup">
+      <meta-data
+        android:name="androidx.lifecycle.ProcessLifecycleInitializer"
+        android:value="androidx.startup">
+      </meta-data>
+      <meta-data
+        android:name="com.unity3d.services.core.configuration.AdsSdkInitializer"
+        android:value="androidx.startup">
+      </meta-data>
+      <meta-data
+        android:name="androidx.work.WorkManagerInitializer"
+        android:value="androidx.startup">
+      </meta-data>
+      <meta-data
+        android:name="androidx.emoji2.text.EmojiCompatInitializer"
+        android:value="androidx.startup">
+      </meta-data>
+      <meta-data
+        android:name="androidx.profileinstaller.ProfileInstallerInitializer"
+        android:value="androidx.startup">
+      </meta-data>
+    </provider>
+    <activity
+      android:name="com.epicgames.mobile.eossdk.EOSAuthHandlerActivity"
+      android:exported="true"
+      android:configChanges="0x4a0"
+      android:noHistory="true">
+      <intent-filter>
+        <action android:name="android.intent.action.VIEW">
+        </action>
+        <category android:name="android.intent.category.DEFAULT">
+        </category>
+        <category android:name="android.intent.category.BROWSABLE">
+        </category>
+        <data android:scheme="eos.xyza7891zruizvs8tjpl44nje28hssba">
+        </data>
+      </intent-filter>
+    </activity>
+    <activity
+      android:theme="@0x7f0f010c"
+      android:name="com.yasirkula.unity.NativeShareCustomShareDialogActivity"
+      android:exported="false">
+    </activity>
+    <receiver
+      android:name="com.yasirkula.unity.NativeShareBroadcastListener"
+      android:exported="false">
+    </receiver>
+    <provider
+      android:name="com.yasirkula.unity.NativeShareContentProvider"
+      android:exported="false"
+      android:authorities="epic.org.flappybird.NativeShareContentProvider"
+      android:grantUriPermissions="true">
+    </provider>
+    <activity
+      android:theme="@0x01030010"
+      android:name="com.google.android.gms.common.api.GoogleApiActivity"
+      android:exported="false">
+    </activity>
+    <meta-data
+      android:name="com.google.android.gms.version"
+      android:value="@0x7f090004">
+    </meta-data>
+    <service
+      android:name="androidx.work.impl.background.systemalarm.SystemAlarmService"
+      android:enabled="@0x7f040002"
+      android:exported="false"
+      android:directBootAware="false">
+    </service>
+    <service
+      android:name="androidx.work.impl.background.systemjob.SystemJobService"
+      android:permission="android.permission.BIND_JOB_SERVICE"
+      android:enabled="@0x7f040004"
+      android:exported="true"
+      android:directBootAware="false">
+    </service>
+    <service
+      android:name="androidx.work.impl.foreground.SystemForegroundService"
+      android:enabled="@0x7f040003"
+      android:exported="false"
+      android:directBootAware="false">
+    </service>
+    <receiver
+      android:name="androidx.work.impl.utils.ForceStopRunnable$BroadcastReceiver"
+      android:enabled="true"
+      android:exported="false"
+      android:directBootAware="false">
+    </receiver>
+    <receiver
+      android:name="androidx.work.impl.background.systemalarm.ConstraintProxy$BatteryChargingProxy"
+      android:enabled="false"
+      android:exported="false"
+      android:directBootAware="false">
+      <intent-filter>
+        <action android:name="android.intent.action.ACTION_POWER_CONNECTED">
+        </action>
+        <action android:name="android.intent.action.ACTION_POWER_DISCONNECTED">
+        </action>
+      </intent-filter>
+    </receiver>
+    <receiver
+      android:name="androidx.work.impl.background.systemalarm.ConstraintProxy$BatteryNotLowProxy"
+      android:enabled="false"
+      android:exported="false"
+      android:directBootAware="false">
+      <intent-filter>
+        <action android:name="android.intent.action.BATTERY_OKAY">
+        </action>
+        <action android:name="android.intent.action.BATTERY_LOW">
+        </action>
+      </intent-filter>
+    </receiver>
+    <receiver
+      android:name="androidx.work.impl.background.systemalarm.ConstraintProxy$StorageNotLowProxy"
+      android:enabled="false"
+      android:exported="false"
+      android:directBootAware="false">
+      <intent-filter>
+        <action android:name="android.intent.action.DEVICE_STORAGE_LOW">
+        </action>
+        <action android:name="android.intent.action.DEVICE_STORAGE_OK">
+        </action>
+      </intent-filter>
+    </receiver>
+    <receiver
+      android:name="androidx.work.impl.background.systemalarm.ConstraintProxy$NetworkStateProxy"
+      android:enabled="false"
+      android:exported="false"
+      android:directBootAware="false">
+      <intent-filter>
+        <action android:name="android.net.conn.CONNECTIVITY_CHANGE">
+        </action>
+      </intent-filter>
+    </receiver>
+    <receiver
+      android:name="androidx.work.impl.background.systemalarm.RescheduleReceiver"
+      android:enabled="false"
+      android:exported="false"
+      android:directBootAware="false">
+      <intent-filter>
+        <action android:name="android.intent.action.BOOT_COMPLETED">
+        </action>
+        <action android:name="android.intent.action.TIME_SET">
+        </action>
+        <action android:name="android.intent.action.TIMEZONE_CHANGED">
+        </action>
+      </intent-filter>
+    </receiver>
+    <receiver
+      android:name="androidx.work.impl.background.systemalarm.ConstraintProxyUpdateReceiver"
+      android:enabled="@0x7f040002"
+      android:exported="false"
+      android:directBootAware="false">
+      <intent-filter>
+        <action android:name="androidx.work.impl.background.systemalarm.UpdateProxies">
+        </action>
+      </intent-filter>
+    </receiver>
+    <receiver
+      android:name="androidx.work.impl.diagnostics.DiagnosticsReceiver"
+      android:permission="android.permission.DUMP"
+      android:enabled="true"
+      android:exported="true"
+      android:directBootAware="false">
+      <intent-filter>
+        <action android:name="androidx.work.diagnostics.REQUEST_DIAGNOSTICS">
+        </action>
+      </intent-filter>
+    </receiver>
+    <receiver
+      android:name="androidx.profileinstaller.ProfileInstallReceiver"
+      android:permission="android.permission.DUMP"
+      android:enabled="true"
+      android:exported="true"
+      android:directBootAware="false">
+      <intent-filter>
+        <action android:name="androidx.profileinstaller.action.INSTALL_PROFILE">
+        </action>
+      </intent-filter>
+      <intent-filter>
+        <action android:name="androidx.profileinstaller.action.SKIP_FILE">
+        </action>
+      </intent-filter>
+      <intent-filter>
+        <action android:name="androidx.profileinstaller.action.SAVE_PROFILE">
+        </action>
+      </intent-filter>
+      <intent-filter>
+        <action android:name="androidx.profileinstaller.action.BENCHMARK_OPERATION">
+        </action>
+      </intent-filter>
+    </receiver>
+    <service
+      android:name="androidx.room.MultiInstanceInvalidationService"
+      android:exported="false"
+      android:directBootAware="true">
+    </service>
+  </application>
+</manifest>
+
+
+--------------------------------------------------------------------
+2. SIGNING CERTIFICATES
+--------------------------------------------------------------------
+- Source: META-INF/FLAPPYBI.RSA
+  Subject: C=\+1,ST=New York,L=New York,O=Flappy Bird Publishing,OU=Development,CN=Jameel Khan
+  Issuer: C=\+1,ST=New York,L=New York,O=Flappy Bird Publishing,OU=Development,CN=Jameel Khan
+  Algorithm: SHA1withRSA
+  Valid: 2025-01-17 to 2075-01-05
+  SHA-256: E2:73:C0:57:47:90:BC:D7:CD:C8:51:60:99:83:FE:F1:25:3F:3F:27:88:67:18:F5:25:DF:3D:9A:A4:DC:B6:D5
+
+--------------------------------------------------------------------
+3. NATIVE LIBRARIES (ELF)
+--------------------------------------------------------------------
+- lib/arm64-v8a/libEOSSDK.so (21.8 MB)
+- lib/arm64-v8a/libUnityHelpers_Android.so (34 KB) | ARM64 64-bit | PIE=true NX=true RELRO=true
+- lib/arm64-v8a/lib_burst_generated.so (189 KB) | ARM64 64-bit | PIE=true NX=true RELRO=true
+- lib/arm64-v8a/libc++_shared.so (890 KB) | ARM64 64-bit | PIE=true NX=true RELRO=true
+- lib/arm64-v8a/libil2cpp.so (76.7 MB)
+- lib/arm64-v8a/libmain.so (6 KB) | ARM64 64-bit | PIE=true NX=true RELRO=true
+- lib/arm64-v8a/libunity.so (23.9 MB)
+- lib/armeabi-v7a/libEOSSDK.so (17.2 MB)
+- lib/armeabi-v7a/libUnityHelpers_Android.so (17 KB) | ARMv7 32-bit | PIE=true NX=true RELRO=true
+- lib/armeabi-v7a/lib_burst_generated.so (183 KB) | ARMv7 32-bit | PIE=true NX=true RELRO=true
+- lib/armeabi-v7a/libc++_shared.so (541 KB) | ARMv7 32-bit | PIE=true NX=true RELRO=true
+- lib/armeabi-v7a/libil2cpp.so (64.7 MB)
+- lib/armeabi-v7a/libmain.so (8 KB) | ARMv7 32-bit | PIE=true NX=true RELRO=true
+- lib/armeabi-v7a/libunity.so (17.3 MB)
+
+--------------------------------------------------------------------
+4. ASSETS, LAYOUTS & CONFIG FILES
+--------------------------------------------------------------------
+- META-INF/FLAPPYBI.SF (67 KB)
+- META-INF/MANIFEST.MF (67 KB)
+- META-INF/androidx.activity_activity-ktx.version (6 B)
+- META-INF/androidx.activity_activity.version (6 B)
+- META-INF/androidx.annotation_annotation-experimental.version (6 B)
+- META-INF/androidx.appcompat_appcompat-resources.version (6 B)
+- META-INF/androidx.appcompat_appcompat.version (6 B)
+- META-INF/androidx.arch.core_core-runtime.version (67 B)
+- META-INF/androidx.browser_browser.version (6 B)
+- META-INF/androidx.core_core-ktx.version (6 B)
+- META-INF/androidx.core_core.version (6 B)
+- META-INF/androidx.cursoradapter_cursoradapter.version (6 B)
+- META-INF/androidx.customview_customview.version (6 B)
+- META-INF/androidx.datastore_datastore.version (6 B)
+- META-INF/androidx.drawerlayout_drawerlayout.version (6 B)
+- META-INF/androidx.emoji2_emoji2-views-helper.version (6 B)
+- META-INF/androidx.emoji2_emoji2.version (6 B)
+- META-INF/androidx.fragment_fragment.version (6 B)
+- META-INF/androidx.interpolator_interpolator.version (6 B)
+- META-INF/androidx.lifecycle_lifecycle-livedata-core.version (78 B)
+- META-INF/androidx.lifecycle_lifecycle-livedata.version (73 B)
+- META-INF/androidx.lifecycle_lifecycle-process.version (72 B)
+- META-INF/androidx.lifecycle_lifecycle-runtime-ktx.version (76 B)
+- META-INF/androidx.lifecycle_lifecycle-runtime.version (72 B)
+- META-INF/androidx.lifecycle_lifecycle-service.version (72 B)
+- META-INF/androidx.lifecycle_lifecycle-viewmodel-ktx.version (78 B)
+- META-INF/androidx.lifecycle_lifecycle-viewmodel-savedstate.version (85 B)
+- META-INF/androidx.lifecycle_lifecycle-viewmodel.version (74 B)
+- META-INF/androidx.loader_loader.version (6 B)
+- META-INF/androidx.profileinstaller_profileinstaller.version (6 B)
+- META-INF/androidx.room_room-runtime.version (6 B)
+- META-INF/androidx.savedstate_savedstate-ktx.version (6 B)
+- META-INF/androidx.savedstate_savedstate.version (6 B)
+- META-INF/androidx.security_security-crypto.version (6 B)
+- META-INF/androidx.sqlite_sqlite-framework.version (6 B)
+- META-INF/androidx.sqlite_sqlite.version (6 B)
+- META-INF/androidx.startup_startup-runtime.version (6 B)
+- META-INF/androidx.tracing_tracing.version (6 B)
+- META-INF/androidx.vectordrawable_vectordrawable-animated.version (6 B)
+- META-INF/androidx.vectordrawable_vectordrawable.version (6 B)
+- META-INF/androidx.versionedparcelable_versionedparcelable.version (6 B)
+- META-INF/androidx.viewpager_viewpager.version (6 B)
+- META-INF/androidx.webkit_webkit.version (6 B)
+- META-INF/androidx.work_work-runtime-ktx.version (6 B)
+- META-INF/androidx.work_work-runtime.version (6 B)
+- META-INF/com/android/build/gradle/app-metadata.properties (56 B)
+- META-INF/kotlinx_coroutines_android.version (5 B)
+- META-INF/kotlinx_coroutines_core.version (5 B)
+- assets/EOS/EpicOnlineServicesConfig.json (250 B)
+- assets/EOS/eos_android_config.json (1 KB)
+- assets/EOS/eos_ios_config.json (1010 B)
+- assets/EOS/eos_linux_config.json (1010 B)
+- assets/EOS/eos_macos_config.json (1009 B)
+- assets/EOS/eos_product_config.json (1 KB)
+- assets/EOS/eos_steam_config.json (201 B)
+- assets/EOS/eos_windows_config.json (1009 B)
+- assets/EOS/log_level_config.json (2 KB)
+- assets/UnityServicesProjectConfiguration.json (1 KB)
+- assets/ad-viewer/245.2c89b6e7.js (1 KB)
+- assets/ad-viewer/3.8b9677aa.js (35 KB)
+- assets/ad-viewer/44.db5552a9.js (3 KB)
+- assets/ad-viewer/ad-viewer-vendors.aa8108b8.js (624 KB)
+- assets/ad-viewer/ad-viewer.v1.37.1-ad-viewer.html (2 KB)
+- assets/ad-viewer/adViewer.3ac112b9.js (1.1 MB)
+- assets/ad-viewer/config.ad-viewer.json (175 B)
+- assets/ad-viewer/da_DK.2e412e42.js (23 KB)
+- assets/ad-viewer/de.5221b25b.js (24 KB)
+- assets/ad-viewer/es.a1bb1dd4.js (23 KB)
+- assets/ad-viewer/fi.9d322d2f.js (23 KB)
+- assets/ad-viewer/fr.c87f7f8c.js (25 KB)
+- assets/ad-viewer/is.cf86432c.js (2 KB)
+- assets/ad-viewer/it.f54da851.js (23 KB)
+- assets/ad-viewer/ja.9957fa62.js (2 KB)
+- assets/ad-viewer/ko.5d69c609.js (2 KB)
+- assets/ad-viewer/lt.2eaf757f.js (23 KB)
+- assets/ad-viewer/mraid.0.0.6.js (49 KB)
+- assets/ad-viewer/nb.9ce7e5f8.js (2 KB)
+- assets/ad-viewer/omid-session-client-v1.js (66 KB)
+- assets/ad-viewer/omsdk-v1.js (42 KB)
+- assets/ad-viewer/pt.6cff0ff1.js (24 KB)
+- assets/ad-viewer/pt_BR.040a0dc0.js (25 KB)
+- assets/ad-viewer/ro.bfcd1d07.js (2 KB)
+- assets/ad-viewer/ru.8befa1d9.js (2 KB)
+- assets/ad-viewer/sv.f2e50e63.js (22 KB)
+- assets/ad-viewer/tr.a4b783ac.js (2 KB)
+- assets/ad-viewer/zh_Hans.1cbe8a79.js (18 KB)
+- assets/ad-viewer/zh_Hant.94192f5b.js (17 KB)
+- assets/bin/Data/Managed/Metadata/global-metadata.dat (14.4 MB)
+- assets/bin/Data/Managed/Resources/Newtonsoft.Json.dll-resources.dat (900 B)
+- assets/bin/Data/Managed/Resources/System.Data.dll-resources.dat (91 KB)
+- assets/bin/Data/Managed/Resources/System.Drawing.dll-resources.dat (24 KB)
+- assets/bin/Data/Managed/Resources/mscorlib.dll-resources.dat (329 KB)
+- assets/bin/Data/RuntimeInitializeOnLoads.json (4 KB)
+- assets/bin/Data/ScriptingAssemblies.json (4 KB)
+- assets/bin/Data/boot.config (151 B)
+- assets/bin/Data/data.unity3d (33.2 MB)
+- assets/bin/Data/sharedassets0.resource (1.2 MB)
+- assets/bin/Data/sharedassets2.resource (114 KB)
+- assets/bin/Data/unity default resources (1.1 MB)
+- assets/bin/Data/unity_app_guid (36 B)
+- assets/dexopt/baseline.prof (1 KB)
+- assets/dexopt/baseline.profm (194 B)
+- build-data.properties (66 B)
+- play-services-base.properties (74 B)
+- play-services-basement.properties (82 B)
+- play-services-cronet.properties (78 B)
+- play-services-tasks.properties (76 B)
+- res/layout-v26/abc_screen_toolbar.xml (1 KB)
+- res/layout-watch/abc_alert_dialog_button_bar_material.xml (1 KB)
+- res/layout-watch/abc_alert_dialog_title_material.xml (1 KB)
+- res/layout/abc_action_bar_title_item.xml (872 B)
+- res/layout/abc_action_bar_up_container.xml (440 B)
+- res/layout/abc_action_menu_item_layout.xml (768 B)
+- res/layout/abc_action_menu_layout.xml (576 B)
+- res/layout/abc_action_mode_bar.xml (464 B)
+- res/layout/abc_action_mode_close_item_material.xml (840 B)
+- res/layout/abc_activity_chooser_view.xml (1 KB)
+- res/layout/abc_activity_chooser_view_list_item.xml (1 KB)
+- res/layout/abc_alert_dialog_button_bar_material.xml (1 KB)
+- res/layout/abc_alert_dialog_material.xml (2 KB)
+- res/layout/abc_alert_dialog_title_material.xml (1 KB)
+- res/layout/abc_cascading_menu_item_layout.xml (1 KB)
+- res/layout/abc_dialog_title_material.xml (1 KB)
+- res/layout/abc_expanded_menu_layout.xml (388 B)
+- res/layout/abc_list_menu_item_checkbox.xml (528 B)
+- res/layout/abc_list_menu_item_icon.xml (780 B)
+- res/layout/abc_list_menu_item_layout.xml (1 KB)
+- res/layout/abc_list_menu_item_radio.xml (532 B)
+- res/layout/abc_popup_menu_header_item_layout.xml (848 B)
+- res/layout/abc_popup_menu_item_layout.xml (2 KB)
+- res/layout/abc_screen_content_include.xml (548 B)
+- res/layout/abc_screen_simple.xml (832 B)
+- res/layout/abc_screen_simple_overlay_action_mode.xml (792 B)
+- res/layout/abc_screen_toolbar.xml (1 KB)
+- res/layout/abc_search_dropdown_item_icons_2line.xml (1 KB)
+- res/layout/abc_search_view.xml (3 KB)
+- res/layout/abc_select_dialog_material.xml (1020 B)
+- res/layout/abc_tooltip.xml (1 KB)
+- res/layout/browser_actions_context_menu_page.xml (1 KB)
+- res/layout/browser_actions_context_menu_row.xml (1 KB)
+- res/layout/custom_dialog.xml (612 B)
+- res/layout/native_share_custom_dialog_holder.xml (452 B)
+- res/layout/native_share_grid_element.xml (1 KB)
+- res/layout/native_share_grid_view.xml (940 B)
+- res/layout/notification_action.xml (1 KB)
+- res/layout/notification_action_tombstone.xml (1 KB)
+- res/layout/notification_template_custom_big.xml (2 KB)
+- res/layout/notification_template_icon_group.xml (988 B)
+- res/layout/notification_template_part_chronometer.xml (440 B)
+- res/layout/notification_template_part_time.xml (440 B)
+- res/layout/select_dialog_item_material.xml (640 B)
+- res/layout/select_dialog_multichoice_material.xml (864 B)
+- res/layout/select_dialog_singlechoice_material.xml (864 B)
+- res/layout/support_simple_spinner_dropdown_item.xml (464 B)
+- res/raw/keep_cronet_api.xml (156 B)
+- res/xml/eossdk_backup_rules.xml (316 B)
+- res/xml/image_share_filepaths.xml (308 B)
+
+--------------------------------------------------------------------
+5. EXTRACTED URLS, ENDPOINTS & NETWORK/STORAGE STRINGS
+--------------------------------------------------------------------
+-  To see where this was allocated, set the OkHttpClient logger level to FINE: Logger.getLogger(OkHttpClient.class.getName()).setLevel(Level.FINE);
+- Authorization
+- (Lcom/unity3d/services/core/domain/ISDKDispatchers;Lokhttp3/OkHttpClient;)V
+- (Lokhttp3/Request;JJLkotlin/coroutines/Continuation;)Ljava/lang/Object;
+- /UnityAdsWebViewConfiguration.json
+- /config.json
+
+--------------------------------------------------------------------
+6. DEX PACKAGES & CLASS INDEX
+--------------------------------------------------------------------
+Package: android.support.customtabs (12 classes)
+  ICustomTabsCallback, ICustomTabsCallback$Default, ICustomTabsCallback$Stub, ICustomTabsCallback$Stub$Proxy, ICustomTabsService, ICustomTabsService$Default, ICustomTabsService$Stub, ICustomTabsService$Stub$Proxy, IPostMessageService, IPostMessageService$Default, IPostMessageService$Stub, IPostMessageService$Stub$Proxy
+Package: android.support.customtabs.trusted (8 classes)
+  ITrustedWebActivityCallback, ITrustedWebActivityCallback$Default, ITrustedWebActivityCallback$Stub, ITrustedWebActivityCallback$Stub$Proxy, ITrustedWebActivityService, ITrustedWebActivityService$Default, ITrustedWebActivityService$Stub, ITrustedWebActivityService$Stub$Proxy
+Package: android.support.v4.app (6 classes)
+  INotificationSideChannel, INotificationSideChannel$Default, INotificationSideChannel$Stub, INotificationSideChannel$Stub$Proxy, INotificationSideChannel$_Parcel, RemoteActionCompatParcelizer
+Package: android.support.v4.graphics.drawable (1 classes)
+  IconCompatParcelizer
+Package: android.support.v4.os (9 classes)
+  IResultReceiver, IResultReceiver$Default, IResultReceiver$Stub, IResultReceiver$Stub$Proxy, IResultReceiver$_Parcel, ResultReceiver, ResultReceiver$1, ResultReceiver$MyResultReceiver, ResultReceiver$MyRunnable
+Package: androidx.activity (63 classes)
+  ActivityViewModelLazyKt, ActivityViewModelLazyKt$viewModels$1, ActivityViewModelLazyKt$viewModels$2, ActivityViewModelLazyKt$viewModels$3, ActivityViewModelLazyKt$viewModels$4, ActivityViewModelLazyKt$viewModels$factoryPromise$1, ActivityViewModelLazyKt$viewModels$factoryPromise$2, Api19Impl, Api26Impl, Cancellable, ComponentActivity, ComponentActivity$$ExternalSyntheticLambda0, ComponentActivity$$ExternalSyntheticLambda1, ComponentActivity$$ExternalSyntheticLambda2, ComponentActivity$$ExternalSyntheticLambda3, ComponentActivity$1, ComponentActivity$2, ComponentActivity$2$1, ComponentActivity$2$2, ComponentActivity$3, ComponentActivity$4, ComponentActivity$5, ComponentActivity$Api19Impl, ComponentActivity$Api33Impl, ComponentActivity$NonConfigurationInstances
+Package: androidx.activity.contextaware (6 classes)
+  ContextAware, ContextAwareHelper, ContextAwareKt, ContextAwareKt$withContextAvailable$2$1, ContextAwareKt$withContextAvailable$2$listener$1, OnContextAvailableListener
+Package: androidx.activity.ktx (1 classes)
+  R
+Package: androidx.activity.result (28 classes)
+  ActivityResult, ActivityResult$1, ActivityResultCallback, ActivityResultCaller, ActivityResultCallerKt, ActivityResultCallerKt$$ExternalSyntheticLambda0, ActivityResultCallerKt$$ExternalSyntheticLambda1, ActivityResultCallerLauncher, ActivityResultCallerLauncher$resultContract$2, ActivityResultCallerLauncher$resultContract$2$1, ActivityResultKt, ActivityResultLauncher, ActivityResultLauncherKt, ActivityResultRegistry, ActivityResultRegistry$1, ActivityResultRegistry$2, ActivityResultRegistry$3, ActivityResultRegistry$CallbackAndContract, ActivityResultRegistry$LifecycleContainer, ActivityResultRegistryOwner, IntentSenderRequest, IntentSenderRequest$Builder, IntentSenderRequest$Builder$Flag, IntentSenderRequest$Companion, IntentSenderRequest$Companion$CREATOR$1
+Package: androidx.activity.result.contract (31 classes)
+  ActivityResultContract, ActivityResultContract$SynchronousResult, ActivityResultContracts, ActivityResultContracts$CaptureVideo, ActivityResultContracts$CreateDocument, ActivityResultContracts$GetContent, ActivityResultContracts$GetMultipleContents, ActivityResultContracts$GetMultipleContents$Companion, ActivityResultContracts$OpenDocument, ActivityResultContracts$OpenDocumentTree, ActivityResultContracts$OpenMultipleDocuments, ActivityResultContracts$PickContact, ActivityResultContracts$PickMultipleVisualMedia, ActivityResultContracts$PickMultipleVisualMedia$Companion, ActivityResultContracts$PickVisualMedia, ActivityResultContracts$PickVisualMedia$Companion, ActivityResultContracts$PickVisualMedia$ImageAndVideo, ActivityResultContracts$PickVisualMedia$ImageOnly, ActivityResultContracts$PickVisualMedia$SingleMimeType, ActivityResultContracts$PickVisualMedia$VideoOnly, ActivityResultContracts$PickVisualMedia$VisualMediaType, ActivityResultContracts$RequestMultiplePermissions, ActivityResultContracts$RequestMultiplePermissions$Companion, ActivityResultContracts$RequestPermission, ActivityResultContracts$StartActivityForResult
+Package: androidx.annotation (69 classes)
+  AnimRes, AnimatorRes, AnyRes, AnyThread, ArrayRes, AttrRes, BinderThread, BoolRes, CallSuper, CheckResult, ChecksSdkIntAtLeast, ColorInt, ColorLong, ColorRes, ContentView, DimenRes, Dimension, Discouraged, DisplayContext, DoNotInline, DrawableRes, FloatRange, FontRes, FractionRes, GravityInt
+Package: androidx.annotation.experimental (4 classes)
+  Experimental, Experimental$Level, R, UseExperimental
+Package: androidx.appcompat (14 classes)
+  R, R$anim, R$attr, R$bool, R$color, R$dimen, R$drawable, R$id, R$integer, R$interpolator, R$layout, R$string, R$style, R$styleable
+Package: androidx.appcompat.app (93 classes)
+  ActionBar, ActionBar$DisplayOptions, ActionBar$LayoutParams, ActionBar$NavigationMode, ActionBar$OnMenuVisibilityListener, ActionBar$OnNavigationListener, ActionBar$Tab, ActionBar$TabListener, ActionBarDrawerToggle, ActionBarDrawerToggle$1, ActionBarDrawerToggle$Delegate, ActionBarDrawerToggle$DelegateProvider, ActionBarDrawerToggle$FrameworkActionBarDelegate, ActionBarDrawerToggle$FrameworkActionBarDelegate$Api18Impl, ActionBarDrawerToggle$ToolbarCompatDelegate, ActionBarDrawerToggleHoneycomb, ActionBarDrawerToggleHoneycomb$SetIndicatorInfo, AlertController, AlertController$1, AlertController$2, AlertController$3, AlertController$4, AlertController$5, AlertController$AlertParams, AlertController$AlertParams$1
+Package: androidx.appcompat.content.res (1 classes)
+  AppCompatResources
+Package: androidx.appcompat.graphics.drawable (18 classes)
+  AnimatedStateListDrawableCompat, AnimatedStateListDrawableCompat$1, AnimatedStateListDrawableCompat$AnimatableTransition, AnimatedStateListDrawableCompat$AnimatedStateListState, AnimatedStateListDrawableCompat$AnimatedVectorDrawableTransition, AnimatedStateListDrawableCompat$AnimationDrawableTransition, AnimatedStateListDrawableCompat$FrameInterpolator, AnimatedStateListDrawableCompat$Transition, DrawableContainer, DrawableContainer$1, DrawableContainer$Api21Impl, DrawableContainer$BlockInvalidateCallback, DrawableContainer$DrawableContainerState, DrawableWrapper, DrawerArrowDrawable, DrawerArrowDrawable$ArrowDirection, StateListDrawable, StateListDrawable$StateListState
+Package: androidx.appcompat.resources (7 classes)
+  Compatibility, Compatibility$Api15Impl, Compatibility$Api18Impl, Compatibility$Api21Impl, R, R$drawable, R$styleable
+Package: androidx.appcompat.text (1 classes)
+  AllCapsTransformationMethod
+Package: androidx.appcompat.view (18 classes)
+  ActionBarPolicy, ActionMode, ActionMode$Callback, CollapsibleActionView, ContextThemeWrapper, ContextThemeWrapper$Api17Impl, StandaloneActionMode, SupportActionModeWrapper, SupportActionModeWrapper$CallbackWrapper, SupportMenuInflater, SupportMenuInflater$InflatedOnMenuItemClickListener, SupportMenuInflater$MenuState, ViewPropertyAnimatorCompatSet, ViewPropertyAnimatorCompatSet$1, WindowCallbackWrapper, WindowCallbackWrapper$Api23Impl, WindowCallbackWrapper$Api24Impl, WindowCallbackWrapper$Api26Impl
+Package: androidx.appcompat.view.menu (46 classes)
+  ActionMenuItem, ActionMenuItemView, ActionMenuItemView$ActionMenuItemForwardingListener, ActionMenuItemView$PopupCallback, BaseMenuPresenter, BaseMenuWrapper, CascadingMenuPopup, CascadingMenuPopup$1, CascadingMenuPopup$2, CascadingMenuPopup$3, CascadingMenuPopup$3$1, CascadingMenuPopup$CascadingMenuInfo, CascadingMenuPopup$HorizPosition, ExpandedMenuView, ListMenuItemView, ListMenuPresenter, ListMenuPresenter$MenuAdapter, MenuAdapter, MenuBuilder, MenuBuilder$Callback, MenuBuilder$ItemInvoker, MenuDialogHelper, MenuHelper, MenuItemImpl, MenuItemImpl$1
+Package: androidx.appcompat.widget (237 classes)
+  AbsActionBarView, AbsActionBarView$1, AbsActionBarView$VisibilityAnimListener, ActionBarBackgroundDrawable, ActionBarBackgroundDrawable$Api21Impl, ActionBarContainer, ActionBarContainer$Api21Impl, ActionBarContextView, ActionBarContextView$1, ActionBarOverlayLayout, ActionBarOverlayLayout$1, ActionBarOverlayLayout$2, ActionBarOverlayLayout$3, ActionBarOverlayLayout$ActionBarVisibilityCallback, ActionBarOverlayLayout$LayoutParams, ActionMenuPresenter, ActionMenuPresenter$ActionButtonSubmenu, ActionMenuPresenter$ActionMenuPopupCallback, ActionMenuPresenter$OpenOverflowRunnable, ActionMenuPresenter$OverflowMenuButton, ActionMenuPresenter$OverflowMenuButton$1, ActionMenuPresenter$OverflowPopup, ActionMenuPresenter$PopupPresenterCallback, ActionMenuPresenter$SavedState, ActionMenuPresenter$SavedState$1
+Package: androidx.arch.core (1 classes)
+  R
+Package: androidx.arch.core.executor (7 classes)
+  ArchTaskExecutor, ArchTaskExecutor$$ExternalSyntheticLambda0, ArchTaskExecutor$$ExternalSyntheticLambda1, DefaultTaskExecutor, DefaultTaskExecutor$1, DefaultTaskExecutor$Api28Impl, TaskExecutor
+Package: androidx.arch.core.internal (8 classes)
+  FastSafeIterableMap, SafeIterableMap, SafeIterableMap$AscendingIterator, SafeIterableMap$DescendingIterator, SafeIterableMap$Entry, SafeIterableMap$IteratorWithAdditions, SafeIterableMap$ListIterator, SafeIterableMap$SupportRemove
+Package: androidx.arch.core.util (1 classes)
+  Function
+Package: androidx.browser (7 classes)
+  R, R$color, R$dimen, R$id, R$layout, R$string, R$xml
+Package: androidx.browser.browseractions (22 classes)
+  BrowserActionItem, BrowserActionsFallbackMenuAdapter, BrowserActionsFallbackMenuAdapter$1, BrowserActionsFallbackMenuAdapter$2, BrowserActionsFallbackMenuAdapter$ViewHolderItem, BrowserActionsFallbackMenuDialog, BrowserActionsFallbackMenuDialog$1, BrowserActionsFallbackMenuUi, BrowserActionsFallbackMenuUi$1, BrowserActionsFallbackMenuUi$2, BrowserActionsFallbackMenuUi$3, BrowserActionsFallbackMenuUi$BrowserActionsFallMenuUiListener, BrowserActionsFallbackMenuView, BrowserActionsIntent, BrowserActionsIntent$BrowserActionsFallDialogListener, BrowserActionsIntent$BrowserActionsItemId, BrowserActionsIntent$BrowserActionsUrlType, BrowserActionsIntent$Builder, BrowserServiceFileProvider, BrowserServiceFileProvider$1, BrowserServiceFileProvider$FileCleanupTask, BrowserServiceFileProvider$FileSaveTask
+Package: androidx.browser.customtabs (34 classes)
+  CustomTabColorSchemeParams, CustomTabColorSchemeParams$Builder, CustomTabsCallback, CustomTabsClient, CustomTabsClient$1, CustomTabsClient$2, CustomTabsClient$2$1, CustomTabsClient$2$2, CustomTabsClient$2$3, CustomTabsClient$2$4, CustomTabsClient$2$5, CustomTabsIntent, CustomTabsIntent$Builder, CustomTabsIntent$ColorScheme, CustomTabsIntent$ShareState, CustomTabsService, CustomTabsService$1, CustomTabsService$1$$ExternalSyntheticLambda0, CustomTabsService$FilePurpose, CustomTabsService$Relation, CustomTabsService$Result, CustomTabsServiceConnection, CustomTabsServiceConnection$1, CustomTabsSession, CustomTabsSession$MockSession
+Package: androidx.browser.trusted (36 classes)
+  ConnectionHolder, ConnectionHolder$$ExternalSyntheticLambda0, ConnectionHolder$WrapperFactory, FutureUtils, NotificationApiHelperForM, NotificationApiHelperForO, PackageIdentityUtils, PackageIdentityUtils$Api28Implementation, PackageIdentityUtils$Pre28Implementation, PackageIdentityUtils$SignaturesCompat, ScreenOrientation, ScreenOrientation$LockType, Token, TokenContents, TokenContents$$ExternalSyntheticLambda0, TokenStore, TrustedWebActivityCallback, TrustedWebActivityCallbackRemote, TrustedWebActivityDisplayMode, TrustedWebActivityDisplayMode$-CC, TrustedWebActivityDisplayMode$DefaultMode, TrustedWebActivityDisplayMode$ImmersiveMode, TrustedWebActivityIntent, TrustedWebActivityIntentBuilder, TrustedWebActivityService
+Package: androidx.browser.trusted.sharing (6 classes)
+  ShareData, ShareTarget, ShareTarget$EncodingType, ShareTarget$FileFormField, ShareTarget$Params, ShareTarget$RequestMethod
+Package: androidx.browser.trusted.splashscreens (2 classes)
+  SplashScreenParamKey, SplashScreenVersion
+Package: androidx.collection (17 classes)
+  ArrayMap, ArrayMap$1, ArraySet, ArraySet$1, CircularArray, CircularIntArray, ContainerHelpers, LongSparseArray, LruCache, MapCollections, MapCollections$ArrayIterator, MapCollections$EntrySet, MapCollections$KeySet, MapCollections$MapIterator, MapCollections$ValuesCollection, SimpleArrayMap, SparseArrayCompat
+Package: androidx.concurrent.futures (19 classes)
+  AbstractResolvableFuture, AbstractResolvableFuture$1, AbstractResolvableFuture$AtomicHelper, AbstractResolvableFuture$Cancellation, AbstractResolvableFuture$Failure, AbstractResolvableFuture$Failure$1, AbstractResolvableFuture$Listener, AbstractResolvableFuture$SafeAtomicHelper, AbstractResolvableFuture$SetFuture, AbstractResolvableFuture$SynchronizedHelper, AbstractResolvableFuture$Waiter, CallbackToFutureAdapter, CallbackToFutureAdapter$Completer, CallbackToFutureAdapter$FutureGarbageCollectedException, CallbackToFutureAdapter$Resolver, CallbackToFutureAdapter$SafeFuture, CallbackToFutureAdapter$SafeFuture$1, DirectExecutor, ResolvableFuture
+Package: androidx.constraintlayout.core (19 classes)
+  ArrayLinkedVariables, ArrayRow, ArrayRow$ArrayRowVariables, Cache, GoalRow, LinearSystem, LinearSystem$Row, LinearSystem$ValuesRow, Metrics, Pools, Pools$Pool, Pools$SimplePool, PriorityGoalRow, PriorityGoalRow$1, PriorityGoalRow$GoalVariableAccessor, SolverVariable, SolverVariable$1, SolverVariable$Type, SolverVariableValues
+Package: androidx.constraintlayout.core.motion (11 classes)
+  CustomAttribute, CustomAttribute$1, CustomAttribute$AttributeType, CustomVariable, Motion, Motion$1, MotionConstrainedPoint, MotionPaths, MotionWidget, MotionWidget$Motion, MotionWidget$PropertySet
+Package: androidx.constraintlayout.core.motion.key (7 classes)
+  MotionConstraintSet, MotionKey, MotionKeyAttributes, MotionKeyCycle, MotionKeyPosition, MotionKeyTimeCycle, MotionKeyTrigger
+Package: androidx.constraintlayout.core.motion.parse (5 classes)
+  KeyParser, KeyParser$$ExternalSyntheticLambda0, KeyParser$$ExternalSyntheticLambda1, KeyParser$DataType, KeyParser$Ids
+Package: androidx.constraintlayout.core.motion.utils (64 classes)
+  ArcCurveFit, ArcCurveFit$Arc, CurveFit, CurveFit$Constant, DifferentialInterpolator, Easing, Easing$CubicEasing, FloatRect, HyperSpline, HyperSpline$Cubic, KeyCache, KeyCycleOscillator, KeyCycleOscillator$1, KeyCycleOscillator$CoreSpline, KeyCycleOscillator$CycleOscillator, KeyCycleOscillator$IntDoubleSort, KeyCycleOscillator$IntFloatFloatSort, KeyCycleOscillator$PathRotateSet, KeyCycleOscillator$WavePoint, KeyFrameArray, KeyFrameArray$CustomArray, KeyFrameArray$CustomVar, KeyFrameArray$FloatArray, LinearCurveFit, MonotonicCurveFit
+Package: androidx.constraintlayout.core.parser (15 classes)
+  CLArray, CLContainer, CLElement, CLKey, CLNumber, CLObject, CLObject$CLObjectIterator, CLParser, CLParser$1, CLParser$TYPE, CLParsingException, CLString, CLToken, CLToken$1, CLToken$Type
+Package: androidx.constraintlayout.core.state (29 classes)
+  ConstraintReference, ConstraintReference$1, ConstraintReference$ConstraintReferenceFactory, ConstraintReference$IncorrectConstraintException, Dimension, Dimension$Type, HelperReference, Interpolator, Reference, Registry, RegistryCallback, State, State$1, State$Chain, State$Constraint, State$Direction, State$Helper, Transition, Transition$$ExternalSyntheticLambda0, Transition$$ExternalSyntheticLambda1, Transition$$ExternalSyntheticLambda2, Transition$$ExternalSyntheticLambda3, Transition$$ExternalSyntheticLambda4, Transition$$ExternalSyntheticLambda5, Transition$$ExternalSyntheticLambda6
+Package: androidx.constraintlayout.core.state.helpers (11 classes)
+  AlignHorizontallyReference, AlignVerticallyReference, BarrierReference, BarrierReference$1, ChainReference, Facade, GuidelineReference, HorizontalChainReference, HorizontalChainReference$1, VerticalChainReference, VerticalChainReference$1
+Package: androidx.constraintlayout.core.widgets (21 classes)
+  Barrier, Chain, ChainHead, ConstraintAnchor, ConstraintAnchor$1, ConstraintAnchor$Type, ConstraintWidget, ConstraintWidget$1, ConstraintWidget$DimensionBehaviour, ConstraintWidgetContainer, Flow, Flow$WidgetsList, Guideline, Guideline$1, Helper, HelperWidget, Optimizer, Placeholder, Rectangle, VirtualLayout, WidgetContainer
+Package: androidx.constraintlayout.core.widgets.analyzer (24 classes)
+  BaselineDimensionDependency, BasicMeasure, BasicMeasure$Measure, BasicMeasure$Measurer, ChainRun, Dependency, DependencyGraph, DependencyNode, DependencyNode$Type, DimensionDependency, Direct, Grouping, GuidelineReference, HelperReferences, HorizontalWidgetRun, HorizontalWidgetRun$1, RunGroup, VerticalWidgetRun, VerticalWidgetRun$1, WidgetGroup, WidgetGroup$MeasureResult, WidgetRun, WidgetRun$1, WidgetRun$RunType
+Package: androidx.constraintlayout.helper.widget (10 classes)
+  Carousel, Carousel$$ExternalSyntheticLambda0, Carousel$1, Carousel$1$1, Carousel$Adapter, CircularFlow, Flow, Layer, MotionEffect, MotionPlaceholder
+Package: androidx.constraintlayout.motion.utils (48 classes)
+  CustomSupport, CustomSupport$1, StopLogic, ViewOscillator, ViewOscillator$AlphaSet, ViewOscillator$CustomSet, ViewOscillator$ElevationSet, ViewOscillator$PathRotateSet, ViewOscillator$ProgressSet, ViewOscillator$RotationSet, ViewOscillator$RotationXset, ViewOscillator$RotationYset, ViewOscillator$ScaleXset, ViewOscillator$ScaleYset, ViewOscillator$TranslationXset, ViewOscillator$TranslationYset, ViewOscillator$TranslationZset, ViewSpline, ViewSpline$AlphaSet, ViewSpline$CustomSet, ViewSpline$ElevationSet, ViewSpline$PathRotate, ViewSpline$PivotXset, ViewSpline$PivotYset, ViewSpline$ProgressSet
+Package: androidx.constraintlayout.motion.widget (47 classes)
+  Animatable, CustomFloatAttributes, Debug, DesignTool, FloatLayout, Key, KeyAttributes, KeyAttributes$Loader, KeyCycle, KeyCycle$Loader, KeyFrames, KeyPosition, KeyPosition$Loader, KeyPositionBase, KeyTimeCycle, KeyTimeCycle$Loader, KeyTrigger, KeyTrigger$Loader, MotionConstrainedPoint, MotionController, MotionController$1, MotionHelper, MotionHelperInterface, MotionInterpolator, MotionLayout
+Package: androidx.constraintlayout.widget (3 classes)
+  ConstraintHelper, ConstraintLayout, VirtualLayout
+Package: androidx.core.app (8 classes)
+  ActivityCompat$OnRequestPermissionsResultCallback, ActivityCompat$RequestPermissionsRequestCodeValidator, ComponentActivity, OnMultiWindowModeChangedProvider, OnNewIntentProvider, OnPictureInPictureModeChangedProvider, RemoteActionCompatParcelizer, TaskStackBuilder$SupportParentable
+Package: androidx.core.content (3 classes)
+  FileProvider, OnConfigurationChangedProvider, OnTrimMemoryProvider
+Package: androidx.core.content.res (1 classes)
+  ResourcesCompat$FontCallback
+Package: androidx.core.graphics.drawable (2 classes)
+  IconCompatParcelizer, TintAwareDrawable
+Package: androidx.core.internal.view (2 classes)
+  SupportMenu, SupportMenuItem
+Package: androidx.core.view (14 classes)
+  ActionProvider, ActionProvider$SubUiVisibilityListener, ActionProvider$VisibilityListener, KeyEventDispatcher$Component, MenuHost, NestedScrollingParent, NestedScrollingParent2, NestedScrollingParent3, OnApplyWindowInsetsListener, OnReceiveContentViewBehavior, TintableBackgroundView, ViewPropertyAnimatorListener, ViewPropertyAnimatorListenerAdapter, ViewPropertyAnimatorUpdateListener
+Package: androidx.core.widget (6 classes)
+  AutoSizeableTextView, NestedScrollView$OnScrollChangeListener, TintableCheckedTextView, TintableCompoundButton, TintableCompoundDrawablesView, TintableImageSourceView
+Package: androidx.cursoradapter.widget (3 classes)
+  CursorAdapter, CursorFilter$CursorFilterClient, ResourceCursorAdapter
+Package: androidx.customview.view (1 classes)
+  AbsSavedState
+Package: androidx.drawerlayout.widget (1 classes)
+  DrawerLayout$DrawerListener
+Package: androidx.emoji2.text (1 classes)
+  EmojiCompat$InitCallback
+Package: androidx.fragment.app (3 classes)
+  DialogFragment, Fragment, FragmentActivity
+Package: androidx.lifecycle (5 classes)
+  HasDefaultViewModelProviderFactory, LifecycleEventObserver, LifecycleObserver, LifecycleOwner, ViewModelStoreOwner
+Package: androidx.savedstate (2 classes)
+  SavedStateRegistry$SavedStateProvider, SavedStateRegistryOwner
+Package: com.google.common.util.concurrent (1 classes)
+  ListenableFuture
+Package: gatewayprotocol.v1 (546 classes)
+  AdDataRefreshRequestKt, AdDataRefreshRequestKt$Dsl, AdDataRefreshRequestKt$Dsl$Companion, AdDataRefreshRequestKtKt, AdDataRefreshRequestOuterClass, AdDataRefreshRequestOuterClass$1, AdDataRefreshRequestOuterClass$AdDataRefreshRequest, AdDataRefreshRequestOuterClass$AdDataRefreshRequest$Builder, AdDataRefreshRequestOuterClass$AdDataRefreshRequestOrBuilder, AdDataRefreshResponseKt, AdDataRefreshResponseKt$Dsl, AdDataRefreshResponseKt$Dsl$Companion, AdDataRefreshResponseKtKt, AdDataRefreshResponseOuterClass, AdDataRefreshResponseOuterClass$1, AdDataRefreshResponseOuterClass$AdDataRefreshResponse, AdDataRefreshResponseOuterClass$AdDataRefreshResponse$Builder, AdDataRefreshResponseOuterClass$AdDataRefreshResponseOrBuilder, AdOperationsConfigurationKt, AdOperationsConfigurationKt$Dsl, AdOperationsConfigurationKt$Dsl$Companion, AdOperationsConfigurationKtKt, AdPlayerConfigRequestKt, AdPlayerConfigRequestKt$Dsl, AdPlayerConfigRequestKt$Dsl$Companion
+Package: kotlin (113 classes)
+  ArrayIntrinsicsKt, BuilderInference, CharCodeJVMKt, CharCodeKt, CompareToKt, ContextFunctionTypeParams, DeepRecursiveFunction, DeepRecursiveKt, DeepRecursiveScope, DeepRecursiveScopeImpl, DeepRecursiveScopeImpl$crossFunctionCompletion$$inlined$Continuation$1, Deprecated, DeprecatedSinceKotlin, DeprecationLevel, DslMarker, ExceptionsKt, ExceptionsKt__ExceptionsKt, ExperimentalMultiplatform, ExperimentalStdlibApi, ExperimentalSubclassOptIn, ExperimentalUnsignedTypes, ExtensionFunctionType, Function, HashCodeKt, InitializedLazyImpl
+Package: kotlin.annotation (6 classes)
+  AnnotationRetention, AnnotationTarget, MustBeDocumented, Repeatable, Retention, Target
+Package: kotlin.collections (132 classes)
+  AbstractCollection, AbstractCollection$toString$1, AbstractIterator, AbstractIterator$WhenMappings, AbstractList, AbstractList$Companion, AbstractList$IteratorImpl, AbstractList$ListIteratorImpl, AbstractList$SubList, AbstractMap, AbstractMap$Companion, AbstractMap$keys$1, AbstractMap$keys$1$iterator$1, AbstractMap$toString$1, AbstractMap$values$1, AbstractMap$values$1$iterator$1, AbstractMutableCollection, AbstractMutableList, AbstractMutableMap, AbstractMutableSet, AbstractSet, AbstractSet$Companion, ArrayAsCollection, ArrayDeque, ArrayDeque$Companion
+Package: kotlin.collections.builders (19 classes)
+  AbstractMapBuilderEntrySet, ListBuilder, ListBuilder$Itr, ListBuilderKt, MapBuilder, MapBuilder$Companion, MapBuilder$EntriesItr, MapBuilder$EntryRef, MapBuilder$Itr, MapBuilder$KeysItr, MapBuilder$ValuesItr, MapBuilderEntries, MapBuilderKeys, MapBuilderValues, SerializedCollection, SerializedCollection$Companion, SerializedMap, SerializedMap$Companion, SetBuilder
+Package: kotlin.collections.jdk8 (1 classes)
+  CollectionsJDK8Kt
+Package: kotlin.collections.unsigned (11 classes)
+  UArraysKt, UArraysKt___UArraysJvmKt, UArraysKt___UArraysJvmKt$asList$1, UArraysKt___UArraysJvmKt$asList$2, UArraysKt___UArraysJvmKt$asList$3, UArraysKt___UArraysJvmKt$asList$4, UArraysKt___UArraysKt, UArraysKt___UArraysKt$withIndex$1, UArraysKt___UArraysKt$withIndex$2, UArraysKt___UArraysKt$withIndex$3, UArraysKt___UArraysKt$withIndex$4
+Package: kotlin.comparisons (23 classes)
+  ComparisonsKt, ComparisonsKt__ComparisonsKt, ComparisonsKt__ComparisonsKt$$ExternalSyntheticLambda0, ComparisonsKt__ComparisonsKt$$ExternalSyntheticLambda1, ComparisonsKt__ComparisonsKt$$ExternalSyntheticLambda2, ComparisonsKt__ComparisonsKt$$ExternalSyntheticLambda3, ComparisonsKt__ComparisonsKt$$ExternalSyntheticLambda4, ComparisonsKt__ComparisonsKt$compareBy$2, ComparisonsKt__ComparisonsKt$compareBy$3, ComparisonsKt__ComparisonsKt$compareByDescending$1, ComparisonsKt__ComparisonsKt$compareByDescending$2, ComparisonsKt__ComparisonsKt$thenBy$1, ComparisonsKt__ComparisonsKt$thenBy$2, ComparisonsKt__ComparisonsKt$thenByDescending$1, ComparisonsKt__ComparisonsKt$thenByDescending$2, ComparisonsKt__ComparisonsKt$thenComparator$1, ComparisonsKt___ComparisonsJvmKt, ComparisonsKt___ComparisonsKt, NaturalOrderComparator, ReverseOrderComparator, ReversedComparator, UComparisonsKt, UComparisonsKt___UComparisonsKt
+Package: kotlin.concurrent (5 classes)
+  LocksKt, ThreadsKt, ThreadsKt$thread$thread$1, TimersKt, TimersKt$timerTask$1
+Package: kotlin.contracts (11 classes)
+  CallsInPlace, ConditionalEffect, ContractBuilder, ContractBuilder$DefaultImpls, ContractBuilderKt, Effect, ExperimentalContracts, InvocationKind, Returns, ReturnsNotNull, SimpleEffect
+Package: kotlin.coroutines (24 classes)
+  AbstractCoroutineContextElement, AbstractCoroutineContextKey, CombinedContext, CombinedContext$Serialized, CombinedContext$Serialized$Companion, CombinedContext$toString$1, CombinedContext$writeReplace$1, Continuation, ContinuationInterceptor, ContinuationInterceptor$DefaultImpls, ContinuationInterceptor$Key, ContinuationKt, ContinuationKt$Continuation$1, CoroutineContext, CoroutineContext$DefaultImpls, CoroutineContext$Element, CoroutineContext$Element$DefaultImpls, CoroutineContext$Key, CoroutineContext$plus$1, CoroutineContextImplKt, EmptyCoroutineContext, RestrictsSuspension, SafeContinuation, SafeContinuation$Companion
+Package: kotlin.coroutines.cancellation (1 classes)
+  CancellationExceptionKt
+Package: kotlin.coroutines.intrinsics (10 classes)
+  CoroutineSingletons, IntrinsicsKt, IntrinsicsKt__IntrinsicsJvmKt, IntrinsicsKt__IntrinsicsJvmKt$createCoroutineFromSuspendFunction$1, IntrinsicsKt__IntrinsicsJvmKt$createCoroutineFromSuspendFunction$2, IntrinsicsKt__IntrinsicsJvmKt$createCoroutineUnintercepted$$inlined$createCoroutineFromSuspendFunction$IntrinsicsKt__IntrinsicsJvmKt$1, IntrinsicsKt__IntrinsicsJvmKt$createCoroutineUnintercepted$$inlined$createCoroutineFromSuspendFunction$IntrinsicsKt__IntrinsicsJvmKt$2, IntrinsicsKt__IntrinsicsJvmKt$createCoroutineUnintercepted$$inlined$createCoroutineFromSuspendFunction$IntrinsicsKt__IntrinsicsJvmKt$3, IntrinsicsKt__IntrinsicsJvmKt$createCoroutineUnintercepted$$inlined$createCoroutineFromSuspendFunction$IntrinsicsKt__IntrinsicsJvmKt$4, IntrinsicsKt__IntrinsicsKt
+Package: kotlin.coroutines.jvm.internal (16 classes)
+  BaseContinuationImpl, Boxing, CompletedContinuation, ContinuationImpl, CoroutineStackFrame, DebugMetadata, DebugMetadataKt, DebugProbesKt, ModuleNameRetriever, ModuleNameRetriever$Cache, RestrictedContinuationImpl, RestrictedSuspendLambda, RunSuspend, RunSuspendKt, SuspendFunction, SuspendLambda
+Package: kotlin.enums (6 classes)
+  EnumEntries, EnumEntriesKt, EnumEntriesKt$enumEntries$1, EnumEntriesList, EnumEntriesSerializationProxy, EnumEntriesSerializationProxy$Companion
+Package: kotlin.experimental (4 classes)
+  BitwiseOperationsKt, ExperimentalObjCName, ExperimentalObjCRefinement, ExperimentalTypeInference
+Package: kotlin.internal (20 classes)
+  AccessibleLateinitPropertyLiteral, ContractsDsl, DynamicExtension, Exact, HidesMembers, InlineOnly, IntrinsicConstEvaluation, LowPriorityInOverloadResolution, NoInfer, OnlyInputTypes, PlatformDependent, PlatformImplementations, PlatformImplementations$ReflectThrowable, PlatformImplementationsKt, ProgressionUtilKt, PureReifiable, RequireKotlin, RequireKotlin$Container, RequireKotlinVersionKind, UProgressionUtilKt
+Package: kotlin.internal.jdk7 (2 classes)
+  JDK7PlatformImplementations, JDK7PlatformImplementations$ReflectSdkVersion
+Package: kotlin.internal.jdk8 (2 classes)
+  JDK8PlatformImplementations, JDK8PlatformImplementations$ReflectSdkVersion
+Package: kotlin.io (38 classes)
+  AccessDeniedException, ByteStreamsKt, ByteStreamsKt$iterator$1, CloseableKt, ConsoleKt, ConstantsKt, ExceptionsKt, ExposingBufferByteArrayOutputStream, FileAlreadyExistsException, FilePathComponents, FileSystemException, FileTreeWalk, FileTreeWalk$DirectoryState, FileTreeWalk$FileTreeWalkIterator, FileTreeWalk$FileTreeWalkIterator$BottomUpDirectoryState, FileTreeWalk$FileTreeWalkIterator$SingleFileState, FileTreeWalk$FileTreeWalkIterator$TopDownDirectoryState, FileTreeWalk$FileTreeWalkIterator$WhenMappings, FileTreeWalk$WalkState, FileWalkDirection, FilesKt, FilesKt__FilePathComponentsKt, FilesKt__FileReadWriteKt, FilesKt__FileReadWriteKt$readLines$1, FilesKt__FileTreeWalkKt
+Package: kotlin.io.path (32 classes)
+  CopyActionContext, CopyActionResult, DefaultCopyActionContext, DirectoryEntriesReader, ExceptionsCollector, ExperimentalPathApi, FileVisitorBuilder, FileVisitorBuilderImpl, FileVisitorImpl, LinkFollowing, OnErrorResult, PathNode, PathRelativizer, PathTreeWalk, PathTreeWalk$bfsIterator$1, PathTreeWalk$dfsIterator$1, PathTreeWalkKt, PathWalkOption, PathsKt, PathsKt__PathReadWriteKt, PathsKt__PathRecursiveFunctionsKt, PathsKt__PathRecursiveFunctionsKt$WhenMappings, PathsKt__PathRecursiveFunctionsKt$copyToRecursively$1, PathsKt__PathRecursiveFunctionsKt$copyToRecursively$2, PathsKt__PathRecursiveFunctionsKt$copyToRecursively$3
+Package: kotlin.jdk7 (1 classes)
+  AutoCloseableKt
+Package: kotlin.js (1 classes)
+  ExperimentalJsExport
+Package: kotlin.jvm (23 classes)
+  JvmClassMappingKt, JvmDefault, JvmDefaultWithCompatibility, JvmDefaultWithoutCompatibility, JvmField, JvmInline, JvmMultifileClass, JvmName, JvmOverloads, JvmPackageName, JvmRecord, JvmSerializableLambda, JvmStatic, JvmSuppressWildcards, JvmSynthetic, JvmWildcard, KotlinReflectionNotSupportedError, PurelyImplements, Strictfp, Synchronized, Throws, Transient, Volatile
+Package: kotlin.jvm.functions (24 classes)
+  Function0, Function1, Function10, Function11, Function12, Function13, Function14, Function15, Function16, Function17, Function18, Function19, Function2, Function20, Function21, Function22, Function3, Function4, Function5, Function6, Function7, Function8, Function9, FunctionN
+Package: kotlin.jvm.internal (92 classes)
+  AdaptedFunctionReference, ArrayBooleanIterator, ArrayByteIterator, ArrayCharIterator, ArrayDoubleIterator, ArrayFloatIterator, ArrayIntIterator, ArrayIterator, ArrayIteratorKt, ArrayIteratorsKt, ArrayLongIterator, ArrayShortIterator, BooleanCompanionObject, BooleanSpreadBuilder, ByteCompanionObject, ByteSpreadBuilder, CallableReference, CallableReference$NoReceiver, CharCompanionObject, CharSpreadBuilder, ClassBasedDeclarationContainer, ClassReference, ClassReference$Companion, CollectionToArray, DefaultConstructorMarker
+Package: kotlin.jvm.internal.markers (9 classes)
+  KMappedMarker, KMutableCollection, KMutableIterable, KMutableIterator, KMutableList, KMutableListIterator, KMutableMap, KMutableMap$Entry, KMutableSet
+Package: kotlin.jvm.internal.unsafe (1 classes)
+  MonitorKt
+Package: kotlin.jvm.jdk8 (1 classes)
+  JvmRepeatableKt
+Package: kotlin.jvm.optionals (1 classes)
+  OptionalsKt
+Package: kotlin.math (5 classes)
+  Constants, MathKt, MathKt__MathHKt, MathKt__MathJVMKt, UMathKt
+Package: kotlin.properties (3 classes)
+  ObservableProperty, ReadOnlyProperty, ReadWriteProperty
+Package: kotlin.reflect (16 classes)
+  KAnnotatedElement, KCallable, KClass, KClassifier, KDeclarationContainer, KFunction, KMutableProperty, KMutableProperty0, KMutableProperty1, KMutableProperty2, KProperty, KProperty0, KProperty1, KProperty2, KType, KTypeParameter
+Package: kotlin.sequences (1 classes)
+  Sequence
+
+--------------------------------------------------------------------
+7. KEY CLASS CODE OVERVIEW (DECOMPILED PSEUDO-JAVA)
+--------------------------------------------------------------------
+// --- android.support.customtabs.ICustomTabsService (classes.dex) ---
+package android.support.customtabs;
+
+public abstract class ICustomTabsService {
+    public abstract Bundle extraCommand(String p0, Bundle p1) {
+        // native or abstract
+    }
+
+    public abstract boolean mayLaunchUrl(ICustomTabsCallback p0, Uri p1, Bundle p2, List p3) {
+        // native or abstract
+    }
+
+    public abstract boolean newSession(ICustomTabsCallback p0) {
+        // native or abstract
+    }
+
+    public abstract boolean newSessionWithExtras(ICustomTabsCallback p0, Bundle p1) {
+        // native or abstract
+    }
+
+    public abstract int postMessage(ICustomTabsCallback p0, String p1, Bundle p2) {
+        // native or abstract
+    }
+
+    public abstract boolean receiveFile(ICustomTabsCallback p0, Uri p1, int p2, Bundle p3) {
+        // native or abstract
+    }
+
+    public abstract boolean requestPostMessageChannel(ICustomTabsCallback p0, Uri p1) {
+        // native or abstract
+    }
+
+    public abstract boolean requestPostMessageChannelWithExtras(ICustomTabsCallback p0, Uri p1, Bundle p2) {
+        // native or abstract
+    }
+
+    public abstract boolean updateVisuals(ICustomTabsCallback p0, Bundle p1) {
+        // native or abstract
+    }
+
+    public abstract boolean validateRelationship(ICustomTabsCallback p0, int p1, Uri p2, Bundle p3) {
+        // native or abstract
+    }
+
+    public abstract boolean warmup(long p0) {
+        // native or abstract
+    }
+
+}
+
+// --- android.support.customtabs.ICustomTabsService$Default (classes.dex) ---
+package android.support.customtabs;
+
+public class ICustomTabsService$Default {
+    public ICustomTabsService$Default() {
+        Object.<init>(...);
+        return;
+    }
+
+    public IBinder asBinder() {
+        return v0;
+    }
+
+    public Bundle extraCommand(String p0, Bundle p1) {
+        return v1;
+    }
+
+    public boolean mayLaunchUrl(ICustomTabsCallback p0, Uri p1, Bundle p2, List p3) {
+        return v1;
+    }
+
+    public boolean newSession(ICustomTabsCallback p0) {
+        return v1;
+    }
+
+    public boolean newSessionWithExtras(ICustomTabsCallback p0, Bundle p1) {
+        return v1;
+    }
+
+    public int postMessage(ICustomTabsCallback p0, String p1, Bundle p2) {
+        return v1;
+    }
+
+    public boolean receiveFile(ICustomTabsCallback p0, Uri p1, int p2, Bundle p3) {
+        return v1;
+    }
+
+    public boolean requestPostMessageChannel(ICustomTabsCallback p0, Uri p1) {
+        return v1;
+    }
+
+    public boolean requestPostMessageChannelWithExtras(ICustomTabsCallback p0, Uri p1, Bundle p2) {
+        return v1;
+    }
+
+    public boolean updateVisuals(ICustomTabsCallback p0, Bundle p1) {
+        return v1;
+    }
+
+    public boolean validateRelationship(ICustomTabsCallback p0, int p1, Uri p2, Bundle p3) {
+        return v1;
+    }
+
+    public boolean warmup(long p0) {
+        return v1;
+    }
+
+}
+
+// --- android.support.customtabs.ICustomTabsService$Stub (classes.dex) ---
+package android.support.customtabs;
+
+public abstract class ICustomTabsService$Stub extends Binder {
+    private static final String DESCRIPTOR;
+    static final int TRANSACTION_extraCommand;
+    static final int TRANSACTION_mayLaunchUrl;
+    static final int TRANSACTION_newSession;
+    static final int TRANSACTION_newSessionWithExtras;
+    static final int TRANSACTION_postMessage;
+    static final int TRANSACTION_receiveFile;
+    static final int TRANSACTION_requestPostMessageChannel;
+    static final int TRANSACTION_requestPostMessageChannelWithExtras;
+    static final int TRANSACTION_updateVisuals;
+    static final int TRANSACTION_validateRelationship;
+    static final int TRANSACTION_warmup;
+
+    public ICustomTabsService$Stub() {
+        Binder.<init>(...);
+        ICustomTabsService$Stub.attachInterface(...);
+        return;
+    }
+
+    public static ICustomTabsService asInterface(IBinder p0) {
+        if (if-nez) goto L_4;
+        return v2;
+        IBinder.queryLocalInterface(...);
+        if (if-eqz) goto L_13;
+        if (if-eqz) goto L_13;
+        return v0;
+        ICustomTabsService$Stub$Proxy.<init>(...);
+        return v0;
+    }
+
+    public static ICustomTabsService getDefaultImpl() {
+        // read sDefaultImpl:Landroid/support/customtabs/ICustomTabsService;
+        return v0;
+    }
+
+    public static boolean setDefaultImpl(ICustomTabsService p0) {
+        // read sDefaultImpl:Landroid/support/customtabs/ICustomTabsService;
+        if (if-nez) goto L_c;
+        if (if-eqz) goto L_a;
+        sDefaultImpl = /* sput-object */;
+        return v1;
+        return v1;
+        IllegalStateException.<init>(...);
+    }
+
+    public IBinder asBinder() {
+        return v0;
+    }
+
+    public boolean onTransact(int p0, Parcel p1, Parcel p2, int p3) {
+        if (if-eq) goto L_1dd;
+        Binder.onTransact(...);
+        return v5;
+        Parcel.enforceInterface(...);
+        Parcel.readStrongBinder(...);
+        ICustomTabsCallback$Stub.asInterface(...);
+        Parcel.readInt(...);
+        if (if-eqz) goto L_2b;
+        // read CREATOR:Landroid/os/Parcelable$Creator;
+        Parcelable$Creator.createFromParcel(...);
+        Parcel.readInt(...);
+        Parcel.readInt(...);
+        if (if-eqz) goto L_3f;
+        // read CREATOR:Landroid/os/Parcelable$Creator;
+        Parcelable$Creator.createFromParcel(...);
+        ICustomTabsService$Stub.receiveFile(...);
+        Parcel.writeNoException(...);
+        Parcel.writeInt(...);
+        return v1;
+        Parcel.enforceInterface(...);
+        Parcel.readStrongBinder(...);
+        ICustomTabsCallback$Stub.asInterface(...);
+        Parcel.readInt(...);
+        if (if-eqz) goto L_64;
+        // read CREATOR:Landroid/os/Parcelable$Creator;
+        Parcelable$Creator.createFromParcel(...);
+        Parcel.readInt(...);
+        if (if-eqz) goto L_74;
+        // read CREATOR:Landroid/os/Parcelable$Creator;
+        Parcelable$Creator.createFromParcel(...);
+        ICustomTabsService$Stub.requestPostMessageChannelWithExtras(...);
+        Parcel.writeNoException(...);
+        Parcel.writeInt(...);
+        return v1;
+        Parcel.enforceInterface(...);
+        Parcel.readStrongBinder(...);
+        ICustomTabsCallback$Stub.asInterface(...);
+        Parcel.readInt(...);
+        if (if-eqz) goto L_99;
+        // read CREATOR:Landroid/os/Parcelable$Creator;
+        Parcelable$Creator.createFromParcel(...);
+        ICustomTabsService$Stub.newSessionWithExtras(...);
+    }
+
+}
+
+// --- android.support.customtabs.ICustomTabsService$Stub$Proxy (classes.dex) ---
+package android.support.customtabs;
+
+class ICustomTabsService$Stub$Proxy {
+    public static ICustomTabsService sDefaultImpl;
+    private IBinder mRemote;
+
+    ICustomTabsService$Stub$Proxy(IBinder p0) {
+        Object.<init>(...);
+        mRemote = /* iput-object */;
+        return;
+    }
+
+    public IBinder asBinder() {
+        // read mRemote:Landroid/os/IBinder;
+        return v0;
+    }
+
+    public Bundle extraCommand(String p0, Bundle p1) {
+        Parcel.obtain(...);
+        Parcel.obtain(...);
+        Parcel.writeInterfaceToken(...);
+        Parcel.writeString(...);
+        if (if-eqz) goto L_1b;
+        Parcel.writeInt(...);
+        Bundle.writeToParcel(...);
+        Parcel.writeInt(...);
+        // read mRemote:Landroid/os/IBinder;
+        IBinder.transact(...);
+        if (if-nez) goto L_3c;
+        ICustomTabsService$Stub.getDefaultImpl(...);
+        if (if-eqz) goto L_3c;
+        ICustomTabsService$Stub.getDefaultImpl(...);
+        ICustomTabsService.extraCommand(...);
+        Parcel.recycle(...);
+        Parcel.recycle(...);
+        return v6;
+        Parcel.readException(...);
+        Parcel.readInt(...);
+        if (if-eqz) goto L_4e;
+        // read CREATOR:Landroid/os/Parcelable$Creator;
+        Parcelable$Creator.createFromParcel(...);
+        Parcel.recycle(...);
+        Parcel.recycle(...);
+        return v6;
+        Parcel.recycle(...);
+        Parcel.recycle(...);
+    }
+
+    public String getInterfaceDescriptor() {
+        return v0;
+    }
+
+    public boolean mayLaunchUrl(ICustomTabsCallback p0, Uri p1, Bundle p2, List p3) {
+        Parcel.obtain(...);
+        Parcel.obtain(...);
+        Parcel.writeInterfaceToken(...);
+        if (if-eqz) goto L_14;
+        ICustomTabsCallback.asBinder(...);
+        Parcel.writeStrongBinder(...);
+        if (if-eqz) goto L_23;
+        Parcel.writeInt(...);
+        Uri.writeToParcel(...);
+        Parcel.writeInt(...);
+        if (if-eqz) goto L_2f;
+        Parcel.writeInt(...);
+        Bundle.writeToParcel(...);
+        Parcel.writeInt(...);
+        Parcel.writeTypedList(...);
+        // read mRemote:Landroid/os/IBinder;
+        IBinder.transact(...);
+        if (if-nez) goto L_53;
+        ICustomTabsService$Stub.getDefaultImpl(...);
+        if (if-eqz) goto L_53;
+        ICustomTabsService$Stub.getDefaultImpl(...);
+        ICustomTabsService.mayLaunchUrl(...);
+        Parcel.recycle(...);
+        Parcel.recycle(...);
+        return v7;
+        Parcel.readException(...);
+        Parcel.readInt(...);
+        if (if-eqz) goto L_5d;
+        Parcel.recycle(...);
+        Parcel.recycle(...);
+        return v2;
+        Parcel.recycle(...);
+        Parcel.recycle(...);
+    }
+
+    public boolean newSession(ICustomTabsCallback p0) {
+        Parcel.obtain(...);
+        Parcel.obtain(...);
+        Parcel.writeInterfaceToken(...);
+        if (if-eqz) goto L_14;
+        ICustomTabsCallback.asBinder(...);
+        Parcel.writeStrongBinder(...);
+        // read mRemote:Landroid/os/IBinder;
+        IBinder.transact(...);
+        if (if-nez) goto L_37;
+        ICustomTabsService$Stub.getDefaultImpl(...);
+        if (if-eqz) goto L_37;
+        ICustomTabsService$Stub.getDefaultImpl(...);
+        ICustomTabsService.newSession(...);
+        Parcel.recycle(...);
+        Parcel.recycle(...);
+        return v6;
+        Parcel.readException(...);
+        Parcel.readInt(...);
+        if (if-eqz) goto L_41;
+        Parcel.recycle(...);
+        Parcel.recycle(...);
+        return v4;
+        Parcel.recycle(..
+// --- android.support.customtabs.IPostMessageService (classes.dex) ---
+package android.support.customtabs;
+
+public abstract class IPostMessageService {
+    public abstract void onMessageChannelReady(ICustomTabsCallback p0, Bundle p1) {
+        // native or abstract
+    }
+
+    public abstract void onPostMessage(ICustomTabsCallback p0, String p1, Bundle p2) {
+        // native or abstract
+    }
+
+}
+
+// --- android.support.customtabs.IPostMessageService$Default (classes.dex) ---
+package android.support.customtabs;
+
+public class IPostMessageService$Default {
+    public IPostMessageService$Default() {
+        Object.<init>(...);
+        return;
+    }
+
+    public IBinder asBinder() {
+        return v0;
+    }
+
+    public void onMessageChannelReady(ICustomTabsCallback p0, Bundle p1) {
+        return;
+    }
+
+    public void onPostMessage(ICustomTabsCallback p0, String p1, Bundle p2) {
+        return;
+    }
+
+}
+
+// --- android.support.customtabs.IPostMessageService$Stub (classes.dex) ---
+package android.support.customtabs;
+
+public abstract class IPostMessageService$Stub extends Binder {
+    private static final String DESCRIPTOR;
+    static final int TRANSACTION_onMessageChannelReady;
+    static final int TRANSACTION_onPostMessage;
+
+    public IPostMessageService$Stub() {
+        Binder.<init>(...);
+        IPostMessageService$Stub.attachInterface(...);
+        return;
+    }
+
+    public static IPostMessageService asInterface(IBinder p0) {
+        if (if-nez) goto L_4;
+        return v2;
+        IBinder.queryLocalInterface(...);
+        if (if-eqz) goto L_13;
+        if (if-eqz) goto L_13;
+        return v0;
+        IPostMessageService$Stub$Proxy.<init>(...);
+        return v0;
+    }
+
+    public static IPostMessageService getDefaultImpl() {
+        // read sDefaultImpl:Landroid/support/customtabs/IPostMessageService;
+        return v0;
+    }
+
+    public static boolean setDefaultImpl(IPostMessageService p0) {
+        // read sDefaultImpl:Landroid/support/customtabs/IPostMessageService;
+        if (if-nez) goto L_c;
+        if (if-eqz) goto L_a;
+        sDefaultImpl = /* sput-object */;
+        return v1;
+        return v1;
+        IllegalStateException.<init>(...);
+    }
+
+    public IBinder asBinder() {
+        return v0;
+    }
+
+    public boolean onTransact(int p0, Parcel p1, Parcel p2, int p3) {
+        if (if-eq) goto L_3d;
+        if (if-eq) goto L_18;
+        if (if-eq) goto L_14;
+        Binder.onTransact(...);
+        return v5;
+        Parcel.writeString(...);
+        return v2;
+        Parcel.enforceInterface(...);
+        Parcel.readStrongBinder(...);
+        ICustomTabsCallback$Stub.asInterface(...);
+        Parcel.readString(...);
+        Parcel.readInt(...);
+        if (if-eqz) goto L_36;
+        // read CREATOR:Landroid/os/Parcelable$Creator;
+        Parcelable$Creator.createFromParcel(...);
+        IPostMessageService$Stub.onPostMessage(...);
+        Parcel.writeNoException(...);
+        return v2;
+        Parcel.enforceInterface(...);
+        Parcel.readStrongBinder(...);
+        ICustomTabsCallback$Stub.asInterface(...);
+        Parcel.readInt(...);
+        if (if-eqz) goto L_57;
+        // read CREATOR:Landroid/os/Parcelable$Creator;
+        Parcelable$Creator.createFromParcel(...);
+        IPostMessageService$Stub.onMessageChannelReady(...);
+        Parcel.writeNoException(...);
+        return v2;
+    }
+
+}
+
+// --- android.support.customtabs.IPostMessageService$Stub$Proxy (classes.dex) ---
+package android.support.customtabs;
+
+class IPostMessageService$Stub$Proxy {
+    public static IPostMessageService sDefaultImpl;
+    private IBinder mRemote;
+
+    IPostMessageService$Stub$Proxy(IBinder p0) {
+        Object.<init>(...);
+        mRemote = /* iput-object */;
+        return;
+    }
+
+    public IBinder asBinder() {
+        // read mRemote:Landroid/os/IBinder;
+        return v0;
+    }
+
+    public String getInterfaceDescriptor() {
+        return v0;
+    }
+
+    public void onMessageChannelReady(ICustomTabsCallback p0, Bundle p1) {
+        Parcel.obtain(...);
+        Parcel.obtain(...);
+        Parcel.writeInterfaceToken(...);
+        if (if-eqz) goto L_14;
+        ICustomTabsCallback.asBinder(...);
+        Parcel.writeStrongBinder(...);
+        if (if-eqz) goto L_23;
+        Parcel.writeInt(...);
+        Bundle.writeToParcel(...);
+        Parcel.writeInt(...);
+        // read mRemote:Landroid/os/IBinder;
+        IBinder.transact(...);
+        if (if-nez) goto L_43;
+        IPostMessageService$Stub.getDefaultImpl(...);
+        if (if-eqz) goto L_43;
+        IPostMessageService$Stub.getDefaultImpl(...);
+        IPostMessageService.onMessageChannelReady(...);
+        Parcel.recycle(...);
+        Parcel.recycle(...);
+        return;
+        Parcel.readException(...);
+        Parcel.recycle(...);
+        Parcel.recycle(...);
+        return;
+        Parcel.recycle(...);
+        Parcel.recycle(...);
+    }
+
+    public void onPostMessage(ICustomTabsCallback p0, String p1, Bundle p2) {
+        Parcel.obtain(...);
+        Parcel.obtain(...);
+        Parcel.writeInterfaceToken(...);
+        if (if-eqz) goto L_14;
+        ICustomTabsCallback.asBinder(...);
+        Parcel.writeStrongBinder(...);
+        Parcel.writeString(...);
+        if (if-eqz) goto L_26;
+        Parcel.writeInt(...);
+        Bundle.writeToParcel(...);
+        Parcel.writeInt(...);
+        // read mRemote:Landroid/os/IBinder;
+        IBinder.transact(...);
+        if (if-nez) goto L_46;
+        IPostMessageService$Stub.getDefaultImpl(...);
+        if (if-eqz) goto L_46;
+        IPostMessageService$Stub.getDefaultImpl(...);
+        IPostMessageService.onPostMessage(...);
+        Parcel.recycle(...);
+        Parcel.recycle(...);
+        return;
+        Parcel.readException(...);
+        Parcel.recycle(...);
+        Parcel.recycle(...);
+        return;
+        Parcel.recycle(...);
+        Parcel.recycle(...);
+    }
+
+}
+
+// --- android.support.customtabs.trusted.ITrustedWebActivityCallback (classes.dex) ---
+package android.support.customtabs.trusted;
+
+public abstract class ITrustedWebActivityCallback {
+    public abstract void onExtraCallback(String p0, Bundle p1) {
+        // native or abstract
+    }
+
+}
+
+// --- android.support.customtabs.trusted.ITrustedWebActivityCallback$Default (classes.dex) ---
+package android.support.customtabs.trusted;
+
+public class ITrustedWebActivityCallback$Default {
+    public ITrustedWebActivityCallback$Default() {
+        Object.<init>(...);
+        return;
+    }
+
+    public IBinder asBinder() {
+        return v0;
+    }
+
+    public void onExtraCallback(String p0, Bundle p1) {
+        return;
+    }
+
+}
+
+// --- android.support.customtabs.trusted.ITrustedWebActivityCallback$Stub (classes.dex) ---
+package android.support.customtabs.trusted;
+
+public abstract class ITrustedWebActivityCallback$Stub extends Binder {
+    private static final String DESCRIPTOR;
+    static final int TRANSACTION_onExtraCallback;
+
+    public ITrustedWebActivityCallback$Stub() {
+        Binder.<init>(...);
+        ITrustedWebActivityCallback$Stub.attachInterface(...);
+        return;
+    }
+
+    public static ITrustedWebActivityCallback asInterface(IBinder p0) {
+        if (if-nez) goto L_4;
+        return v2;
+        IBinder.queryLocalInterface(...);
+        if (if-eqz) goto L_13;
+        if (if-eqz) goto L_13;
+        return v0;
+        ITrustedWebActivityCallback$Stub$Proxy.<init>(...);
+        return v0;
+    }
+
+    public static ITrustedWebActivityCallback getDefaultImpl() {
+        // read sDefaultImpl:Landroid/support/customtabs/trusted/ITrustedWebActivityCallback;
+        return v0;
+    }
+
+    public static boolean setDefaultImpl(ITrustedWebActivityCallback p0) {
+        // read sDefaultImpl:Landroid/support/customtabs/trusted/ITrustedWebActivityCallback;
+        if (if-nez) goto L_c;
+        if (if-eqz) goto L_a;
+        sDefaultImpl = /* sput-object */;
+        return v1;
+        return v1;
+        IllegalStateException.<init>(...);
+    }
+
+    public IBinder asBinder() {
+        return v0;
+    }
+
+    public boolean onTransact(int p0, Parcel p1, Parcel p2, int p3) {
+        if (if-eq) goto L_14;
+        if (if-eq) goto L_10;
+        Binder.onTransact(...);
+        return v4;
+        Parcel.writeString(...);
+        return v1;
+        Parcel.enforceInterface(...);
+        Parcel.readString(...);
+        Parcel.readInt(...);
+        if (if-eqz) goto L_2a;
+        // read CREATOR:Landroid/os/Parcelable$Creator;
+        Parcelable$Creator.createFromParcel(...);
+        ITrustedWebActivityCallback$Stub.onExtraCallback(...);
+        Parcel.writeNoException(...);
+        return v1;
+    }
+
+}
+
+// --- android.support.customtabs.trusted.ITrustedWebActivityCallback$Stub$Proxy (classes.dex) ---
+package android.support.customtabs.trusted;
+
+class ITrustedWebActivityCallback$Stub$Proxy {
+    public static ITrustedWebActivityCallback sDefaultImpl;
+    private IBinder mRemote;
+
+    ITrustedWebActivityCallback$Stub$Proxy(IBinder p0) {
+        Object.<init>(...);
+        mRemote = /* iput-object */;
+        return;
+    }
+
+    public IBinder asBinder() {
+        // read mRemote:Landroid/os/IBinder;
+        return v0;
+    }
+
+    public String getInterfaceDescriptor() {
+        return v0;
+    }
+
+    public void onExtraCallback(String p0, Bundle p1) {
+        Parcel.obtain(...);
+        Parcel.obtain(...);
+        Parcel.writeInterfaceToken(...);
+        Parcel.writeString(...);
+        if (if-eqz) goto L_1b;
+        Parcel.writeInt(...);
+        Bundle.writeToParcel(...);
+        Parcel.writeInt(...);
+        // read mRemote:Landroid/os/IBinder;
+        IBinder.transact(...);
+        if (if-nez) goto L_3b;
+        ITrustedWebActivityCallback$Stub.getDefaultImpl(...);
+        if (if-eqz) goto L_3b;
+        ITrustedWebActivityCallback$Stub.getDefaultImpl(...);
+        ITrustedWebActivityCallback.onExtraCallback(...);
+        Parcel.recycle(...);
+        Parcel.recycle(...);
+        return;
+        Parcel.readException(...);
+        Parcel.recycle(...);
+        Parcel.recycle(...);
+        return;
+        Parcel.recycle(...);
+        Parcel.recycle(...);
+    }
+
+}
+
+// --- android.support.customtabs.trusted.ITrustedWebActivityService (classes.dex) ---
+package android.support.customtabs.trusted;
+
+public abstract class ITrustedWebActivityService {
+    public abstract Bundle areNotificationsEnabled(Bundle p0) {
+        // native or abstract
+    }
+
+    public abstract void cancelNotification(Bundle p0) {
+        // native or abstract
+    }
+
+    public abstract Bundle extraCommand(String p0, Bundle p1, IBinder p2) {
+        // native or abstract
+    }
+
+    public abstract Bundle getActiveNotifications() {
+        // native or abstract
+    }
+
+    public abstract Bundle getSmallIconBitmap() {
+        // native or abstract
+    }
+
+    public abstract int getSmallIconId() {
+        // native or abstract
+    }
+
+    public abstract Bundle notifyNotificationWithChannel(Bundle p0) {
+        // native or abstract
+    }
+
+}
+
+// --- android.support.customtabs.trusted.ITrustedWebActivityService$Default (classes.dex) ---
+package android.support.customtabs.trusted;
+
+public class ITrustedWebActivityService$Default {
+    public ITrustedWebActivityService$Default() {
+        Object.<init>(...);
+        return;
+    }
+
+    public Bundle areNotificationsEnabled(Bundle p0) {
+        return v1;
+    }
+
+    public IBinder asBinder() {
+        return v0;
+    }
+
+    public void cancelNotification(Bundle p0) {
+        return;
+    }
+
+    public Bundle extraCommand(String p0, Bundle p1, IBinder p2) {
+        return v1;
+    }
+
+    public Bundle getActiveNotifications() {
+        return v0;
+    }
+
+    public Bundle getSmallIconBitmap() {
+        return v0;
+    }
+
+    public int getSmallIconId() {
+        return v0;
+    }
+
+    public Bundle notifyNotificationWithChannel(Bundle p0) {
+        return v1;
+    }
+
+}
+
+// --- android.support.customtabs.trusted.ITrustedWebActivityService$Stub (classes.dex) ---
+package android.support.customtabs.trusted;
+
+public abstract class ITrustedWebActivityService$Stub extends Binder {
+    private static final String DESCRIPTOR;
+    static final int TRANSACTION_areNotificationsEnabled;
+    static final int TRANSACTION_cancelNotification;
+    static final int TRANSACTION_extraCommand;
+    static final int TRANSACTION_getActiveNotifications;
+    static final int TRANSACTION_getSmallIconBitmap;
+    static final int TRANSACTION_getSmallIconId;
+    static final int TRANSACTION_notifyNotificationWithChannel;
+
+    public ITrustedWebActivityService$Stub() {
+        Binder.<init>(...);
+        ITrustedWebActivityService$Stub.attachInterface(...);
+        return;
+    }
+
+    public static ITrustedWebActivityService asInterface(IBinder p0) {
+        if (if-nez) goto L_4;
+        return v2;
+        IBinder.queryLocalInterface(...);
+        if (if-eqz) goto L_13;
+        if (if-eqz) goto L_13;
+        return v0;
+        ITrustedWebActivityService$Stub$Proxy.<init>(...);
+        return v0;
+    }
+
+    public static ITrustedWebActivityService getDefaultImpl() {
+        // read sDefaultImpl:Landroid/support/customtabs/trusted/ITrustedWebActivityService;
+        return v0;
+    }
+
+    public static boolean setDefaultImpl(ITrustedWebActivityService p0) {
+        // read sDefaultImpl:Landroid/support/customtabs/trusted/ITrustedWebActivityService;
+        if (if-nez) goto L_c;
+        if (if-eqz) goto L_a;
+        sDefaultImpl = /* sput-object */;
+        return v1;
+        return v1;
+        IllegalStateException.<init>(...);
+    }
+
+    public IBinder asBinder() {
+        return v0;
+    }
+
+    public boolean onTransact(int p0, Parcel p1, Parcel p2, int p3) {
+        if (if-eq) goto L_bb;
+        if (if-eq) goto L_b7;
+        Binder.onTransact(...);
+        return v6;
+        Parcel.enforceInterface(...);
+        ITrustedWebActivityService$Stub.getSmallIconBitmap(...);
+        Parcel.writeNoException(...);
+        if (if-eqz) goto L_29;
+        Parcel.writeInt(...);
+        Bundle.writeToParcel(...);
+        Parcel.writeInt(...);
+        return v3;
+        Parcel.enforceInterface(...);
+        Parcel.readInt(...);
+        if (if-eqz) goto L_3f;
+        // read CREATOR:Landroid/os/Parcelable$Creator;
+        Parcelable$Creator.createFromParcel(...);
+        ITrustedWebActivityService$Stub.areNotificationsEnabled(...);
+        Parcel.writeNoException(...);
+        if (if-eqz) goto L_4f;
+        Parcel.writeInt(...);
+        Bundle.writeToParcel(...);
+        Parcel.writeInt(...);
+        return v3;
+        Parcel.enforceInterface(...);
+        ITrustedWebActivityService$Stub.getActiveNotifications(...);
+        Parcel.writeNoException(...);
+        if (if-eqz) goto L_66;
+        Parcel.writeInt(...);
+        Bundle.writeToParcel(...);
+        Parcel.writeInt(...);
+        return v3;
+        Parcel.enforceInterface(...);
+        ITrustedWebActivityService$Stub.getSmallIconId(...);
+        Parcel.writeNoException(...);
+        Parcel.writeInt(...);
+        return v3;
+        Parcel.enforceInterface(...);
+        Parcel.readInt(...);
+        if (if-eqz) goto L_8a;
+        // read CREATOR:Landroid/os/Parcelable$Creator;
+        Parcelable$Creator.createFromParcel(...);
+        ITrustedWebActivityService$Stub.cancelNotification(...);
+        Parcel.writeNoException(...);
+        return v3;
+        Parcel.enforceInterface(...);
+        Parcel.readInt(...);
+        if (if-eqz) goto L_a3;
+        // read CREATOR:Landroid/os/Parcelable$C
+// --- android.support.customtabs.trusted.ITrustedWebActivityService$Stub$Proxy (classes.dex) ---
+package android.support.customtabs.trusted;
+
+class ITrustedWebActivityService$Stub$Proxy {
+    public static ITrustedWebActivityService sDefaultImpl;
+    private IBinder mRemote;
+
+    ITrustedWebActivityService$Stub$Proxy(IBinder p0) {
+        Object.<init>(...);
+        mRemote = /* iput-object */;
+        return;
+    }
+
+    public Bundle areNotificationsEnabled(Bundle p0) {
+        Parcel.obtain(...);
+        Parcel.obtain(...);
+        Parcel.writeInterfaceToken(...);
+        if (if-eqz) goto L_18;
+        Parcel.writeInt(...);
+        Bundle.writeToParcel(...);
+        Parcel.writeInt(...);
+        // read mRemote:Landroid/os/IBinder;
+        IBinder.transact(...);
+        if (if-nez) goto L_39;
+        ITrustedWebActivityService$Stub.getDefaultImpl(...);
+        if (if-eqz) goto L_39;
+        ITrustedWebActivityService$Stub.getDefaultImpl(...);
+        ITrustedWebActivityService.areNotificationsEnabled(...);
+        Parcel.recycle(...);
+        Parcel.recycle(...);
+        return v6;
+        Parcel.readException(...);
+        Parcel.readInt(...);
+        if (if-eqz) goto L_4b;
+        // read CREATOR:Landroid/os/Parcelable$Creator;
+        Parcelable$Creator.createFromParcel(...);
+        Parcel.recycle(...);
+        Parcel.recycle(...);
+        return v6;
+        Parcel.recycle(...);
+        Parcel.recycle(...);
+    }
+
+    public IBinder asBinder() {
+        // read mRemote:Landroid/os/IBinder;
+        return v0;
+    }
+
+    public void cancelNotification(Bundle p0) {
+        Parcel.obtain(...);
+        Parcel.obtain(...);
+        Parcel.writeInterfaceToken(...);
+        if (if-eqz) goto L_18;
+        Parcel.writeInt(...);
+        Bundle.writeToParcel(...);
+        Parcel.writeInt(...);
+        // read mRemote:Landroid/os/IBinder;
+        IBinder.transact(...);
+        if (if-nez) goto L_38;
+        ITrustedWebActivityService$Stub.getDefaultImpl(...);
+        if (if-eqz) goto L_38;
+        ITrustedWebActivityService$Stub.getDefaultImpl(...);
+        ITrustedWebActivityService.cancelNotification(...);
+        Parcel.recycle(...);
+        Parcel.recycle(...);
+        return;
+        Parcel.readException(...);
+        Parcel.recycle(...);
+        Parcel.recycle(...);
+        return;
+        Parcel.recycle(...);
+        Parcel.recycle(...);
+    }
+
+    public Bundle extraCommand(String p0, Bundle p1, IBinder p2) {
+        Parcel.obtain(...);
+        Parcel.obtain(...);
+        Parcel.writeInterfaceToken(...);
+        Parcel.writeString(...);
+        if (if-eqz) goto L_1b;
+        Parcel.writeInt(...);
+        Bundle.writeToParcel(...);
+        Parcel.writeInt(...);
+        Parcel.writeStrongBinder(...);
+        // read mRemote:Landroid/os/IBinder;
+        IBinder.transact(...);
+        if (if-nez) goto L_40;
+        ITrustedWebActivityService$Stub.getDefaultImpl(...);
+        if (if-eqz) goto L_40;
+        ITrustedWebActivityService$Stub.getDefaultImpl(...);
+        ITrustedWebActivityService.extraCommand(...);
+        Parcel.recycle(...);
+        Parcel.recycle(...);
+        return v6;
+        Parcel.readException(...);
+        Parcel.readInt(...);
+        if (if-eqz) goto L_52;
+        // read CREATOR:Landroid/os/Parcelable$Creator;
+        Parcelable$Creator.createFromParcel(...);
+        Parcel.recycle(...);
+        Parcel.recycle(...);
+        return v6;
+        Parcel.recycle(...);
+        Parcel.recycle(...);
+    }
+
+    public Bundle getActiveNotifications() {
+        Parcel.obtain(...);
+        Parcel.obtain(...);
+        Parcel
+// --- androidx.activity.ActivityViewModelLazyKt (classes.dex) ---
+package androidx.activity;
+
+public final class ActivityViewModelLazyKt {
+    public static final Lazy viewModels(ComponentActivity p0, Function0 p1) {
+        Intrinsics.checkNotNullParameter(...);
+        if (if-nez) goto L_e;
+        ActivityViewModelLazyKt$viewModels$factoryPromise$1.<init>(...);
+        Intrinsics.reifiedOperationMarker(...);
+        Reflection.getOrCreateKotlinClass(...);
+        ActivityViewModelLazyKt$viewModels$1.<init>(...);
+        ActivityViewModelLazyKt$viewModels$2.<init>(...);
+        ViewModelLazy.<init>(...);
+        return v0;
+    }
+
+    public static final Lazy viewModels(ComponentActivity p0, Function0 p1, Function0 p2) {
+        Intrinsics.checkNotNullParameter(...);
+        if (if-nez) goto L_e;
+        ActivityViewModelLazyKt$viewModels$factoryPromise$2.<init>(...);
+        Intrinsics.reifiedOperationMarker(...);
+        Reflection.getOrCreateKotlinClass(...);
+        ActivityViewModelLazyKt$viewModels$3.<init>(...);
+        ActivityViewModelLazyKt$viewModels$4.<init>(...);
+        ViewModelLazy.<init>(...);
+        return v0;
+    }
+
+    public static Lazy viewModels$default(ComponentActivity p0, Function0 p1, int p2, Object p3) {
+        if (if-eqz) goto L_5;
+        Intrinsics.checkNotNullParameter(...);
+        if (if-nez) goto L_13;
+        ActivityViewModelLazyKt$viewModels$factoryPromise$1.<init>(...);
+        Intrinsics.reifiedOperationMarker(...);
+        Reflection.getOrCreateKotlinClass(...);
+        ActivityViewModelLazyKt$viewModels$1.<init>(...);
+        ActivityViewModelLazyKt$viewModels$2.<init>(...);
+        ViewModelLazy.<init>(...);
+        return v4;
+    }
+
+    public static Lazy viewModels$default(ComponentActivity p0, Function0 p1, Function0 p2, int p3, Object p4) {
+        if (if-eqz) goto L_6;
+        if (if-eqz) goto L_b;
+        Intrinsics.checkNotNullParameter(...);
+        if (if-nez) goto L_19;
+        ActivityViewModelLazyKt$viewModels$factoryPromise$2.<init>(...);
+        Intrinsics.reifiedOperationMarker(...);
+        Reflection.getOrCreateKotlinClass(...);
+        ActivityViewModelLazyKt$viewModels$3.<init>(...);
+        ActivityViewModelLazyKt$viewModels$4.<init>(...);
+        ViewModelLazy.<init>(...);
+        return v5;
+    }
+
+}
+
+// --- androidx.activity.ActivityViewModelLazyKt$viewModels$1 (classes.dex) ---
+package androidx.activity;
+
+public final class ActivityViewModelLazyKt$viewModels$1 extends Lambda {
+    final ComponentActivity $this_viewModels;
+
+    public ActivityViewModelLazyKt$viewModels$1(ComponentActivity p0) {
+        $this_viewModels = /* iput-object */;
+        Lambda.<init>(...);
+        return;
+    }
+
+    public final ViewModelStore invoke() {
+        // read $this_viewModels:Landroidx/activity/ComponentActivity;
+        ComponentActivity.getViewModelStore(...);
+        Intrinsics.checkNotNullExpressionValue(...);
+        return v0;
+    }
+
+    public Object invoke() {
+        ActivityViewModelLazyKt$viewModels$1.invoke(...);
+        return v0;
+    }
+
+}
+
+// --- androidx.activity.ActivityViewModelLazyKt$viewModels$2 (classes.dex) ---
+package androidx.activity;
+
+public final class ActivityViewModelLazyKt$viewModels$2 extends Lambda {
+    final ComponentActivity $this_viewModels;
+
+    public ActivityViewModelLazyKt$viewModels$2(ComponentActivity p0) {
+        $this_viewModels = /* iput-object */;
+        Lambda.<init>(...);
+        return;
+    }
+
+    public final CreationExtras invoke() {
+        // read $this_viewModels:Landroidx/activity/ComponentActivity;
+        ComponentActivity.getDefaultViewModelCreationExtras(...);
+        Intrinsics.checkNotNullExpressionValue(...);
+        return v0;
+    }
+
+    public Object invoke() {
+        ActivityViewModelLazyKt$viewModels$2.invoke(...);
+        return v0;
+    }
+
+}
+
+// --- androidx.activity.ActivityViewModelLazyKt$viewModels$3 (classes.dex) ---
+package androidx.activity;
+
+public final class ActivityViewModelLazyKt$viewModels$3 extends Lambda {
+    final ComponentActivity $this_viewModels;
+
+    public ActivityViewModelLazyKt$viewModels$3(ComponentActivity p0) {
+        $this_viewModels = /* iput-object */;
+        Lambda.<init>(...);
+        return;
+    }
+
+    public final ViewModelStore invoke() {
+        // read $this_viewModels:Landroidx/activity/ComponentActivity;
+        ComponentActivity.getViewModelStore(...);
+        Intrinsics.checkNotNullExpressionValue(...);
+        return v0;
+    }
+
+    public Object invoke() {
+        ActivityViewModelLazyKt$viewModels$3.invoke(...);
+        return v0;
+    }
+
+}
+
